@@ -1,0 +1,20 @@
+{
+    "monsters": [
+        {
+            "name": "werebeaver",
+            "namePretty": "Werebeaver",
+            "description": "Some poor humanoid has become infected with werebeaveritis. They have turned into a rabid beaver. It thinks you kicked its dam and it's not happy about it.",
+            "weakness": "fire",
+            "fightDamage": "The werebeaver skillfully dodges your attack, using its tail as a springboard to get close enough to sink its vile teeth into your leg. You lose one point of health.",
+            "fightDie": "The werebeaver goes limp and falls to the ground."
+        },
+        {
+            "name": "monstrousKoiFish",
+            "namePretty": "Monstrous Koi Fish",
+            "description": "An evil mage has gigantified a once-pretty-looking koi fish and granted it the ability to breathe air. It now sports fangs and a denim jacket with the sleeves ripped off. It has sick tribal tats around its fins.",
+            "weakness": "electricity",
+            "fightDamage": "The monstrous koi fish wobbles around your attack. It then slides toward you, sinking its fang into you. You lose one point of health.",
+            "fightDie": "The koi fish suddenly stiffens its muscles. It begins to shrink, slowly at first, then rapidly. It is now the size of a typical koi, flopping around inside the denim jacket it once wore."
+        }
+    ]
+}

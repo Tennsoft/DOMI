@@ -1,0 +1,12 @@
+{
+    "bosses": [
+        {
+            "name": "tuckersKobolds",
+            "namePretty": "Tucker's Kobolds",
+            "weakness": "automaticCrossbow",
+            "description": "Several kobolds fighting together. Trained in guerilla warfare tactics.",
+            "fightDamage": "The kobolds skillfully use various places in the room for cover. One throws a molotov cocktail toward you, another shoots an arrow, and a third hurls a medium sized rock. You lose one point of damage.",
+            "fightDie": "The kobolds' war of attrition has failed. Their squadron is entirely dead. In the distance you hear a helicopter fleeing. The Jimi Hendrix cover of \"All Along the Watchtower\" plays in your mind."
+        }
+    ]
+}

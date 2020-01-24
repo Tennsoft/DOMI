@@ -1,0 +1,14 @@
+{
+    "rooms": [
+        {
+            "name": "storageRoom",
+            "namePretty": "Storage Room",
+            "description": "This is what appears to be an old storage closet. You see dusty shelves with spider webs. A few objects line the shelves, such as cups and a broom. There is a stench of stale air mixed with pine. Perhaps someone once kept the dungeon clean."
+        },
+        {
+            "name": "campRoom",
+            "namePretty": "Camp Room",
+            "description": "This room appears to be where someone has made camp. There are ashes where a fire was made, but has been long extinguished. A bedroll lies nearby. The rest of the room is sparse."
+        }
+    ]
+}
