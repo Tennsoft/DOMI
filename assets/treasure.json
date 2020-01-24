@@ -1,0 +1,16 @@
+{
+    "treasure": [
+        {
+            "name": "automaticCrossbow",
+            "namePretty": "Automatic Crossbow",
+            "description": "A crossbow which continuously fires bolts so long as the trigger is held.",
+            "strength": "ranged"
+        },
+        {
+            "name": "romanCandle",
+            "namePretty": "Roman Candle",
+            "description": "A wand-like object that emits a ball of greek fire when evoked.",
+            "strength": "fire"
+        }
+    ]
+}
