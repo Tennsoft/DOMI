@@ -32,6 +32,12 @@ Here's a quick overview of working with branches and merge requests.
 
 All commands are executed within the repository directory via `git-bash`
 
+Before making any changes, sync your local repo with the one at `gitlab`:
+
+```
+git pull
+```
+
 To create a new branch called `ben_updating_readme`
 
 ```
