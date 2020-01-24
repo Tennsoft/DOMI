@@ -70,7 +70,7 @@ Navigate to the repo's web page at [gitlab.com/gbmor/dungeon_of_moderate_inconve
 and click on `Merge Requests` in the left-hand navigation bar. Then, click `New Merge Request`
 in the main area. Select your branch in the drop-down box for `source branch`, and make sure
 `master` is selected for `target branch`. Click `compare branches and continue`, and so long
-as everything looks good, merge the two.
+as everything looks good, submit the Merge Request, then open it and merge the two.
 
 Locally, switch back to `master` and sync the changes.
 ```
