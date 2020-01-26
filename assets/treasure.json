@@ -11,6 +11,18 @@
             "namePretty": "Roman Candle",
             "description": "A wand-like object that emits a ball of greek fire when evoked.",
             "strength": "fire"
+        },
+        {
+            "name": "handheldVacuumCleaner",
+            "namePretty": "Handheld Vacuum Cleaner",
+            "description": "Small but powerful little vacuum that runs on batteries.",
+            "strength": "handheldVacuumCleaner"
+        },
+        {
+            "name": "banefulButterknife",
+            "namePretty": "Baneful Butterknife",
+            "description": "A tiny blade that glints wickedly in the light.  Sharp enough to cut through anything like butter.  Watch your fingers!",
+            "strength": "sword"
         }
     ]
 }
