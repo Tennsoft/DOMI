@@ -7,6 +7,14 @@
             "description": "Several kobolds fighting together. Trained in guerilla warfare tactics.",
             "fightDamage": "The kobolds skillfully use various places in the room for cover. One throws a molotov cocktail toward you, another shoots an arrow, and a third hurls a medium sized rock. You lose one point of damage.",
             "fightDie": "The kobolds' war of attrition has failed. Their squadron is entirely dead. In the distance you hear a helicopter fleeing. The Jimi Hendrix cover of \"All Along the Watchtower\" plays in your mind."
+        },
+        {
+            "name": "Kerfluffle",
+            "namePretty": "Kerfluffle",
+            "weakness": "handheldVacuumCleaner",
+            "description": "What seems to be a giant agglomeration of dust bunnies, out for revenge.",
+            "fightDamage": "The Kerfluffle bounds foward and engulfs you in soft, choking dust.  You try to inhale and are overwhelmed with coughing.  You lose one point of health.",
+            "fightDie": "The Kerfluffle is drawn inexorably into the handheld vacuum cleaner and disappears.  The noise of the vacuum drowns out any last cries of Kerfluffle's constituent dust bunnies."
         }
     ]
 }
