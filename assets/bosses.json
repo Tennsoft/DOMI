@@ -15,6 +15,14 @@
             "description": "Cloaked in a black robe and weilding a silver scythe, this otherwise ordinary floating skeleton chills you with an otherwordly presence.",
             "fightDamage": "Death floats over toward you, touching down with a single skeletal foot. It reaches out to touch you with it's hand. You lose one point of damage.",
             "fightDie": "Death floats over toward you, touching down with a single skeletal foot... right onto the discarded banana peel. It slips all the way out of the room, where loud crashing and falling can be heard trailing off in the distance."
+        },
+        {
+            "name": "Kerfluffle",
+            "namePretty": "Kerfluffle",
+            "weakness": "handheldVacuumCleaner",
+            "description": "What seems to be a giant agglomeration of dust bunnies, out for revenge.",
+            "fightDamage": "The Kerfluffle bounds foward and engulfs you in soft, choking dust.  You try to inhale and are overwhelmed with coughing.  You lose one point of health.",
+            "fightDie": "The Kerfluffle is drawn inexorably into the handheld vacuum cleaner and disappears.  The noise of the vacuum drowns out any last cries of Kerfluffle's constituent dust bunnies."
         }
     ]
 }

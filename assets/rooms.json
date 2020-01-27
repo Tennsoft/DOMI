@@ -11,6 +11,16 @@
             "description": "This room appears to be where someone has made camp. There are ashes where a fire was made, but has been long extinguished. A bedroll lies nearby. The rest of the room is sparse."
         },
         {
+            "name": "lakeRoom",
+            "namePretty": "Lake Room",
+            "description": "A dark pool with an ornately carved stone lip fills the center of this room.  The water is very still.  You can't tell how deep it is."
+        },
+        {
+            "name": "stalactiteRoom",
+            "namePretty": "Stalactite Room",
+            "description": "Stalactites in many colors festoon the ceiling in this room.  The floor is bumpy with their partner stalagmites.  You'll have to pick your way through carefully."
+        },
+        {
             "name": "obitalControlRoom",
             "namePretty": "Orbital Ion Cannon Control Room",
             "description": "This room appears to have many computers running at once with a large screen detailing various other places in the world. How did you get here?"
