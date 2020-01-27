@@ -44,7 +44,7 @@
             "name": "greenOoze",
             "namePretty": "Green Ooze",
             "description": "The bright, rippling green of a bowl of jello, but grown to shocking size, endowed with two red eyes, and squelching toward you.",
-            "weakness": "magic",
+            "weakness": "wand",
             "fightDamage": "The Ooze extends a psuedopod which glops onto your leg.  Acid burns you.  You lose one point of health.",
             "fightDie": "The Ooze explodes into a shower of jello, leaving sticky puddles all over the floor."
         },

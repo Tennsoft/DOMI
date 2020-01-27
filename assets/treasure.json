@@ -41,6 +41,12 @@
             "namePretty": "Cattle Prod",
             "description": "A thin black cylinder with two metal prongs sticking out of one end. Perfect for dealing with shapeshifters and mimics.",
             "strength": "cattleProd"
+        },
+        {
+            "name": "readME",
+            "namePretty": "readME",
+            "description": "A document containing the wisdom of the ages as they pertain to version control with git.",
+            "strength": "readME"
         }
     ]
 }
