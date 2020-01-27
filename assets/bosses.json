@@ -23,6 +23,14 @@
             "description": "What seems to be a giant agglomeration of dust bunnies, out for revenge.",
             "fightDamage": "The Kerfluffle bounds foward and engulfs you in soft, choking dust.  You try to inhale and are overwhelmed with coughing.  You lose one point of health.",
             "fightDie": "The Kerfluffle is drawn inexorably into the handheld vacuum cleaner and disappears.  The noise of the vacuum drowns out any last cries of Kerfluffle's constituent dust bunnies."
+        },
+        {
+            "name": "boxxytmorningwood",
+            "namePretty": "Boxxy T. Morningwood",
+            "weakness": "cattelProd",
+            "description": "As you enter the room, you see a treasure chest walking upon 8 spider legs. It is gazing upon you with hated in a single cat like eye ",
+            "fightDamage": "The chest points a leg at you and a ball of shadows flies to you engulfing you.  You lose one point of health.",
+            "fightDie": "The chest begins convulsing from the use of the cattle prod and falls over."
         }
     ]
 }

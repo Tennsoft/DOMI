@@ -29,6 +29,11 @@
             "name": "dungeon",
             "namePretty": "Dungeon",
             "description": "The smell hits you before you have time to take in your surroundings. It's dark, with chains and cages lining the walls, lit with lightly flickering torches."
+        },
+        {
+            "name": "dragonCave",
+            "namePretty": "Dragon's Home",
+            "description": "As you enter the room, you see a two dragons laying around a raised stone platform. The edges of the room are darkend and they do not appear to be paying attention to you."
         }
     ]
 }

@@ -35,6 +35,12 @@
             "namePretty": "Baneful Butterknife",
             "description": "A tiny blade that glints wickedly in the light.  Sharp enough to cut through anything like butter.  Watch your fingers!",
             "strength": "sword"
+        },
+        {
+            "name": "cattleProd",
+            "namePretty": "Cattle Prod",
+            "description": "A thin black cylinder with two metal prongs sticking out of one end. Perfect for dealing with shapeshifters and mimics.",
+            "strength": "cattleProd"
         }
     ]
 }

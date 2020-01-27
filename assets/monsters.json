@@ -47,6 +47,14 @@
             "weakness": "magic",
             "fightDamage": "The Ooze extends a psuedopod which glops onto your leg.  Acid burns you.  You lose one point of health.",
             "fightDie": "The Ooze explodes into a shower of jello, leaving sticky puddles all over the floor."
+        },
+        {
+            "name": "mimic",
+            "namePretty": "Mimic",
+            "description": "An innocuous treasure chest that seems completelynon threatening",
+            "weakness": "cattleProd",
+            "fightDamage": "The treasure chest jumps out at you bitting into your arm.  You lose one point of health.",
+            "fightDie": "The treasure chest falls over ."
         }
     ]
 }
