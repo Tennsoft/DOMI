@@ -9,6 +9,16 @@
             "name": "campRoom",
             "namePretty": "Camp Room",
             "description": "This room appears to be where someone has made camp. There are ashes where a fire was made, but has been long extinguished. A bedroll lies nearby. The rest of the room is sparse."
+        },
+        {
+            "name": "obitalControlRoom",
+            "namePretty": "Orbital Ion Cannon Control Room",
+            "description": "This room appears to have many computers running at once with a large screen detailing various other places in the world. How did you get here?"
+        },
+        {
+            "name": "dungeon",
+            "namePretty": "Dungeon",
+            "description": "The smell hits you before you have time to take in your surroundings. It's dark, with chains and cages lining the walls, lit with lightly flickering torches."
         }
     ]
 }
