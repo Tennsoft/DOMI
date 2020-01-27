@@ -12,7 +12,7 @@
             "name": "death",
             "namePretty": "Death",
             "weakness": "bananaPeel",
-            "description": "Cloaked in a black robe and weilding a silver scythe, this otherwise ordinary floating skeleton chills you with an otherwordly presence.",
+            "description": "Cloaked in a black robe and wielding a silver scythe, this otherwise ordinary floating skeleton chills you with an otherwordly presence.",
             "fightDamage": "Death floats over toward you, touching down with a single skeletal foot. It reaches out to touch you with it's hand. You lose one point of damage.",
             "fightDie": "Death floats over toward you, touching down with a single skeletal foot... right onto the discarded banana peel. It slips all the way out of the room, where loud crashing and falling can be heard trailing off in the distance."
         },
@@ -22,7 +22,7 @@
             "weakness": "handheldVacuumCleaner",
             "description": "What seems to be a giant agglomeration of dust bunnies, out for revenge.",
             "fightDamage": "The Kerfluffle bounds foward and engulfs you in soft, choking dust.  You try to inhale and are overwhelmed with coughing.  You lose one point of health.",
-            "fightDie": "The Kerfluffle is drawn inexorably into the handheld vacuum cleaner and disappears.  The noise of the vacuum drowns out any last cries of Kerfluffle's constituent dust bunnies."
+            "fightDie": "The Kerfluffle explodes into a corruscating cloud of dust and is no more."
         },
         {
             "name": "boxxytmorningwood",
@@ -31,6 +31,14 @@
             "description": "As you enter the room, you see a treasure chest walking upon 8 spider legs. It is gazing upon you with hated in a single cat like eye ",
             "fightDamage": "The chest points a leg at you and a ball of shadows flies to you engulfing you.  You lose one point of health.",
             "fightDie": "The chest begins convulsing from the use of the cattle prod and falls over."
+        },
+        {
+            "name": "originMaster",
+            "namePretty": "Origin Master",
+            "weakness": "readME",
+            "description": "The Git Origin Master, inscrutable in their enlightenment. ",
+            "fightDamage": "'git rm you,' Origin Master intones.  You lose one point of health.",
+            "fightDie": "You study the readME and realize that Origin Master is just an illusion.  Looking up, you realize the room was empty all along."
         }
     ]
 }
