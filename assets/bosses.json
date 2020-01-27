@@ -9,6 +9,14 @@
             "fightDie": "The kobolds' war of attrition has failed. Their squadron is entirely dead. In the distance you hear a helicopter fleeing. The Jimi Hendrix cover of \"All Along the Watchtower\" plays in your mind."
         },
         {
+            "name": "death",
+            "namePretty": "Death",
+            "weakness": "bananaPeel",
+            "description": "Cloaked in a black robe and weilding a silver scythe, this otherwise ordinary floating skeleton chills you with an otherwordly presence.",
+            "fightDamage": "Death floats over toward you, touching down with a single skeletal foot. It reaches out to touch you with it's hand. You lose one point of damage.",
+            "fightDie": "Death floats over toward you, touching down with a single skeletal foot... right onto the discarded banana peel. It slips all the way out of the room, where loud crashing and falling can be heard trailing off in the distance."
+        },
+        {
             "name": "Kerfluffle",
             "namePretty": "Kerfluffle",
             "weakness": "handheldVacuumCleaner",

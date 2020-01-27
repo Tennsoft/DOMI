@@ -17,20 +17,36 @@
             "fightDie": "The koi fish suddenly stiffens its muscles. It begins to shrink, slowly at first, then rapidly. It is now the size of a typical koi, flopping around inside the denim jacket it once wore."
         },
         {
+            "name": "pheonixBear",
+            "namePretty": "Phoenix Bear",
+            "description": "It appears to be part bear, part phoenix with a large blue mane and azure fur.",
+            "weakness": "Phoenix Bear Mace",
+            "fightDamage": "The Pheonix Bear RAGES, dropping its head and charging at you with it's fearsome claws. You lose one point of health.",
+            "fightDie": "The Phoenix Bear gives a whimpering cry, self-engulfing into a pile of ash... better get out of here fast."
+        },
+        {
+            "name": "mummy",
+            "namePretty": "Mummy",
+            "description": "Wrapped in ancient cloths, this creature moans in a low rummbling tone",
+            "weakness": "fire",
+            "fightDamage": "The mummy is faster than it looks, and before you know it, the creature has grabbed you. You feel lifeforce drain out of your body. You lose one point of health.",
+            "fightDie": "The mummy, in one final gasp, dissolves into a pile of cloth"
+        },
+        {
             "name": "frumiousBandersnatch",
             "namePretty": "Frumious Bandersnatch",
             "description": "Loping and lolloping along toward you, jaws agape and tongue lolling out between fangs of preposterous proportion, the Bandersnatch of sagas is at all times famishing and eager for the hunt.",
             "weakness": "sword",
             "fightDamage": "The Bandersnatch lunges toward you and sinks its fangs to the bone in your leg. You lose one point of health.",
             "fightDie": "The Bandersnatch staggers, roaring, before collapsing in an untidy heap of long limbs and grinning fangs."
-          },
-          {
+        },
+        {
             "name": "greenOoze",
             "namePretty": "Green Ooze",
             "description": "The bright, rippling green of a bowl of jello, but grown to shocking size, endowed with two red eyes, and squelching toward you.",
             "weakness": "magic",
             "fightDamage": "The Ooze extends a psuedopod which glops onto your leg.  Acid burns you.  You lose one point of health.",
             "fightDie": "The Ooze explodes into a shower of jello, leaving sticky puddles all over the floor."
-          }
+        }
     ]
 }

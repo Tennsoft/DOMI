@@ -15,10 +15,20 @@
             "namePretty": "Lake Room",
             "description": "A dark pool with an ornately carved stone lip fills the center of this room.  The water is very still.  You can't tell how deep it is."
         },
-         {
+        {
             "name": "stalactiteRoom",
             "namePretty": "Stalactite Room",
             "description": "Stalactites in many colors festoon the ceiling in this room.  The floor is bumpy with their partner stalagmites.  You'll have to pick your way through carefully."
+        },
+        {
+            "name": "obitalControlRoom",
+            "namePretty": "Orbital Ion Cannon Control Room",
+            "description": "This room appears to have many computers running at once with a large screen detailing various other places in the world. How did you get here?"
+        },
+        {
+            "name": "dungeon",
+            "namePretty": "Dungeon",
+            "description": "The smell hits you before you have time to take in your surroundings. It's dark, with chains and cages lining the walls, lit with lightly flickering torches."
         }
     ]
 }
