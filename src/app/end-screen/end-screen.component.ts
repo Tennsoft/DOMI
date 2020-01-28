@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class EndScreenComponent implements OnInit {
+
   EndMessage = "You Survived The Dungeon";
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }
