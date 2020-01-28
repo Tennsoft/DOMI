@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="row">
+        <h1>Welcome to The Dungeon of Moderate Inconvenience!</h1>
+        <h3>May your adventure be neither too inconvenient nor make you late for dinner.</h3>
+    </div>
+    <div class="row">
+        <div class="col">
+            <!-- button for playing mortal kombat theme -->
+            <!-- click method onTestMettle just needs to change testMettle variable from false to true or back again to show/hide audio player -->
+                <button class="btn btn-info" (click)="onTestMettle()">Test Your Mettle</button>
+                <p *ngIf="testMettle=false"> 
+                    <audio autoplay controls>
+                        <source src="../../../public/MortalKombatThemeSongOriginal.mp3" type="audio/mpeg">
+                        Your browser does not support the audio tag.
+                      </audio>    
+                </p>
+
+        </div>
+        <div class="col-7">
+            <!-- player input -->
+            <h3>Start Your Adventure</h3>
+            <form [formGroup]="playerStartStuff" (ngSubmit)="onStart()" >
+                <div formGroupName="playerStartData" class="form-group">
+
+                <input formControlName="playername" type="text" id="playername" value="enter your name" class="form-group">
+            
+                <div class="radio">
+                <p>Choose your starting item:</p>
+                <label>
+                <input formControlName="startItem" name="playerStartItem" type="radio" value="sword"/> Sword
+                <input formControlName="startItem" name="playerStartItem" type="radio" value="wand"/> Wand
+                </label>    
+                </div>
+
+                </div>
+                <label>
+                <button class="btn btn-danger" type="submit">Start!</button>
+                </label>
+
+            </form>
+            
+            <!-- fake high scores -->
+            <h3>Totally Real High Scores</h3>
+            <table class="table table-dark table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Words of Wisdom</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Old Man Henderson</td>
+                    <td>11</td>
+                    <td>Ain't my fault I'm crazy!</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Maria Morevna</td>
+                    <td>9.5</td>
+                    <td>Even Kashchei the Deathless can be locked in a box.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Tucker's Kobolds</td>
+                    <td>8.333</td>
+                    <td>Teamwork! Yip yip!</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Queen of Hearts</td>
+                    <td>7.25</td>
+                    <td>Off with their head!</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Conan the Barbarian</td>
+                    <td>6</td>
+                    <td>Crom!</td>
+                  </tr>
+                </tbody>
+              </table>
+
+        
+
+        </div>
+        <div class="col">
+            <!-- empty for now, but create 3 columns so music button on right doesn't look off balance -->
+
+        </div>
+    </div>
+</div>
+
