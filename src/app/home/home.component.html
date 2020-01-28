@@ -8,7 +8,7 @@
             <!-- button for playing mortal kombat theme -->
             <!-- click method onTestMettle just needs to change testMettle variable from false to true or back again to show/hide audio player -->
                 <button class="btn btn-info" (click)="onTestMettle()">Test Your Mettle</button>
-                <p *ngIf="testMettle=false"> 
+                <p *ngIf="testMettle===false"> <!-- needed tripple equal-->
                     <audio autoplay controls>
                         <source src="../../../public/MortalKombatThemeSongOriginal.mp3" type="audio/mpeg">
                         Your browser does not support the audio tag.
@@ -19,7 +19,7 @@
         <div class="col-7">
             <!-- player input -->
             <h3>Start Your Adventure</h3>
-            <form [formGroup]="playerStartStuff" (ngSubmit)="onStart()" >
+            <form (formGroup)="playerStartStuff" (ngSubmit)="onStart()" ><!-- formgGroup needed ()-->
                 <div formGroupName="playerStartData" class="form-group">
 
                 <input formControlName="playername" type="text" id="playername" value="enter your name" class="form-group">
