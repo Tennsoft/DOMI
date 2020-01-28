@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { EndScreenComponent } from './end-screen/end-screen.component';
+import { MoveRoomService } from './move-room.service';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { EndScreenComponent } from './end-screen/end-screen.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [MoveRoomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
