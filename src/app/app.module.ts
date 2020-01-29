@@ -12,6 +12,9 @@ import { LakeRoomComponent } from './rooms/lake-room/lake-room.component';
 import { OrbitalControlRoomComponent } from './rooms/orbital-control-room/orbital-control-room.component';
 import { DungeonRoomComponent } from './rooms/dungeon-room/dungeon-room.component';
 import { DragonCaveComponent } from './rooms/dragon-cave/dragon-cave.component';
+import { EndScreenComponent } from './end-screen/end-screen.component';
+import { MoveRoomService } from './move-room.service';
+
 
 @NgModule({
   declarations: [
@@ -24,13 +27,14 @@ import { DragonCaveComponent } from './rooms/dragon-cave/dragon-cave.component';
     OrbitalControlRoomComponent,
     DungeonRoomComponent,
     DragonCaveComponent,
-    HomeComponent
+    HomeComponent,
+    EndScreenComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [MoveRoomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
