@@ -14,6 +14,8 @@ import { DungeonRoomComponent } from './rooms/dungeon-room/dungeon-room.componen
 import { DragonCaveComponent } from './rooms/dragon-cave/dragon-cave.component';
 import { EndScreenComponent } from './end-screen/end-screen.component';
 import { MoveRoomService } from './move-room.service';
+import { CurrentRoomComponent } from './dungeon/current-room/current-room.component';
+import { InventoryComponent } from './dungeon/inventory/inventory.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { MoveRoomService } from './move-room.service';
     DungeonRoomComponent,
     DragonCaveComponent,
     HomeComponent,
-    EndScreenComponent
+    EndScreenComponent,
+    CurrentRoomComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,

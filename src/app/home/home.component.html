@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row">
+    <div class="row intro">
         <h1>Welcome to The Dungeon of Moderate Inconvenience!</h1>
         <h3>May your adventure be neither too inconvenient nor make you late for dinner.</h3>
     </div>
@@ -13,18 +13,20 @@
         </div>
         <div class="col-7">
             <!-- player input -->
-            <h3>Start Your Adventure</h3>
-            <form (formGroup)="playerStartStuff" (ngSubmit)="onStart()" ><!-- formgGroup needed ()-->
+            <h3 class="text-warning">Start Your Adventure</h3>
+            <form  (formGroup)="playerStartStuff" (ngSubmit)="onStart()" ><!-- formGroup needed ()-->
                 <div formGroupName="playerStartData" class="form-group">
 
                 <input formControlName="playername" type="text" id="playername" value="enter your name" class="form-group">
             
                 <div class="radio">
-                <p>Choose your starting item:</p>
-                <label>
+                <p class="text-white">Choose your starting item:</p>
+                <label class="text-danger mr-3">
                 <input formControlName="startItem" name="playerStartItem" type="radio" value="sword"/> Sword
-                <input formControlName="startItem" name="playerStartItem" type="radio" value="wand"/> Wand
                 </label>    
+                <label class="text-primary">
+                  <input formControlName="startItem" name="playerStartItem" type="radio" value="wand"/> Wand
+                </label>
                 </div>
 
                 </div>
@@ -35,7 +37,7 @@
             </form>
             
             <!-- fake high scores -->
-            <h3>Totally Real High Scores</h3>
+            <h3 class="text-success">Totally Real High Scores</h3>
             <table class="table table-dark table-sm">
                 <thead>
                   <tr>
@@ -50,7 +52,7 @@
                     <th scope="row">1</th>
                     <td>Alucard</td>
                     <td>25</td>
-                    <td>I went for a walk</td>
+                    <td>I went for a walk.</td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>

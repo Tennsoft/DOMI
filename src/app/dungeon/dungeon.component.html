@@ -1,29 +1,29 @@
 <div class="container">
     <div class="row">
-        <h3>Make your way through the dungeon!</h3>
+        <h3 class="text-danger mr-3">Make your way through the dungeon!</h3>
     </div>
     <div class="row">
         <div id="textGoesHere" class="col-xs-5">
             <div class="currentRoom">
-                <p>This is where the room text goes</p>
+                <app-current-room></app-current-room>
             </div>
             <div class="monsterInRoom">
                 <p>This is where the monster text goes</p>
             </div>
             <div class="inventory">
-                <p>This is where the inventory text goes</p>
+                <app-inventory></app-inventory>
             </div>
         </div>
         <div id="btnDiv" class="col-xs-5">
-            <button id="up" class="btn btn-primary" (click)="onMoveNorth()"><strong>^^</strong></button>
+            <button id="up" class="btn btn-primary mr-3 mb-3" (click)="onMoveNorth()"><strong>Go To <br> North Room</strong></button>
             <br>
-            <button id="right" class="btn btn-primary" (click)="onMoveEast()">
-                <strong><<br><</strong>
+            <button id="right" class="btn btn-primary mr-3" (click)="onMoveEast()">
+                <strong>Go To <br> East Room </strong>
             </button> 
             <button id="left" class="btn btn-primary" (click)="onMoveWest()">
-                <strong>><br>></strong>
+                <strong>Go To <br> West Room</strong>
             </button>
             <br>
-            <button id="down" class="btn btn-primary" (click)="onMoveSouth()"><strong>VV</strong></button>
+            <button id="down" class="btn btn-primary mr-3 mt-3" (click)="onMoveSouth()"><strong>Go To <br>South Room</strong></button>
         </div>
     </div>

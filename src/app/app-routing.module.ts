@@ -3,11 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { EndScreenComponent } from './end-screen/end-screen.component';
 import { HomeComponent } from './home/home.component';
+import { DungeonComponent } from './dungeon/dungeon.component';
 
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
-  //{ path: "dungeon", },
+  { path: "dungeon", component: DungeonComponent },
   { path: "endScreen", component: EndScreenComponent }
 ];
 
