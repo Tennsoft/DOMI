@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 import { rooms } from '../../../assets/rooms.json';
 
@@ -15,10 +15,13 @@ export class DungeonComponent implements OnInit {
    
     let dungeonLayout = rooms.map(a => a.id);
     function newDungeon(array) {
-      array.sort(() => Math.random() - 0.5);
+     array.sort(() => Math.random() - 0.5);
     }
-    newDungeon(dungeonLayout);
-    console.log(dungeonLayout);
+    let my_new_dungeon = newDungeon(dungeonLayout);
+    return my_new_dungeon;
+    //console.log(dungeonLayout);
   }
+
+  @Output() my_new_dungeon;  
 
 }
