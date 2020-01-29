@@ -1,36 +1,43 @@
 {
     "rooms": [
         {
+            "id": 1,
             "name": "storageRoom",
             "namePretty": "Storage Room",
             "description": "This is what appears to be an old storage closet. You see dusty shelves with spider webs. A few objects line the shelves, such as cups and a broom. There is a stench of stale air mixed with pine. Perhaps someone once kept the dungeon clean."
         },
         {
+            "id": 2,
             "name": "campRoom",
             "namePretty": "Camp Room",
             "description": "This room appears to be where someone has made camp. There are ashes where a fire was made, but has been long extinguished. A bedroll lies nearby. The rest of the room is sparse."
         },
         {
+            "id": 3,
             "name": "lakeRoom",
             "namePretty": "Lake Room",
             "description": "A dark pool with an ornately carved stone lip fills the center of this room.  The water is very still.  You can't tell how deep it is."
         },
         {
+            "id": 4,
             "name": "stalactiteRoom",
             "namePretty": "Stalactite Room",
             "description": "Stalactites in many colors festoon the ceiling in this room.  The floor is bumpy with their partner stalagmites.  You'll have to pick your way through carefully."
         },
         {
+            "id": 5,
             "name": "obitalControlRoom",
-            "namePretty": "Orbital Ion Cannon Control Room",
+            "namePretty": "Orbital Ion Canon Control Room",
             "description": "This room appears to have many computers running at once with a large screen detailing various other places in the world. How did you get here?"
         },
         {
-            "name": "dungeon",
+            "id": 6,
+            "name": "dungeonRoom",
             "namePretty": "Dungeon",
             "description": "The smell hits you before you have time to take in your surroundings. It's dark, with chains and cages lining the walls, lit with lightly flickering torches."
         },
         {
+            "id": 7,
             "name": "dragonCave",
             "namePretty": "Dragon's Home",
             "description": "As you enter the room, you see a two dragons laying around a raised stone platform. The edges of the room are darkend and they do not appear to be paying attention to you."
