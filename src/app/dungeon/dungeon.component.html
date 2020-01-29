@@ -1,30 +1,39 @@
-<div class="container">
-    <div class="row">
+<div class="container text-primary">
+    <div class="row justify-content-center">
         <h3 class="text-danger mr-3">Make your way through the dungeon!</h3>
     </div>
-    <br>
-    <div id="textStuff" class="row">
-        <div id="textGoesHere" class="col-xs-8">
-            <div class="currentRoom">
+    <div class="row justify-content-center mb-3">
+        <div class="col-lg-1 monsterpic">
+            <p>This is where room / monster pic goes</p>
+        </div>
+    </div>
+    <div class="row justify-content-center mb-3">
+        <div id="textGoesHere" class="col-me">
+            <div class="currentRoom pl-3 pt-3 pr-3">
                 <app-current-room></app-current-room>
             </div>
             <div class="monsterInRoom">
                 <p>This is where the monster text goes</p>
             </div>
-            <div class="inventory">
-                <app-inventory></app-inventory>
-            </div>
         </div>
-        <div id="btnDiv" class="col-xs-5">
-            <button id="up" class="btn btn-primary mr-3 mb-3" (click)="onMoveNorth()"><strong>Go <br> North</strong></button>
+        <div id="btnDiv" class="col-me">
+            <button id="up" class="btn btn-primary mr-3 mb-3" (click)="onMoveNorth()"><strong>Go<br>North</strong></button>
             <br>
             <button id="right" class="btn btn-primary mr-3" (click)="onMoveEast()">
-                <strong>Go <br> East </strong>
+                <strong>Go<br>East</strong>
             </button> 
             <button id="left" class="btn btn-primary" (click)="onMoveWest()">
-                <strong>Go <br> West </strong>
+                <strong>Go<br>West</strong>
             </button>
             <br>
             <button id="down" class="btn btn-primary mr-3 mt-3" (click)="onMoveSouth()"><strong>Go<br>South</strong></button>
         </div>
     </div>
+    <div class="row justify-content-center">
+        <div class="col-xs-12">
+            <div class="inventory">
+                <app-inventory></app-inventory>
+            </div>
+        </div>
+    </div>
+</div>

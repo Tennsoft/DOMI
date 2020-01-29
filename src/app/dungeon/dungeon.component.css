@@ -8,3 +8,15 @@
 #textStuff {
     color: white;
 }
+.monsterpic{
+    background-color: aqua;
+    min-width: 200px;
+    min-height: 200px;
+}
+.currentRoom{
+    min-height: 150px; 
+    max-width: 800px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: rgba(237,221,158,.8);
+}

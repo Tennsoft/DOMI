@@ -1,14 +1,18 @@
 <div class="container">
-  <nav>
-    <a routerLink="/">
-      <button class="btn btn-primary mr-3">Home</button>
-    </a>
-    <a routerLink="/dungeon">
-      <button class="btn btn-primary mr-3">Dungeon</button>
-    </a>
-    <a routerLink="/endScreen">
-      <button class="btn btn-primary mr-3">End Screen</button>
-    </a>
-  </nav>
-  <router-outlet></router-outlet>
+  <div class="row justify-content-center">
+    <nav>
+      <a routerLink="/">
+        <button class="btn btn-primary mr-3">Home</button>
+      </a>
+      <a routerLink="/dungeon">
+        <button class="btn btn-primary mr-3">Dungeon</button>
+      </a>
+      <a routerLink="/endScreen">
+        <button class="btn btn-primary mr-3">End Screen</button>
+      </a>
+    </nav>
+  </div>
+  <div class="row justify-content-center">
+    <router-outlet></router-outlet>
+  </div>
 </div>
