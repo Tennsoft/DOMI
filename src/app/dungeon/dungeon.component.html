@@ -2,8 +2,9 @@
     <div class="row">
         <h3 class="text-danger mr-3">Make your way through the dungeon!</h3>
     </div>
-    <div class="row">
-        <div id="textGoesHere" class="col-xs-5">
+    <br>
+    <div id="textStuff" class="row">
+        <div id="textGoesHere" class="col-xs-8">
             <div class="currentRoom">
                 <app-current-room></app-current-room>
             </div>
@@ -15,15 +16,15 @@
             </div>
         </div>
         <div id="btnDiv" class="col-xs-5">
-            <button id="up" class="btn btn-primary mr-3 mb-3" (click)="onMoveNorth()"><strong>Go To <br> North Room</strong></button>
+            <button id="up" class="btn btn-primary mr-3 mb-3" (click)="onMoveNorth()"><strong>Go <br> North</strong></button>
             <br>
             <button id="right" class="btn btn-primary mr-3" (click)="onMoveEast()">
-                <strong>Go To <br> East Room </strong>
+                <strong>Go <br> East </strong>
             </button> 
             <button id="left" class="btn btn-primary" (click)="onMoveWest()">
-                <strong>Go To <br> West Room</strong>
+                <strong>Go <br> West </strong>
             </button>
             <br>
-            <button id="down" class="btn btn-primary mr-3 mt-3" (click)="onMoveSouth()"><strong>Go To <br>South Room</strong></button>
+            <button id="down" class="btn btn-primary mr-3 mt-3" (click)="onMoveSouth()"><strong>Go<br>South</strong></button>
         </div>
     </div>
