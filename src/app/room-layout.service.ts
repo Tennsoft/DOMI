@@ -9,6 +9,13 @@ export class RoomLayoutService {
 
   constructor() { }
 
+     // let dungeonLayout = rooms.map(a => a.id);
+    // function newDungeon(array) {
+    //  array.sort(() => Math.random() - 0.5);
+    // }
+    // let my_new_dungeon = newDungeon(dungeonLayout);
+    // return my_new_dungeon;
+    //console.log(dungeonLayout);
 
    scrambleRooms(array): Array<any> {
     let currentIndex: number = array.length;

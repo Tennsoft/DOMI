@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 
 import { DungeonComponent } from '../dungeon.component';
 import { rooms } from '../../../../assets/rooms.json';
@@ -16,7 +16,7 @@ import { RoomLayoutService } from 'src/app/room-layout.service';
   styleUrls: ['./current-room.component.css'],
   providers: [PlayerArrayService, MoveRoomService, RoomLayoutService]
 })
-export class CurrentRoomComponent implements OnInit {
+export class CurrentRoomComponent implements OnInit, OnChanges {
 
   constructor(public playerArrayService: PlayerArrayService,public move_room_service: MoveRoomService, public room_layout_service: RoomLayoutService, ) { 
     console.log(this.room_list);
@@ -48,7 +48,9 @@ export class CurrentRoomComponent implements OnInit {
   current_room_name: string = this.room_list[this.current_room_abs_id].namePretty;
   current_room_desc: string = this.room_list[this.current_room_abs_id].description;
 
-  
+  ngOnChanges(){
+
+  }
 
 
 }

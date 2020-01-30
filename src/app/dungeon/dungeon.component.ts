@@ -1,8 +1,8 @@
-import { Component, OnInit, Output, Inject } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { rooms } from '../../../assets/rooms.json';
-import { MonsterLayoutService } from '../monster-layout.service.js';
+
 import { MoveRoomService } from '../move-room.service.js';
+import { PlayerArrayService } from '../player-array.service.js';
 
 
 
@@ -10,26 +10,54 @@ import { MoveRoomService } from '../move-room.service.js';
   selector: 'app-dungeon',
   templateUrl: './dungeon.component.html',
   styleUrls: ['./dungeon.component.css'],
-  providers: [MonsterLayoutService, MoveRoomService]
+  providers: [MoveRoomService, PlayerArrayService]
 })
 export class DungeonComponent implements OnInit {
 
-  constructor(public monster_layout_service: MonsterLayoutService) { }
+  constructor(public move_room_service: MoveRoomService, public playerArrayService: PlayerArrayService) { }
+
+  @Output() positionChanged = new EventEmitter<{this.playerArrayService.position}>f()
 
   ngOnInit() {
    
-    // let dungeonLayout = rooms.map(a => a.id);
-    // function newDungeon(array) {
-    //  array.sort(() => Math.random() - 0.5);
-    // }
-    // let my_new_dungeon = newDungeon(dungeonLayout);
-    // return my_new_dungeon;
-    //console.log(dungeonLayout);
+    
+  }
 
-    //monsters...
+  onMoveNorth(){
+    this.positionChanged.emit({
+    let current_position: {x: number, y: number} = this.playerArrayService.position;
+    let new_position: {x: number, y: number} = this.move_room_service.moveRoom(0,1,current_position);
+    this.playerArrayService.position = new_position;
+    console.log(new_position);
+    console.log(this.playerArrayService.position);
+   })
+  }
 
+  onMoveSouth(){
+    let current_position: {x: number, y: number} = this.playerArrayService.position;
+    let new_position: {x: number, y: number} = this.move_room_service.moveRoom(0,-1,current_position);
+    this.playerArrayService.position = new_position;
+    console.log(new_position);
+    console.log(this.playerArrayService.position);
+  }
+
+  onMoveEast(){
+    let current_position: {x: number, y: number} = this.playerArrayService.position;
+    let new_position: {x: number, y: number} = this.move_room_service.moveRoom(1,0,current_position);
+    this.playerArrayService.position = new_position;
+    console.log(new_position);
+    console.log(this.playerArrayService.position);
 
   }
+
+  onMoveWest(){
+    let current_position: {x: number, y: number} = this.playerArrayService.position;
+    let new_position: {x: number, y: number} = this.move_room_service.moveRoom(-1,0,current_position);
+    this.playerArrayService.position = new_position;
+    console.log(new_position);
+    console.log(this.playerArrayService.position);
+  }
+
 
  
 

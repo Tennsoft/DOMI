@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
 
+import { DungeonComponent } from './dungeon/dungeon.component';
+
 @Injectable({
   providedIn: 'root'
 })
 export class PlayerArrayService {
 
-  //constructor() { }
+  constructor() {
+    // position = {x: <number> 0, y: <number> 1};
+    // this.dungeonComponent.subscribe((this.new_position) => {
+    //    position = this.new_position; 
+   }
 
   //name
   name = <string> '';
@@ -33,5 +39,5 @@ export class PlayerArrayService {
 
   //position
   position = {x: <number> 0, y: <number> 1};
-
+  
 }

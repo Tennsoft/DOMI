@@ -18,23 +18,47 @@ export class MoveRoomService {
     let new_x = current_pos.x;
     let new_y= current_pos.y;
     //deal with special cases in center column of dungeon
-    if(current_pos.x==1){
+    if(current_pos.x == 1){
       //in boss room, can only back out
-      if(current_pos.y==2 && second_coord != -1){
+    if(current_pos.y == 2 && second_coord != -1){
         //just return a set of coordinates; handle updating player array elsewhere?
         return new_pos = current_pos;
       }
       //in entry, can't back out
-      else if(current_pos.y==0 && second_coord == -1){
+      else if(current_pos.y == 0 && second_coord == -1){
         return new_pos = current_pos;
       }
+      else if(current_pos.y == 0 && second_coord == 1){
+        return new_pos = {x:1, y:1};
+      }
       //can go forward into boss room
-      else if(current_pos.y==1 && second_coord ==1){
-        return new_pos = {x: 1, y: 2};
+      else if(current_pos.y == 1 && second_coord == 1){
+        return new_pos = {x:1,y:2};
+      }
+      else if(current_pos.y == 2 && second_coord == -1){
+        return new_pos = {x: 1, y: 1};
+      }
+      else if(second_coord == 0){
+        new_x = (current_pos.x+first_coord)%3;
+       new_y = (current_pos.y+second_coord)%2;
+       if(new_x < 0){
+        new_x = new_x + 3;
+      }
+      if(new_y<0){
+        new_y = new_y+2; 
+      }
+        return new_pos = {x: new_x, y: new_y};
       }
     }else{
       new_x = (current_pos.x+first_coord)%3;
       new_y = (current_pos.y+second_coord)%2;
+      if(new_x < 0){
+        new_x = new_x + 3;
+      }
+      if(new_y<0){
+        new_y = new_y+2; 
+      }
+      
       return new_pos = {x: new_x, y: new_y};
     }
     
