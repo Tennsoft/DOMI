@@ -38,9 +38,12 @@ export class MoveRoomService {
       else if(current_pos.y == 2 && second_coord == -1){
         return new_pos = {x: 1, y: 1};
       }
+<<<<<<< HEAD
       else if(current_pos.y == 1 && second_coord == -1){
         return new_pos = {x: 1, y: 0};
       }
+=======
+>>>>>>> move buttons working locally but not updating globally
       else if(second_coord == 0){
         new_x = (current_pos.x+first_coord)%3;
        new_y = (current_pos.y+second_coord)%2;
