@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class PlayerArrayService {
 
-  constructor() { }
+  //constructor() { }
 
   //name
 
@@ -14,5 +14,6 @@ export class PlayerArrayService {
   //health
 
   //position
+  position = {x: <number> 0, y: <number> 1};
 
 }
