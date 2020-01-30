@@ -20,3 +20,11 @@
     border-radius: 8px;
     background-color: rgba(237,221,158,.8);
 }
+
+.monsterInRoom{
+    min-height: 150px; 
+    max-width: 800px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: rgba(237,221,158,.8);
+}

@@ -16,6 +16,10 @@ import { EndScreenComponent } from './end-screen/end-screen.component';
 import { MoveRoomService } from './move-room.service';
 import { CurrentRoomComponent } from './dungeon/current-room/current-room.component';
 import { InventoryComponent } from './dungeon/inventory/inventory.component';
+import { CurrentMonsterComponent } from './dungeon/current-monster/current-monster.component';
+import { MonsterLayoutService } from './monster-layout.service';
+import { RoomLayoutService } from './room-layout.service';
+import { PlayerArrayService } from './player-array.service';
 
 
 @NgModule({
@@ -32,13 +36,14 @@ import { InventoryComponent } from './dungeon/inventory/inventory.component';
     HomeComponent,
     EndScreenComponent,
     CurrentRoomComponent,
-    InventoryComponent
+    InventoryComponent,
+    CurrentMonsterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [MoveRoomService],
+  providers: [MoveRoomService, MonsterLayoutService, RoomLayoutService, PlayerArrayService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
