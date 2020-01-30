@@ -9,30 +9,29 @@ export class RoomLayoutService {
 
   constructor() { }
 
-  scrambleRooms(): Array<Object>{
-    //make a blank to take results
-    let my_room_list: Array<Object> = [];
-    //choose one from original
-    while(my_room_list.length < 8){
-    let randomNum: number = Math.floor(Math.random()*rooms.length);
-    let my_choice = rooms[randomNum];
-    //check if already in results, if not, push
-    var found = false;
-    for(var i = 0; i < my_room_list.length; i++) {
-      if (my_room_list[i] == my_choice) {
-          found = true;
-          continue;
-      }
-  }
-    if(found == false){
-      my_room_list.push(my_choice);
+
+   scrambleRooms(array): Array<any> {
+    let currentIndex: number = array.length;
+    let temporaryValue: number, randomIndex: number;
+  
+    //while there are things to scramble
+    while (0 !== currentIndex) {
+  
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+  
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
     }
-  }
-    //console.log(my_room_list);
-    return my_room_list;
+  
+    return array;
   }
   
-
+  random_room_layout = this.scrambleRooms(rooms);
+  
 
 
 }

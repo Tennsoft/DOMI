@@ -15,14 +15,13 @@ import { RoomLayoutService } from 'src/app/room-layout.service';
 })
 export class CurrentRoomComponent implements OnInit {
 
-  constructor(public playerArrayService: PlayerArrayService,public move_room_service: MoveRoomService, public room_layout_service: RoomLayoutService) { }
+  constructor(public playerArrayService: PlayerArrayService,public move_room_service: MoveRoomService, public room_layout_service: RoomLayoutService) { 
+    console.log(this.room_list);
+  }
 
-  //@Input() my_new_dungeon: number[];
-  //placeholders for now
-  //current_room_name: string = rooms[2].namePretty;
-  //current_room_desc: string = rooms[2].description;
+  
 
-
+  
   
 
   ngOnInit() {
@@ -35,16 +34,18 @@ export class CurrentRoomComponent implements OnInit {
     // console.log(dungeonLayout);    
     // console.log(my_new_dungeon);
     // console.log(typeof my_new_dungeon);
-
+    
+    //let room_list = this.room_layout_service.random_room_layout;
+    //console.log(room_list);
 
   }
 
-  //room_list = this.room_layout_service.scrambleRooms();
   
-  
+  room_list = this.room_layout_service.random_room_layout;
+
   current_room: {x: number, y: number} = this.playerArrayService.position;
   current_room_abs_id = this.move_room_service.current_room_reduce(this.current_room.x, this.current_room.y);
-  current_room_name: string = rooms[this.current_room_abs_id].namePretty;
-  current_room_desc: string = rooms[this.current_room_abs_id].description;
+  current_room_name: any = this.room_list[this.current_room_abs_id].namePretty;
+  current_room_desc: string = this.room_list[this.current_room_abs_id].description;
 
 }
