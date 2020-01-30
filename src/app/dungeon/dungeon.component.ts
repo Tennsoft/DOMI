@@ -16,7 +16,11 @@ export class DungeonComponent implements OnInit {
 
   constructor(public move_room_service: MoveRoomService, public playerArrayService: PlayerArrayService) { }
 
+<<<<<<< HEAD
  // @Output() positionChanged = new EventEmitter<{this.playerArrayService.position}>f()
+=======
+  @Output() positionChanged = new EventEmitter<{this.playerArrayService.position}>f()
+>>>>>>> move buttons working locally but not updating globally
 
   ngOnInit() {
    
@@ -24,13 +28,13 @@ export class DungeonComponent implements OnInit {
   }
 
   onMoveNorth(){
-    //this.positionChanged.emit({
+    this.positionChanged.emit({
     let current_position: {x: number, y: number} = this.playerArrayService.position;
     let new_position: {x: number, y: number} = this.move_room_service.moveRoom(0,1,current_position);
     this.playerArrayService.position = new_position;
     console.log(new_position);
     console.log(this.playerArrayService.position);
-   //})
+   })
   }
 
   onMoveSouth(){
