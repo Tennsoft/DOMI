@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerArrayService } from '../player-array.service';
 
 @Component({
   selector: 'app-end-screen',
@@ -7,18 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EndScreenComponent implements OnInit {
 
+  constructor(private playerService: PlayerArrayService) { }
+
+  playerHealth = {};
+
   EndMessage = "";
 
+  flawlessMessage = "<h4 class='text-primary'>Flawless Victory. You Won without taking any damage<h4>";
   winMessage = "<h4 class='text-primary'>You Survived The Dungeon<h4>";
   loseMessage = "<h4 class='text-danger'>You Died<h4>";
   tieMessage = "<h4 class='text-warning'>You defeated the Boss but at what cost?<h4>";
 
-  temp = [this.winMessage,this.loseMessage,this.tieMessage];
-
-  constructor() { }
+  temp = [this.flawlessMessage, this.winMessage, this.loseMessage, this.tieMessage];
 
   ngOnInit() {
+    this.playerHealth = this.playerService.getHealth();
+
+    if(this.playerHealth["maxHP"] === this.playerHealth["curHP"]){
+      this.EndMessage = this.flawlessMessage;
+    } else if (this.playerHealth["curHP"] > 0) {
+      this.EndMessage = this.winMessage;
+    } else if (this.playerHealth["bossHP"] === 0) {
+      this.EndMessage = this.tieMessage;
+    } else {
+      this.EndMessage = this.loseMessage;
+    }
     
-    this.EndMessage = this.temp[Math.floor(Math.random()*3)];
   }
 }
