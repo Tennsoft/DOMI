@@ -40,6 +40,27 @@ export class MoveRoomService {
     
  
   }
+
+
+  public current_room_reduce = function(temp_x: number, temp_y: number){  
+    let room_abs_id = 1;
+    if(temp_x == 0 && temp_y == 0){ 
+      room_abs_id = 0;
+    }else if(temp_x == 1 && temp_y == 0){ 
+      room_abs_id = 1;
+    }else if(temp_x == 2 && temp_y == 0){ 
+      room_abs_id = 2;
+    }else if(temp_x == 2 && temp_y == 1){ 
+      room_abs_id = 3;
+    }else if(temp_x == 1 && temp_y == 1){ 
+      room_abs_id = 4;
+    }else if(temp_x == 0 && temp_y == 1){ 
+      room_abs_id = 5;
+    }else if(temp_x == 1 && temp_y == 2){ 
+      room_abs_id = 6;
+    }
+    return room_abs_id;
+  }
   
 
 }
