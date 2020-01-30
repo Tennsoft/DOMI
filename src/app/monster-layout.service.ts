@@ -7,30 +7,31 @@ import { monsters } from '../../assets/monsters.json';
 })
 export class MonsterLayoutService {
 
-  //constructor() { }
+  constructor() { }
 
- 
-  generateMonsters(): Array<Object>{
-  //make a blank to take results
-  let my_monster_list: Array<Object> = [];
-  //choose one from original
-  while(my_monster_list.length < 6){
-  let randomNum: number = Math.floor(Math.random()*monsters.length);
-  let my_choice = monsters[randomNum];
-  //check if already in results, if not, push
-  var found = false;
-  for(var i = 0; i < my_monster_list.length; i++) {
-    if (my_monster_list[i] == my_choice) {
-        found = true;
-        break;
+  scrambleMonsters(array): Array<any> {
+    let currentIndex: number = array.length;
+    let temporaryValue: number, randomIndex: number;
+  
+    //while there are things to scramble
+    while (0 !== currentIndex) {
+  
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+  
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
     }
-}
-  if(found == false){
-    my_monster_list.push(my_choice);
+  
+    return array;
   }
-}
-  return my_monster_list;
-}
+  
+  random_monster_layout = this.scrambleMonsters(monsters);
+ 
+
 
 
 }
