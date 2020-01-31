@@ -16,7 +16,7 @@ export class DungeonComponent implements OnInit {
 
   constructor(public move_room_service: MoveRoomService, public playerArrayService: PlayerArrayService) { }
 
- @Output() positionChanged = new EventEmitter<{this.playerArrayService.position}>
+// @Output() positionChanged = new EventEmitter<{this.playerArrayService.position}>
 
 
 
@@ -26,13 +26,13 @@ export class DungeonComponent implements OnInit {
   }
 
   onMoveNorth(){
-    this.positionChanged.emit({
+    //this.positionChanged.emit({
     let current_position: {x: number, y: number} = this.playerArrayService.position;
     let new_position: {x: number, y: number} = this.move_room_service.moveRoom(0,1,current_position);
     this.playerArrayService.position = new_position;
     console.log(new_position);
     console.log(this.playerArrayService.position);
-   })
+  // })
   }
 
   onMoveSouth(){
