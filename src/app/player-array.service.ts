@@ -23,12 +23,12 @@ export class PlayerArrayService {
   }
 
   //inventory
-  invventory = [];
+  inventory = [];
   addToInventory(addedItem){
-    this.invventory.push(addedItem);
+    this.inventory.push(addedItem);
   }
   getInventory(){
-    return this.invventory;
+    return this.inventory;
   }
 
   //health
@@ -39,5 +39,11 @@ export class PlayerArrayService {
 
   //position
   position = {x: <number> 0, y: <number> 1};
+  getPosition(){
+    return this.position;
+  }
+  setPosition(new_position){
+    this.position = new_position;
+  }
   
 }
