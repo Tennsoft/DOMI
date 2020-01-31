@@ -8,8 +8,22 @@ export class PlayerArrayService {
   //constructor() { }
 
   //name
+  name = <string> '';
+  setName(newName){
+    this.name = newName;
+  }
+  getName(){
+    return this.name;
+  }
 
   //inventory
+  invventory = [];
+  addToInventory(addedItem){
+    this.invventory.push(addedItem);
+  }
+  getInventory(){
+    return this.invventory;
+  }
 
   //health
   health = {maxHP: <number> 4, curHP: <number> 4, bossHP: <number> 8};

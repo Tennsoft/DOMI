@@ -1,4 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+
+import { PlayerArrayService } from '../player-array.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +12,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   testMettle = false;
   audioPlayer = new Audio();
 
-  constructor() { }
+  playerStartStuff = new FormGroup({
+    playerName: new FormControl(''),
+    startItem: new FormControl('')
+  });
+
+
+  constructor(private playerService: PlayerArrayService) { }
 
   ngOnInit() {
     this.audioPlayer.src = "../../assets/audio/MortalKombatTheme.mp3";
@@ -25,5 +34,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(){
     this.audioPlayer.pause();
+  }
+
+  onStart(){
+    console.log(this.playerStartStuff.value);
   }
 }
