@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { PlayerArrayService } from '../player-array.service';
 
@@ -11,6 +11,7 @@ import { PlayerArrayService } from '../player-array.service';
 export class HomeComponent implements OnInit, OnDestroy {
   testMettle = false;
   audioPlayer = new Audio();
+  player
 
   playerStartStuff = new FormGroup({
     playerName: new FormControl(''),
@@ -18,7 +19,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   });
 
 
-  constructor(private playerService: PlayerArrayService) { }
+  constructor(private playerService: PlayerArrayService, public builder: FormBuilder) { 
+    this.playerStartStuff = this.builder.group({
+      playerName: [null, Validators.required],
+      startItem: [null, Validators.required]
+    });
+  }
 
   ngOnInit() {
     this.audioPlayer.src = "../../assets/audio/MortalKombatTheme.mp3";
@@ -37,6 +43,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   onStart(){
-    console.log(this.playerStartStuff.value);
+    this.player = this.playerStartStuff.value;
+    this.playerService.addToInventory(this.player["startItem"]);
+    this.playerService.setName(this.player["playerName"])
+
+    console.log("player name is " + this.playerService.getName());
+    console.log("player start item is " + this.playerService.getInventory());
   }
 }

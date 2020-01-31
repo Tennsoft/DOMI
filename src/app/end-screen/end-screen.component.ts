@@ -19,9 +19,12 @@ export class EndScreenComponent implements OnInit {
   loseMessage = "<h4 class='text-danger'>You Died<h4>";
   tieMessage = "<h4 class='text-warning'>You defeated the Boss but at what cost?<h4>";
 
+  playerName 
+
   temp = [this.flawlessMessage, this.winMessage, this.loseMessage, this.tieMessage];
 
   ngOnInit() {
+    this.playerName = this.playerService.getName();
     this.playerHealth = this.playerService.getHealth();
 
     if(this.playerHealth["maxHP"] === this.playerHealth["curHP"]){

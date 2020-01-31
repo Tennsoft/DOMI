@@ -12,6 +12,7 @@
     background-color: aqua;
     min-width: 200px;
     min-height: 200px;
+    border-radius: 8px;
 }
 .currentRoom{
     min-height: 150px; 
