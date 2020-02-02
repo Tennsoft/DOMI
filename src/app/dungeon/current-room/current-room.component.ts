@@ -1,4 +1,6 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
+//import { Observable, Subscription } from 'rxjs';
+
 
 import { DungeonComponent } from '../dungeon.component';
 import { rooms } from '../../../../assets/rooms.json';
@@ -14,17 +16,50 @@ import { RoomLayoutService } from 'src/app/room-layout.service';
   selector: 'app-current-room',
   templateUrl: './current-room.component.html',
   styleUrls: ['./current-room.component.css'],
-  providers: [PlayerArrayService, MoveRoomService, RoomLayoutService]
+  providers: [MoveRoomService, RoomLayoutService]
 })
-export class CurrentRoomComponent implements OnInit, OnChanges {
-
-  constructor(public playerArrayService: PlayerArrayService,public move_room_service: MoveRoomService, public room_layout_service: RoomLayoutService, ) { 
-    console.log(this.room_list);
-  }
+export class CurrentRoomComponent implements OnInit, OnChanges, OnDestroy {
 
   
 
+  room_list = this.room_layout_service.random_room_layout;
+
+  
+
+  constructor(public move_room_service: MoveRoomService, public room_layout_service: RoomLayoutService, public playerArrayService: PlayerArrayService) { 
+
+    //room display stuff
+  // room_list = this.room_layout_service.random_room_layout;
+
+
+  let current_room: {x: number, y: number} = this.playerArrayService.getPosition();
+  let current_room_abs_id = this.move_room_service.current_room_reduce(current_room.x, current_room.y);
+  let current_room_name: string = this.room_list[current_room_abs_id].namePretty;
+  let current_room_desc: string = this.room_list[current_room_abs_id].description;
+
+
+    //console.log('current room is '+ this.position);
+    console.log(this.playerArrayService.getPosition());
+  }
+  
+ 
+
   ngOnInit() {
+
+   
+
+  let current_room = this.playerArrayService.getPosition();
+    let current_room_abs_id = this.move_room_service.current_room_reduce(current_room.x, current_room.y);
+    let current_room_name = this.room_list[current_room_abs_id].namePretty;
+    let current_room_desc = this.room_list[current_room_abs_id].description;
+    
+
+    //console.log("current room is "+ current_room);
+    console.log(this.playerArrayService.getPosition());
+
+}
+  
+
     //original attempt
     // let dungeonLayout = rooms.map(a => a.id);
     // function newDungeon(array) {
@@ -38,19 +73,27 @@ export class CurrentRoomComponent implements OnInit, OnChanges {
     //let room_list = this.room_layout_service.random_room_layout;
     //console.log(room_list);
 
+    //let room_list = this.room_layout_service.random_room_layout;
+
+    
+
+
+  
+
+  ngOnChanges(changes: SimpleChanges){
+    let current_room = this.playerArrayService.getPosition();
+    console.log("current room is "+current_room);
+    
+    let current_room_abs_id = this.move_room_service.current_room_reduce(current_room.x, current_room.y);
+    let current_room_name = this.room_list[current_room_abs_id].namePretty;
+    let current_room_desc = this.room_list[current_room_abs_id].description;
+    console.log("current room is "+ current_room);
+
   }
 
-  //room display stuff
-  room_list = this.room_layout_service.random_room_layout;
+  ngOnDestroy() {
 
-  current_room: {x: number, y: number} = this.playerArrayService.position;
-  current_room_abs_id = this.move_room_service.current_room_reduce(this.current_room.x, this.current_room.y);
-  current_room_name: string = this.room_list[this.current_room_abs_id].namePretty;
-  current_room_desc: string = this.room_list[this.current_room_abs_id].description;
-
-  ngOnChanges(){
-
-  }
-
+    //this.whereAmI.unsubscribe();
+}
 
 }
