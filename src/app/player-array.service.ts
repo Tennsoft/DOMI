@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import { DungeonComponent } from './dungeon/dungeon.component';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +7,8 @@ import { DungeonComponent } from './dungeon/dungeon.component';
 export class PlayerArrayService {
 
   constructor() {
-    // position = {x: <number> 0, y: <number> 1};
-    // this.dungeonComponent.subscribe((this.new_position) => {
-    //    position = this.new_position; 
-   }
+    
+  }
 
   //name
   name = <string> '';
@@ -38,12 +35,14 @@ export class PlayerArrayService {
   }
 
   //position
-  position = {x: <number> 0, y: <number> 1};
+  position= {x:1,y:0};
+    
+  setPosition(new_position){
+    return this.position = new_position;
+  }
+
   getPosition(){
     return this.position;
-  }
-  setPosition(new_position){
-    this.position = new_position;
-  }
+}
   
 }
