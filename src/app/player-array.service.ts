@@ -1,11 +1,14 @@
 import { Injectable, EventEmitter  } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlayerArrayService {
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     
   }
 
@@ -30,12 +33,6 @@ export class PlayerArrayService {
   getInventory(){
     return this.inventory;
   }
-  clearInventory(){
-    this.inventory = [];
-  }
-  restartInventory(){
-    this.inventory = [this.inventory[0]];
-  }
 
   //searching for treasure
   can_search = false;
@@ -50,8 +47,23 @@ export class PlayerArrayService {
 
   //health
   health = {maxHP: <number> 4, curHP: <number> 4, bossHP: <number> 8};
+
   getHealth(){
     return this.health;
+  }
+
+  loseHealth(){
+    this.health.curHP--;
+    if(this.health.curHP === 0 ){
+      this.router.navigate(['/endScreen'])
+    }
+  }
+
+  gainHealth(){
+    this.health.curHP++;
+    if(this.health.curHP > this.health.maxHP){
+      this.health.curHP = this.health.maxHP;
+    }
   }
 
   //position
@@ -63,6 +75,19 @@ export class PlayerArrayService {
 
   getPosition(){
     return this.position;
-}
+  }
+
+  //resetting the game
+
+  clearInventory(){
+    this.inventory = [];
+    this.health.curHP = this.health.maxHP;
+    this.setName('');
+  }
+
+  restartInventory(){
+    this.inventory = [this.inventory[0]];
+    this.health.curHP = this.health.maxHP;
+  }
   
 }

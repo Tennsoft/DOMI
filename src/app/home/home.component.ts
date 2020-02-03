@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { PlayerArrayService } from '../player-array.service';
 
@@ -20,7 +21,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   });
 
 
-  constructor(private playerService: PlayerArrayService, public builder: FormBuilder) { 
+  constructor(
+    private playerService: PlayerArrayService, 
+    public builder: FormBuilder,
+    private router: Router) { 
     this.playerStartStuff = this.builder.group({
       playerName: [null, Validators.required],
       startItem: [null, Validators.required]
@@ -47,8 +51,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.player = this.playerStartStuff.value;
     this.playerService.addToInventory(this.player["startItem"]);
     this.playerService.setName(this.player["playerName"]);
-
-    console.log("player name is " + this.playerService.getName());
-    console.log("player start item is " + this.playerService.getInventory());
+    this.router.navigate(['/dungeon'])
   }
 }

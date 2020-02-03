@@ -22,7 +22,7 @@
                   <div class="col-lg-4">
                     <label>
                       <p class="text-white">Enter your name:</p>
-                      <input type="text" formControlName="playerName">
+                      <input type="text" formControlName="playerName" required>
                     </label>
                   </div>
                     
@@ -39,7 +39,7 @@
                 <div class="row justify-content-center">
                   <label>
                     <button 
-                      class="btn btn-danger" type="button" (click)="onStart()" [routerLink]="['/dungeon']"
+                      class="btn btn-danger" type="button" (click)="onStart()"
                       [disabled]="playerStartStuff.controls['playerName' && 'startItem'].invalid"
                       >Start!</button>
                   </label>

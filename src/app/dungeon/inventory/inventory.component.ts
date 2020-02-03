@@ -50,7 +50,6 @@ export class InventoryComponent implements OnInit, OnChanges {
   return chosen.strength;
   }
   useInventoryItem(item){
-    console.log("attack worked using " + item)
     if( this.getItemType(item) === 'weapon' ) {
       this.attackService.attackDeclared(this.getDamageType(item))
     }

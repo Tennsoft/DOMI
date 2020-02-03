@@ -6,6 +6,7 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 import { PlayerArrayService } from '../../player-array.service';
 import { MoveRoomService } from 'src/app/move-room.service';
 import { MonsterLayoutService } from 'src/app/monster-layout.service';
+import { AttackService } from '../../attack.service';
 
 @Component({
   selector: 'app-current-monster',
@@ -30,7 +31,11 @@ export class CurrentMonsterComponent implements OnInit {
 
   can_search_for_treasure = this.playerArrayService.getSearchPossible();
 
-  constructor(public playerArrayService: PlayerArrayService,public move_room_service: MoveRoomService, public monster_layout_service: MonsterLayoutService) { 
+  constructor(
+    public playerArrayService: PlayerArrayService, 
+    public move_room_service: MoveRoomService, 
+    public monster_layout_service: MonsterLayoutService,
+    public attackService: AttackService) { 
     //console.log(this.monster_list);
   }
 
@@ -51,8 +56,7 @@ export class CurrentMonsterComponent implements OnInit {
      }
      
      //console.log(this.playerArrayService.getPosition());
-
-
+     this.attackService.setMonster(this.current_monster_name);
   }
 
   ngDoCheck(){
@@ -73,9 +77,11 @@ export class CurrentMonsterComponent implements OnInit {
     if(this.current_monster_base_name == "treasure_find"){
       this.can_search_for_treasure = true;
       this.playerArrayService.setSearchPossible(true);
-      console.log(this.playerArrayService.getSearchPossible());
+      //console.log(this.playerArrayService.getSearchPossible());
     }
-    console.log("current monster is "+ this.current_monster_name);
+    //console.log("current monster is "+ this.current_monster_name);
+    
+    this.attackService.setMonster(this.current_monster_name);
     }
   }
 

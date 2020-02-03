@@ -66,10 +66,10 @@ export class CurrentRoomComponent implements OnInit, DoCheck {
     //console.log("current room is "+this.current_room_name);
     
     this.current_room_abs_id = this.move_room_service.current_room_reduce();
-    console.log(this.current_room_abs_id)
+    //console.log(this.current_room_abs_id)
     this.current_room_name = this.room_list[this.current_room_abs_id].namePretty;
     this.current_room_desc = this.room_list[this.current_room_abs_id].description;
-    console.log("current room is "+ this.current_room_name);
+    //console.log("current room is "+ this.current_room_name);
 
   }
 
