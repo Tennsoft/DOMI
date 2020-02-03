@@ -10,8 +10,7 @@ import { PlayerArrayService } from '../player-array.service.js';
 @Component({
   selector: 'app-dungeon',
   templateUrl: './dungeon.component.html',
-  styleUrls: ['./dungeon.component.css'],
-  providers: [MoveRoomService]
+  styleUrls: ['./dungeon.component.css']
 })
 export class DungeonComponent implements OnInit, OnDestroy {
 
@@ -34,8 +33,8 @@ export class DungeonComponent implements OnInit, OnDestroy {
     let new_position= this.move_room_service.moveRoom(0,1,current_position);
     this.playerArrayService.setPosition(new_position);
     //this.current_room = new_position;
-    console.log(current_position);
-    console.log(this.playerArrayService.getPosition());
+    // console.log(current_position);
+    // console.log(this.playerArrayService.getPosition());
     
   }
 
@@ -44,8 +43,8 @@ export class DungeonComponent implements OnInit, OnDestroy {
     let new_position = this.move_room_service.moveRoom(0,-1,current_position);
     this.playerArrayService.setPosition(new_position);
     //this.current_room = new_position;
-    console.log(current_position);
-    console.log(this.playerArrayService.getPosition());
+    // console.log(current_position);
+    // console.log(this.playerArrayService.getPosition());
   }
 
   onMoveEast(){
@@ -53,8 +52,8 @@ export class DungeonComponent implements OnInit, OnDestroy {
     let new_position = this.move_room_service.moveRoom(1,0,current_position);
     this.playerArrayService.setPosition(new_position);
     //this.current_room = new_position;
-    console.log(current_position);
-    console.log(this.playerArrayService.getPosition());
+    // console.log(current_position);
+    // console.log(this.playerArrayService.getPosition());
 
   }
 
@@ -63,8 +62,8 @@ export class DungeonComponent implements OnInit, OnDestroy {
     let new_position = this.move_room_service.moveRoom(-1,0,current_position);
     this.playerArrayService.setPosition(new_position);
     //this.current_room = new_position;
-    console.log(current_position);
-    console.log(this.playerArrayService.getPosition());
+    // console.log(current_position);
+    // console.log(this.playerArrayService.getPosition());
   }
 
 
