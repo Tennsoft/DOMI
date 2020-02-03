@@ -31,6 +31,17 @@ export class PlayerArrayService {
     this.inventory = [];
   }
 
+  //searching for treasure
+  can_search = false;
+  getSearchPossible(){
+    return this.can_search;
+  }
+
+  setSearchPossible(arg){
+    return this.can_search = arg;
+  }
+
+
   //health
   health = {maxHP: <number> 4, curHP: <number> 4, bossHP: <number> 8};
   getHealth(){

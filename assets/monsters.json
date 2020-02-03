@@ -65,42 +65,42 @@
         },
         {
             "id": 8,
-            "name": "",
+            "name": "treasure_find",
             "namePretty": "",
-            "description": "You don't see any monsters.",
+            "description": "You don't see any monsters, but there is a small pile of rubble that might be hiding something.",
             "weakness": "",
             "fightDamage": "",
             "fightDie": ""
         },
         {
             "id": 9,
-            "name": "",
+            "name": "treasure_find",
             "namePretty": "",
-            "description": "You don't see any monsters.",
+            "description": "You don't see any monsters, but there is a small chest, the wood so soft and rotten you can push through it easily.",
             "weakness": "",
             "fightDamage": "",
             "fightDie": ""
         },{
             "id": 10,
-            "name": "",
+            "name": "treasure_find",
             "namePretty": "",
-            "description": "You don't see any monsters.",
+            "description": "You don't see any monsters, but one section of the wall looks suspiciously discolored and cracked.",
             "weakness": "",
             "fightDamage": "",
             "fightDie": ""
         },{
             "id": 11,
-            "name": "",
+            "name": "treasure_find",
             "namePretty": "",
-            "description": "You don't see any monsters.",
+            "description": "You don't see any monsters, but there is an ancient wooden chest with a rust-eaten lock.",
             "weakness": "",
             "fightDamage": "",
             "fightDie": ""
         },{
             "id": 12,
-            "name": "",
+            "name": "treasure_find",
             "namePretty": "",
-            "description": "You don't see any monsters.",
+            "description": "You don't see any monsters, but there is a skeleton dressed in rags, still cradling something in its bony grip.",
             "weakness": "",
             "fightDamage": "",
             "fightDie": ""

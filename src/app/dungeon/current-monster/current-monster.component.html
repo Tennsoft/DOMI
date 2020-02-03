@@ -1,6 +1,12 @@
 <div>
+<div>
     <h6>You Look For Monsters:</h6>
     <p> {{ current_monster_name }} </p>
     <p> {{ current_monster_desc }} </p>    
 </div>
 
+<div *ngIf = "can_search_for_treasure">
+    <button id="search" class="btn btn-primary" (click)="searchForTreasure()"  >Search for Treasure</button>
+</div>
+
+</div>
