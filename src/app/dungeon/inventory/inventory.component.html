@@ -15,11 +15,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <!-- <tr>
         <th scope="row">1</th>
         <td>Wand</td>
         <td><button class="btn btn-primary" type="button">Use Wand</button></td>
         <td>Your trusty magic wand that has protected you through many a journey against magical foes</td>
+      </tr> -->
+
+      <tr *ngFor="let field of inventory; let i = index">
+        <th scope="row">{{ i+1 }}</th>
+        <td>{{ field }}</td>
+        <td><button class="btn btn-primary" type="button">Use {{ field }}</button></td>
+        <td>{{ getDesc(field) }}</td>
       </tr>
     </tbody>
   </table>

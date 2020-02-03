@@ -1,6 +1,20 @@
 {
     "treasure": [
         {
+            "name": "wand",
+            "namePretty": "Wand",
+            "description": "Your trusty magic wand that has protected you through many a journey against magical foes.",
+            "strength": "magic",
+            "starting": true
+        },
+        {
+            "name": "sword",
+            "namePretty": "Sword",
+            "description": "Your trusty sword that has cleaved through many a beast that would have seen you as dinner.",
+            "strength": "sword",
+            "starting": true
+        },
+        {
             "name": "automaticCrossbow",
             "namePretty": "Automatic Crossbow",
             "description": "A crossbow which continuously fires bolts so long as the trigger is held.",

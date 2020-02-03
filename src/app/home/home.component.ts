@@ -11,6 +11,7 @@ import { PlayerArrayService } from '../player-array.service';
 export class HomeComponent implements OnInit, OnDestroy {
   testMettle = false;
   audioPlayer = new Audio();
+
   player
 
   playerStartStuff = new FormGroup({
@@ -45,7 +46,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   onStart(){
     this.player = this.playerStartStuff.value;
     this.playerService.addToInventory(this.player["startItem"]);
-    this.playerService.setName(this.player["playerName"])
+    this.playerService.setName(this.player["playerName"]);
 
     console.log("player name is " + this.playerService.getName());
     console.log("player start item is " + this.playerService.getInventory());

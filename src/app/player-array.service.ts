@@ -27,6 +27,9 @@ export class PlayerArrayService {
   getInventory(){
     return this.inventory;
   }
+  clearInventory(){
+    this.inventory = [];
+  }
 
   //health
   health = {maxHP: <number> 4, curHP: <number> 4, bossHP: <number> 8};

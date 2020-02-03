@@ -8,8 +8,8 @@
     <div class="row justify-content-center"> 
         <div class="col-xs-12">
             <div class="btn-toolbar">
-                <input type="button" class="btn btn-primary mr-3" routerLink="/" value="Home">
-                <input type="button" class="btn btn-primary mr-3" routerLink="/dungeon" value="Retry">
+                <input type="button" class="btn btn-primary mr-3" routerLink="/" (click)="this.playerService.clearInventory()" value="Home">
+                <input type="button" class="btn btn-primary mr-3" routerLink="/dungeon" (click)="retry()" value="Retry">
             </div>
         </div>
     </div>
