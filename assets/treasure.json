@@ -18,49 +18,65 @@
             "name": "automaticCrossbow",
             "namePretty": "Automatic Crossbow",
             "description": "A crossbow which continuously fires bolts so long as the trigger is held.",
-            "strength": "ranged"
+            "strength": "ranged",
+            "starting": true,
+            "found": false
         },
         {
             "name": "romanCandle",
             "namePretty": "Roman Candle",
             "description": "A wand-like object that emits a ball of greek fire when evoked.",
-            "strength": "fire"
+            "strength": "fire",
+            "starting": true,
+            "found": false
         },
         {
             "name": "phoenixBearMace",
             "namePretty": "Phoenix Bear Mace",
             "description": "An aluminum cylinder covered in warning labels. A firey blue growling bear face is plastard on the front. 'Keep Away from Eyes'",
-            "strength": "toxic"
+            "strength": "toxic",
+            "starting": true,
+            "found": false
         },
         {
             "name": "bananaPeel",
             "namePretty": "Banana Peel",
             "description": "The peel of a banana, it's insides seem unusually slippery.",
-            "strength": "instantkill"
+            "strength": "instantkill",
+            "starting": true,
+            "found": false
         },
         {
             "name": "handheldVacuumCleaner",
             "namePretty": "Handheld Vacuum Cleaner",
             "description": "Small but powerful little vacuum that runs on batteries.",
-            "strength": "handheldVacuumCleaner"
+            "strength": "handheldVacuumCleaner",
+            "starting": true,
+            "found": false
         },
         {
             "name": "banefulButterknife",
             "namePretty": "Baneful Butterknife",
             "description": "A tiny blade that glints wickedly in the light.  Sharp enough to cut through anything like butter.  Watch your fingers!",
-            "strength": "sword"
+            "strength": "sword",
+            "starting": true,
+            "found": false
         },
         {
             "name": "cattleProd",
             "namePretty": "Cattle Prod",
             "description": "A thin black cylinder with two metal prongs sticking out of one end. Perfect for dealing with shapeshifters and mimics.",
-            "strength": "cattleProd"
+            "strength": "cattleProd",
+            "starting": true,
+            "found": false
         },
         {
             "name": "readME",
             "namePretty": "readME",
             "description": "A document containing the wisdom of the ages as they pertain to version control with git.",
-            "strength": "readME"
+            "strength": "readME",
+            "starting": true,
+            "found": false
         }
     ]
 }
