@@ -1,6 +1,7 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, EventEmitter } from '@angular/core';
 import { PlayerArrayService } from '../../player-array.service';
 import treasure from '../../../../assets/treasure.json';
+import { AttackService } from 'src/app/attack.service';
 
 @Component({
   selector: 'app-inventory',
@@ -11,19 +12,17 @@ export class InventoryComponent implements OnInit, OnChanges {
   itemDesc = [];
   inventory;
 
-  constructor( private playerArrayConst : PlayerArrayService) { }
+  constructor( private playerArrayConst : PlayerArrayService, private attackService : AttackService ) { }
 
   ngOnInit(){
     this.inventory = this.playerArrayConst.getInventory();
-    console.log(this.inventory);
-    console.log(treasure.treasure);
-    console.log(treasure.treasure[0]);
-     let filtered = treasure.treasure.filter(function(item) {
-       return(item.name === 'sword');
-     })[0];
-    console.log(filtered.namePretty);
+    // this.playerArrayConst.inventoryUpdated.subscribe(
+    //   () => {
+        
+    //   }
+    // );
   }
-  ngOnChanges( ) {}
+  ngOnChanges( changes: SimpleChanges ) {}
 
   getDesc(item) {
       let chosen = treasure.treasure.filter(function(items) {
@@ -31,6 +30,29 @@ export class InventoryComponent implements OnInit, OnChanges {
     })[0];
     return chosen.description;
   }
+  getName(item){
+    let chosen = treasure.treasure.filter(function(items) {
+    return(items.name === item);
+  })[0];
+  return chosen.namePretty;
+  }
 
-
+  getItemType(item){
+    let chosen = treasure.treasure.filter(function(items) {
+    return(items.name === item);
+  })[0];
+  return chosen.effect;
+  }
+  getDamageType(item){
+    let chosen = treasure.treasure.filter(function(items) {
+    return(items.name === item);
+  })[0];
+  return chosen.strength;
+  }
+  useInventoryItem(item){
+    console.log("attack worked using " + item)
+    if( this.getItemType(item) === 'weapon' ) {
+      this.attackService.attackDeclared(this.getDamageType(item))
+    }
+  }
 }

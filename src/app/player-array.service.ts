@@ -1,5 +1,4 @@
-import { Injectable } from '@angular/core';
-
+import { Injectable, EventEmitter  } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -20,15 +19,22 @@ export class PlayerArrayService {
   }
 
   //inventory
+  inventoryUpdated = new EventEmitter();
+
   inventory = [];
   addToInventory(addedItem){
     this.inventory.push(addedItem);
+    this.inventoryUpdated.emit(addedItem);
   }
+
   getInventory(){
     return this.inventory;
   }
   clearInventory(){
     this.inventory = [];
+  }
+  restartInventory(){
+    this.inventory = [this.inventory[0]];
   }
 
   //searching for treasure
@@ -49,7 +55,7 @@ export class PlayerArrayService {
   }
 
   //position
-  position= {x:1,y:0};
+  position = { x: 1, y: 0 };
     
   setPosition(new_position){
     return this.position = new_position;

@@ -36,6 +36,5 @@ export class EndScreenComponent implements OnInit {
     } else {
       this.EndMessage = this.loseMessage;
     }
-    
   }
 }

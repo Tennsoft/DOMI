@@ -24,8 +24,8 @@
 
       <tr *ngFor="let field of inventory; let i = index">
         <th scope="row">{{ i+1 }}</th>
-        <td>{{ field }}</td>
-        <td><button class="btn btn-primary" type="button">Use {{ field }}</button></td>
+        <td>{{ getName(field) }}</td>
+        <td><button class="btn btn-primary" type="button" (click) = "useInventoryItem(field)">Use {{ getName(field) }}</button></td>
         <td>{{ getDesc(field) }}</td>
       </tr>
     </tbody>
