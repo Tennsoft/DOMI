@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { monsters } from '../../assets/monsters.json';
+import { bosses } from '../../assets/bosses.json';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,8 @@ export class MonsterLayoutService {
   }
   
   random_monster_layout = this.scrambleMonsters(monsters);
+
+  random_boss_layout = this.scrambleMonsters(bosses);
  
 
 

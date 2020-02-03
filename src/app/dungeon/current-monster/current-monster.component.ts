@@ -1,7 +1,7 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 
-import { DungeonComponent } from '../dungeon.component';
-import { monsters } from '../../../../assets/monsters.json';
+//import { monsters } from '../../../../assets/monsters.json';
+
 
 import { PlayerArrayService } from '../../player-array.service';
 import { MoveRoomService } from 'src/app/move-room.service';
@@ -17,14 +17,15 @@ export class CurrentMonsterComponent implements OnInit {
   //bring in monsters, random order
   monster_list = this.monster_layout_service.random_monster_layout;
   //bring in boss monsters, random order
-  //boss_list = this.monster_layout_service
+  boss_list = this.monster_layout_service.random_boss_layout;
 
   //initialize
   current_room: {x: number, y: number};
   current_room_abs_id;
   current_monster_name;
   current_monster_desc;
-
+  boss_monster_name;
+  boss_monster_desc;
 
   constructor(public playerArrayService: PlayerArrayService,public move_room_service: MoveRoomService, public monster_layout_service: MonsterLayoutService) { 
     //console.log(this.monster_list);
@@ -50,9 +51,14 @@ export class CurrentMonsterComponent implements OnInit {
     
     this.current_room_abs_id = this.move_room_service.current_room_reduce();
     //console.log(this.current_room_abs_id)
+    if(this.current_room_abs_id == 6){
+      this.current_monster_name = this.boss_list[1].namePretty;
+      this.current_monster_desc = this.boss_list[1].description;
+    }else{
     this.current_monster_name = this.monster_list[this.current_room_abs_id].namePretty;
     this.current_monster_desc = this.monster_list[this.current_room_abs_id].description;
     console.log("current monster is "+ this.current_monster_name);
+    }
   }
 
   
