@@ -24,7 +24,7 @@
             "namePretty": "Phoenix Bear",
             "description": "It appears to be part bear, part phoenix with a large blue mane and azure fur.",
             "weakness": "Phoenix Bear Mace",
-            "fightDamage": "The Pheonix Bear RAGES, dropping its head and charging at you with it's fearsome claws. You lose one point of health.",
+            "fightDamage": "The Pheonix Bear RAGES, dropping its head and charging at you with its fearsome claws. You lose one point of health.",
             "fightDie": "The Phoenix Bear gives a whimpering cry, self-engulfing into a pile of ash... better get out of here fast."
         },
         {
@@ -34,7 +34,7 @@
             "description": "Wrapped in ancient cloths, this creature moans in a low rummbling tone",
             "weakness": "fire",
             "fightDamage": "The mummy is faster than it looks, and before you know it, the creature has grabbed you. You feel lifeforce drain out of your body. You lose one point of health.",
-            "fightDie": "The mummy, in one final gasp, dissolves into a pile of cloth"
+            "fightDie": "The mummy, in one final gasp, crumbles into a pile of cloth"
         },
         {
             "id": 5,
@@ -58,9 +58,9 @@
             "id": 7,
             "name": "mimic",
             "namePretty": "Mimic",
-            "description": "An innocuous treasure chest that seems completelynon threatening",
+            "description": "An innocuous treasure chest that seems completely non-threatening",
             "weakness": "cattleProd",
-            "fightDamage": "The treasure chest jumps out at you bitting into your arm.  You lose one point of health.",
+            "fightDamage": "The treasure chest jumps out at you, biting into your arm.  You lose one point of health.",
             "fightDie": "The treasure chest falls over ."
         },
         {
