@@ -77,6 +77,7 @@ export class PlayerArrayService {
 
   //position
   position = { x: 1, y: 0 };
+  prev_position = {x: 1, y:0};
     
   setPosition(new_position){
     return this.position = new_position;
@@ -84,6 +85,14 @@ export class PlayerArrayService {
 
   getPosition(){
     return this.position;
+  }
+
+  setOldPosition(curr_pos){
+    return this.prev_position = curr_pos;
+  }
+
+  getOldPosition(){
+    return this.prev_position;
   }
 
   //resetting the game
