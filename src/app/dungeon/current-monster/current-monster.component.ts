@@ -1,4 +1,5 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 //import { monsters } from '../../../../assets/monsters.json';
 
@@ -14,7 +15,7 @@ import { AttackService } from '../../attack.service';
   templateUrl: './current-monster.component.html',
   styleUrls: ['./current-monster.component.css']
 })
-export class CurrentMonsterComponent implements OnInit, DoCheck {
+export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
 
   //bring in monsters, random order
   monster_list = this.monster_layout_service.random_monster_layout;
@@ -39,8 +40,9 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
   current_treasure_name;
   current_treasure_desc;
 
-  previous_room: {x: number, y: number};
-  previous_room_abs_id;
+  count_moves;
+  count_temp = 0;
+  sub: Subscription;
 
   constructor(
     public playerArrayService: PlayerArrayService, 
@@ -51,12 +53,18 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
     //console.log(this.treasure_list);
   }
 
+
   ngOnInit() {
      //get the (x,y) coords
      this.current_room = this.playerArrayService.getPosition();
-     this.previous_room = this.playerArrayService.getOldPosition();
+
+     this.sub = this.playerArrayService.getCount.subscribe(num => {
+      this.count_moves = num;
+    })
+
      //turn that into a single number to get an index from the rooms array
      this.current_room_abs_id = this.move_room_service.current_room_reduce();
+    
      //and pull a monster for where you happen to be
      this.current_monster_base_name = this.monster_list[this.current_room_abs_id].name;
      this.current_monster_name = this.monster_list[this.current_room_abs_id].namePretty;
@@ -75,12 +83,12 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
   ngDoCheck(){
     this.current_room = this.playerArrayService.getPosition();
     this.found_treasure = this.playerArrayService.getTreasureFound();
-    this.previous_room = this.playerArrayService.getOldPosition();
-    this.previous_room_abs_id = this.move_room_service.current_room_reduce();
-    // console.log(this.previous_room);
-    // console.log(this.previous_room_abs_id);
    
-    //console.log(this.found_treasure);
+    
+
+    console.log(this.playerArrayService.countSub.getValue());
+   
+    
    
     
     this.current_room_abs_id = this.move_room_service.current_room_reduce();
@@ -110,11 +118,13 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       this.found_treasure = this.playerArrayService.getTreasureFound();
       this.current_treasure_name = "";
       this.current_treasure_desc = "";
-      //this.found_treasure = false;
-      //this.playerArrayService.setTreasureFound(false);
-      //console.log(this.found_treasure);
     }
-   
+    if(this.count_moves != this.count_temp){
+      console.log(this.count_moves + " "+ this.count_temp);
+      this.found_treasure = false;
+      this.count_temp = this.count_moves;
+      
+    }
     
     
     //console.log("current monster is "+ this.current_monster_name);
@@ -122,7 +132,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
     this.attackService.setMonster(this.current_monster_name);
     }
 
-  
+    console.log(this.playerArrayService.getPosition());
 
   }
 
@@ -139,7 +149,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       
       this.playerArrayService.setTreasureFound(true);
       this.found_treasure =true;
-      //console.log(this.treasure_list[this.current_room_abs_id].found);
+      console.log(this.count_moves);
       this.playerArrayService.addToInventory(this.treasure_list[this.current_room_abs_id].name);
       this.treasure_list[this.current_room_abs_id].taken = true;
 
@@ -164,9 +174,8 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
 
   }
 
-  // function takeTreasure(){
-  //   this.playerArrayService.addToInventory(this.treasure_list[this.current_room_abs_id].name);
-  //   this.treasure_list[this.current_room_abs_id].taken = true;
-  // }
+ ngOnDestroy(){
+  this.sub.unsubscribe();
+ }
 
 }
