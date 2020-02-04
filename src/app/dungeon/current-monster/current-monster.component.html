@@ -8,19 +8,16 @@
 
 <div *ngIf = "can_search_for_treasure">
     <button id="search" class="btn btn-primary" (click)="searchForTreasure()">Search for Treasure</button>
-</div>
-    </div>
 
-
-    <div class="col-xs" *ngIf = "found_current_treasure">
-        <h6>You find </h6>
+    <div class="col-xs" *ngIf = "found_treasure && can_search_for_treasure">
+        <!-- <h6>You find </h6> -->
         <p> {{ current_treasure_name }} </p>
         <p> {{ current_treasure_desc }} </p>
     </div>
 
-    <!-- <div class="col-sm" *ngIf = "!found_treasure">
-        <h6>You search thoroughly, but find nothing.</h6>
-        </div> -->
+</div>
+    </div>
+
 
 </div>
 </div>

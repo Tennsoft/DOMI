@@ -35,9 +35,12 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
   can_search_for_treasure = this.playerArrayService.getSearchPossible();
 
 
-  found_current_treasure;
+  found_treasure = this.playerArrayService.getTreasureFound();
   current_treasure_name;
   current_treasure_desc;
+
+  previous_room: {x: number, y: number};
+  previous_room_abs_id;
 
   constructor(
     public playerArrayService: PlayerArrayService, 
@@ -51,6 +54,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
   ngOnInit() {
      //get the (x,y) coords
      this.current_room = this.playerArrayService.getPosition();
+     this.previous_room = this.playerArrayService.getOldPosition();
      //turn that into a single number to get an index from the rooms array
      this.current_room_abs_id = this.move_room_service.current_room_reduce();
      //and pull a monster for where you happen to be
@@ -70,20 +74,26 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
 
   ngDoCheck(){
     this.current_room = this.playerArrayService.getPosition();
-    //console.log("current room is "+this.current_room_name);
-    //this.found_treasure = false;
+    this.found_treasure = this.playerArrayService.getTreasureFound();
+    this.previous_room = this.playerArrayService.getOldPosition();
+    this.previous_room_abs_id = this.move_room_service.current_room_reduce();
+    // console.log(this.previous_room);
+    // console.log(this.previous_room_abs_id);
+   
+    //console.log(this.found_treasure);
+   
     
     this.current_room_abs_id = this.move_room_service.current_room_reduce();
     //console.log(this.current_room_abs_id)
 
     if(this.current_room_abs_id == 6){
       this.can_search_for_treasure = false;
-      this.found_current_treasure = false;
+      this.playerArrayService.setTreasureFound(false);
       this.current_monster_name = this.boss_list[1].namePretty;
       this.current_monster_desc = this.boss_list[1].description;
     }else{
       this.can_search_for_treasure = false;
-      this.found_current_treasure = this.playerArrayService.getTreasureFound();
+      this.found_treasure = this.playerArrayService.getTreasureFound();
       this.playerArrayService.setSearchPossible(false);
     this.current_monster_base_name = this.monster_list[this.current_room_abs_id].name;
     this.current_monster_name = this.monster_list[this.current_room_abs_id].namePretty;
@@ -91,12 +101,22 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
     if(this.current_monster_base_name == "treasure_find"){
       this.can_search_for_treasure = true;
       this.playerArrayService.setSearchPossible(true);
+      
+        // this.current_treasure_name = "";
+        //  this.current_treasure_desc = "";
        //console.log(this.playerArrayService.getSearchPossible());
     }
     if(this.current_monster_base_name != "treasure_find"){
-      this.found_current_treasure = false;
-      this.playerArrayService.setTreasureFound(false);
+      this.found_treasure = this.playerArrayService.getTreasureFound();
+      this.current_treasure_name = "";
+      this.current_treasure_desc = "";
+      //this.found_treasure = false;
+      //this.playerArrayService.setTreasureFound(false);
+      //console.log(this.found_treasure);
     }
+   
+    
+    
     //console.log("current monster is "+ this.current_monster_name);
     
     this.attackService.setMonster(this.current_monster_name);
@@ -108,26 +128,45 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
 
 
   searchForTreasure(){
-    if(this.treasure_list[this.current_room_abs_id].found === false){
+   
+    if(this.treasure_list[this.current_room_abs_id].found == false && this.treasure_list[this.current_room_abs_id].taken == false){
       //this.found_treasure =true;
       this.treasure_list[this.current_room_abs_id].found = true;
       this.current_treasure_name = this.treasure_list[this.current_room_abs_id].namePretty;
       this.current_treasure_desc = this.treasure_list[this.current_room_abs_id].description;
       this.can_search_for_treasure = false;
       this.playerArrayService.setSearchPossible(false);
-      this.found_current_treasure =true;
+      
       this.playerArrayService.setTreasureFound(true);
+      this.found_treasure =true;
       //console.log(this.treasure_list[this.current_room_abs_id].found);
-    }else{
+      this.playerArrayService.addToInventory(this.treasure_list[this.current_room_abs_id].name);
+      this.treasure_list[this.current_room_abs_id].taken = true;
+
+     setTimeout(() =>{
+      this.found_treasure = false;
+      this.playerArrayService.setTreasureFound(false);
+     }, 2500);
+      
+
+     
+    }
+    else{
       this.current_treasure_name = "";
       this.current_treasure_desc = "nothing new, even though you search carefully";
-      this.found_current_treasure =true;
+      this.found_treasure =true;
       this.playerArrayService.setTreasureFound(true);
+      setTimeout(() =>{
+        this.found_treasure = false;
+        this.playerArrayService.setTreasureFound(false);
+       }, 2500);
     }
-    
 
   }
-  
 
+  // function takeTreasure(){
+  //   this.playerArrayService.addToInventory(this.treasure_list[this.current_room_abs_id].name);
+  //   this.treasure_list[this.current_room_abs_id].taken = true;
+  // }
 
 }
