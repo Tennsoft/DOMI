@@ -44,6 +44,15 @@ export class PlayerArrayService {
     return this.can_search = arg;
   }
 
+  treasure_found = false;
+  getTreasureFound(){
+    return this.treasure_found;
+  }
+
+  setTreasureFound(arg){
+    return this.treasure_found = arg;
+  }
+
 
   //health
   health = {maxHP: <number> 4, curHP: <number> 4, bossHP: <number> 8};

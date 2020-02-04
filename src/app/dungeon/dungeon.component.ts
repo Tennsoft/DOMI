@@ -25,19 +25,13 @@ export class DungeonComponent implements OnInit, DoCheck {
     
   }
   
-  SearchForTreasure(){
-
-  }
   
 
   onMoveNorth(){
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     let new_position= this.move_room_service.moveRoom(0,1,current_position);
     this.playerArrayService.setPosition(new_position);
-    // this.can_search_for_treasure = this.playerArrayService.getSearchPossible();
-    // console.log(this.can_search_for_treasure);
-    // console.log(this.playerArrayService.getSearchPossible());
-    //this.current_room = new_position;
+
     // console.log(current_position);
     // console.log(this.playerArrayService.getPosition());
     
@@ -47,10 +41,7 @@ export class DungeonComponent implements OnInit, DoCheck {
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     let new_position = this.move_room_service.moveRoom(0,-1,current_position);
     this.playerArrayService.setPosition(new_position);
-    // this.can_search_for_treasure = this.playerArrayService.getSearchPossible();
-    // console.log(this.can_search_for_treasure);
-    // console.log(this.playerArrayService.getSearchPossible());
-    //this.current_room = new_position;
+   
     // console.log(current_position);
     // console.log(this.playerArrayService.getPosition());
   }
@@ -59,10 +50,8 @@ export class DungeonComponent implements OnInit, DoCheck {
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     let new_position = this.move_room_service.moveRoom(1,0,current_position);
     this.playerArrayService.setPosition(new_position);
-    // this.can_search_for_treasure = this.playerArrayService.getSearchPossible();
-    // console.log(this.can_search_for_treasure);
-    // console.log(this.playerArrayService.getSearchPossible());
-    //this.current_room = new_position;
+   
+ 
     // console.log(current_position);
     // console.log(this.playerArrayService.getPosition());
 
@@ -72,10 +61,8 @@ export class DungeonComponent implements OnInit, DoCheck {
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     let new_position = this.move_room_service.moveRoom(-1,0,current_position);
     this.playerArrayService.setPosition(new_position);
-    // this.can_search_for_treasure = this.playerArrayService.getSearchPossible();
-    // console.log(this.can_search_for_treasure);
-    // console.log(this.playerArrayService.getSearchPossible());
-    //this.current_room = new_position;
+    
+   
     // console.log(current_position);
     // console.log(this.playerArrayService.getPosition());
   }
