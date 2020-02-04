@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { rooms } from '../../assets/rooms.json';
+import { treasure } from '../../assets/treasure.json';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,10 @@ export class RoomLayoutService {
   }
   
   random_room_layout = this.scrambleRooms(rooms);
+
+  found_treasures = treasure.slice(-9);
+
+  random_treasure_layout = this.scrambleRooms(this.found_treasures);
   
 
 
