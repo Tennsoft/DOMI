@@ -33,7 +33,7 @@ export class DungeonComponent implements OnInit, DoCheck {
     this.playerArrayService.setPosition(new_position);
     this.playerArrayService.setTreasureFound(false);
     this.playerArrayService.setCount();
-    
+    this.playerArrayService.setFightResult(" ");
       //this.found_treasure = false;
     
     // console.log(current_position);
@@ -47,6 +47,7 @@ export class DungeonComponent implements OnInit, DoCheck {
     this.playerArrayService.setPosition(new_position);
     this.playerArrayService.setTreasureFound(false);
     this.playerArrayService.setCount();
+    this.playerArrayService.setFightResult(" ");
     //console.log(this.playerArrayService.getOldPosition());
     // console.log(current_position);
     // console.log(this.playerArrayService.getPosition());
@@ -58,6 +59,7 @@ export class DungeonComponent implements OnInit, DoCheck {
     this.playerArrayService.setPosition(new_position);
     this.playerArrayService.setTreasureFound(false);
     this.playerArrayService.setCount();
+    this.playerArrayService.setFightResult(" ");
     //console.log(this.playerArrayService.countSub.getValue());
     // console.log(current_position);
     // console.log(this.playerArrayService.getPosition());
@@ -70,6 +72,7 @@ export class DungeonComponent implements OnInit, DoCheck {
     this.playerArrayService.setPosition(new_position);
     this.playerArrayService.setTreasureFound(false);
     this.playerArrayService.setCount();
+    this.playerArrayService.setFightResult(" ");
     //console.log(this.playerArrayService.getOldPosition());
     // console.log(current_position);
     // console.log(this.playerArrayService.getPosition());

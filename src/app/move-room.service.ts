@@ -80,7 +80,9 @@ export class MoveRoomService {
 
       
       this.new_pos = {x: new_x, y: new_y};
+      //this.playerArrayService.setFightResult("");
       return this.new_pos;
+     
     }
     
  
