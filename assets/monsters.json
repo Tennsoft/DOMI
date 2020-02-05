@@ -6,8 +6,8 @@
             "namePretty": "Werebeaver",
             "description": "Some poor humanoid has become infected with werebeaveritis. They have turned into a rabid beaver. It thinks you kicked its dam and it's not happy about it.",
             "weakness": "fire",
-            "fightDamage": "The werebeaver skillfully dodges your attack, using its tail as a springboard to get close enough to sink its vile teeth into your leg. You lose one point of health.",
-            "fightDie": "The werebeaver goes limp and falls to the ground.",
+            "fightDamage": "The werebeaver skillfully dodges your attack, using its tail as a springboard to get close enough to sink its vile teeth into your leg. You lose one point of health.  You found treasure! Check your inventory.",
+            "fightDie": "The werebeaver goes limp and falls to the ground.  You found treasure! Check your inventory.",
             "dead": false
         },
         {
@@ -16,8 +16,8 @@
             "namePretty": "Monstrous Koi Fish",
             "description": "An evil mage has gigantified a once-pretty-looking koi fish and granted it the ability to breathe air. It now sports fangs and a denim jacket with the sleeves ripped off. It has sick tribal tats around its fins.",
             "weakness": "electricity",
-            "fightDamage": "The monstrous koi fish wobbles around your attack. It then slides toward you, sinking its fang into you. You lose one point of health.",
-            "fightDie": "The koi fish suddenly stiffens its muscles. It begins to shrink, slowly at first, then rapidly. It is now the size of a typical koi, flopping around inside the denim jacket it once wore.",
+            "fightDamage": "The monstrous koi fish wobbles around your attack. It then slides toward you, sinking its fang into you. You lose one point of health.  You found treasure! Check your inventory.",
+            "fightDie": "The koi fish suddenly stiffens its muscles. It begins to shrink, slowly at first, then rapidly. It is now the size of a typical koi, flopping around inside the denim jacket it once wore.  You found treasure! Check your inventory.",
             "dead": false
         },
         {
@@ -26,8 +26,8 @@
             "namePretty": "Phoenix Bear",
             "description": "It appears to be part bear, part phoenix with a large blue mane and azure fur.",
             "weakness": "toxic" ,
-            "fightDamage": "The Pheonix Bear RAGES, dropping its head and charging at you with its fearsome claws. You lose one point of health.",
-            "fightDie": "The Phoenix Bear gives a whimpering cry, self-engulfing into a pile of ash... better get out of here fast.",
+            "fightDamage": "The Pheonix Bear RAGES, dropping its head and charging at you with its fearsome claws. You lose one point of health.  You found treasure! Check your inventory.",
+            "fightDie": "The Phoenix Bear gives a whimpering cry, self-engulfing into a pile of ash... better get out of here fast.  You found treasure! Check your inventory.",
             "dead": false
         },
         {
@@ -36,8 +36,8 @@
             "namePretty": "Mummy",
             "description": "Wrapped in ancient cloths, this creature moans in a low rummbling tone",
             "weakness": "fire",
-            "fightDamage": "The mummy is faster than it looks, and before you know it, the creature has grabbed you. You feel lifeforce drain out of your body. You lose one point of health.",
-            "fightDie": "The mummy, in one final gasp, crumbles into a pile of cloth",
+            "fightDamage": "The mummy is faster than it looks, and before you know it, the creature has grabbed you. You feel lifeforce drain out of your body. You lose one point of health.  You found treasure! Check your inventory.",
+            "fightDie": "The mummy, in one final gasp, crumbles into a pile of cloth.  You found treasure! Check your inventory.",
             "dead": false
         },
         {
@@ -46,8 +46,8 @@
             "namePretty": "Frumious Bandersnatch",
             "description": "Loping and lolloping along toward you, jaws agape and tongue lolling out between fangs of preposterous proportion, the Bandersnatch of sagas is at all times famishing and eager for the hunt.",
             "weakness": "sword",
-            "fightDamage": "The Bandersnatch lunges toward you and sinks its fangs to the bone in your leg. You lose one point of health.",
-            "fightDie": "The Bandersnatch staggers, roaring, before collapsing in an untidy heap of long limbs and grinning fangs.",
+            "fightDamage": "The Bandersnatch lunges toward you and sinks its fangs to the bone in your leg. You lose one point of health.  You found treasure! Check your inventory.",
+            "fightDie": "The Bandersnatch staggers, roaring, before collapsing in an untidy heap of long limbs and grinning fangs.  You found treasure! Check your inventory.",
             "dead": false
         },
         {
@@ -56,8 +56,8 @@
             "namePretty": "Green Ooze",
             "description": "The bright, rippling green of a bowl of jello, but grown to shocking size, endowed with two red eyes, and squelching toward you.",
             "weakness": "wand",
-            "fightDamage": "The Ooze extends a psuedopod which glops onto your leg.  Acid burns you.  You lose one point of health.",
-            "fightDie": "The Ooze explodes into a shower of jello, leaving sticky puddles all over the floor.",
+            "fightDamage": "The Ooze extends a psuedopod which glops onto your leg.  Acid burns you.  You lose one point of health.  You found treasure! Check your inventory.",
+            "fightDie": "The Ooze explodes into a shower of jello, leaving sticky puddles all over the floor.  You found treasure! Check your inventory.",
             "dead": false
         },
         {
@@ -66,8 +66,8 @@
             "namePretty": "Mimic",
             "description": "An innocuous treasure chest that seems completely non-threatening",
             "weakness": "cattleProd",
-            "fightDamage": "The treasure chest jumps out at you, biting into your arm.  You lose one point of health.",
-            "fightDie": "The treasure chest falls over .",
+            "fightDamage": "The treasure chest jumps out at you, biting into your arm.  You lose one point of health.  You found treasure! Check your inventory.",
+            "fightDie": "The treasure chest falls over with a pathetic gurgle.  You found treasure! Check your inventory.",
             "dead": false
         },
         {

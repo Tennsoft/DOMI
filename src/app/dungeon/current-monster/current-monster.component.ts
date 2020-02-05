@@ -107,27 +107,24 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       this.current_monster_base_name = this.monster_list[this.current_room_abs_id].name;
       this.current_monster_name = this.monster_list[this.current_room_abs_id].namePretty;
       this.current_monster_desc = this.monster_list[this.current_room_abs_id].description;
+        if(this.current_monster_base_name == "treasure_find"){
+          this.can_search_for_treasure = true;
+          this.playerArrayService.setSearchPossible(true);
+        }
+        else{
+          this.can_search_for_treasure = false;
+          this.found_treasure = this.playerArrayService.getTreasureFound();
+          this.current_treasure_name = "";
+          this.current_treasure_desc = "";
+        }
       }
       //if monster dead, don't display
-      if(this.monster_list[this.current_room_abs_id].dead == true){
+      else if(this.monster_list[this.current_room_abs_id].dead == true){
         this.current_monster_base_name = "";
         this.current_monster_name = "";
         this.current_monster_desc = "";
         }
-    if(this.current_monster_base_name == "treasure_find"){
-      this.can_search_for_treasure = true;
-      this.playerArrayService.setSearchPossible(true);
-      
-        // this.current_treasure_name = "";
-        //  this.current_treasure_desc = "";
-       //console.log(this.playerArrayService.getSearchPossible());
-    }
-    if(this.current_monster_base_name != "treasure_find"){
-      this.can_search_for_treasure = false;
-      this.found_treasure = this.playerArrayService.getTreasureFound();
-      this.current_treasure_name = "";
-      this.current_treasure_desc = "";
-    }
+   
     if(this.count_moves != this.count_temp){
       console.log(this.count_moves + " "+ this.count_temp);
       this.found_treasure = false;

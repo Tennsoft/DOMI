@@ -50,7 +50,7 @@ export class InventoryComponent implements OnInit, OnChanges {
   return chosen.strength;
   }
   useInventoryItem(item){
-    if( this.getItemType(item) === 'weapon' ) {
+    if( this.getItemType(item) === 'weapon') {
       this.attackService.attackDeclared(this.getDamageType(item))
       //console.log(this.treasure_list[my_index]);
       
