@@ -77,7 +77,6 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
      }
      
      //console.log(this.playerArrayService.getPosition());
-     this.attackService.setMonster(this.current_monster_name);
   }
 
   ngDoCheck(){
@@ -139,8 +138,9 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
     
     //console.log("current monster is "+ this.current_monster_name);
     
-    this.attackService.setMonster(this.current_monster_name);
+    
     }
+    this.attackService.setMonster(this.current_monster_name);
 
     //console.log(this.playerArrayService.getPosition());
 
