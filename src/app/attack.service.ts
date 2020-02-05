@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { PlayerArrayService } from './player-array.service';
 
+import { HealthChangeService } from './health-change.service'
+
 import monsters from '../../assets/monsters.json';
 
 @Injectable({
@@ -10,7 +12,8 @@ import monsters from '../../assets/monsters.json';
 export class AttackService {
 
   constructor(
-    public playerArray: PlayerArrayService
+    public playerArray: PlayerArrayService,
+    public healthChange: HealthChangeService
   ) { }
   currentMonster = '';
   setMonster(monsterName){
@@ -25,6 +28,7 @@ export class AttackService {
      } else {
        console.log("you used the wrong weapon");
        this.playerArray.loseHealth();
+       this.healthChange.updateLife();
      }
     
   }
