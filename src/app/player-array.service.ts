@@ -75,6 +75,19 @@ export class PlayerArrayService {
     }
   }
 
+  //fight results
+  fight_result = "";
+
+  getFightResult(){
+    return this.fight_result;
+  }
+
+  setFightResult(result){
+    this.fight_result = result;
+    return this.fight_result;
+  }
+
+
   //position
   position = { x: 1, y: 0 };
   count = 0;

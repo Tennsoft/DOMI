@@ -7,7 +7,8 @@
             "description": "Some poor humanoid has become infected with werebeaveritis. They have turned into a rabid beaver. It thinks you kicked its dam and it's not happy about it.",
             "weakness": "fire",
             "fightDamage": "The werebeaver skillfully dodges your attack, using its tail as a springboard to get close enough to sink its vile teeth into your leg. You lose one point of health.",
-            "fightDie": "The werebeaver goes limp and falls to the ground."
+            "fightDie": "The werebeaver goes limp and falls to the ground.",
+            "dead": false
         },
         {
             "id": 2,
@@ -16,7 +17,8 @@
             "description": "An evil mage has gigantified a once-pretty-looking koi fish and granted it the ability to breathe air. It now sports fangs and a denim jacket with the sleeves ripped off. It has sick tribal tats around its fins.",
             "weakness": "electricity",
             "fightDamage": "The monstrous koi fish wobbles around your attack. It then slides toward you, sinking its fang into you. You lose one point of health.",
-            "fightDie": "The koi fish suddenly stiffens its muscles. It begins to shrink, slowly at first, then rapidly. It is now the size of a typical koi, flopping around inside the denim jacket it once wore."
+            "fightDie": "The koi fish suddenly stiffens its muscles. It begins to shrink, slowly at first, then rapidly. It is now the size of a typical koi, flopping around inside the denim jacket it once wore.",
+            "dead": false
         },
         {
             "id": 3,
@@ -25,7 +27,8 @@
             "description": "It appears to be part bear, part phoenix with a large blue mane and azure fur.",
             "weakness": "toxic" ,
             "fightDamage": "The Pheonix Bear RAGES, dropping its head and charging at you with its fearsome claws. You lose one point of health.",
-            "fightDie": "The Phoenix Bear gives a whimpering cry, self-engulfing into a pile of ash... better get out of here fast."
+            "fightDie": "The Phoenix Bear gives a whimpering cry, self-engulfing into a pile of ash... better get out of here fast.",
+            "dead": false
         },
         {
             "id": 4,
@@ -34,7 +37,8 @@
             "description": "Wrapped in ancient cloths, this creature moans in a low rummbling tone",
             "weakness": "fire",
             "fightDamage": "The mummy is faster than it looks, and before you know it, the creature has grabbed you. You feel lifeforce drain out of your body. You lose one point of health.",
-            "fightDie": "The mummy, in one final gasp, crumbles into a pile of cloth"
+            "fightDie": "The mummy, in one final gasp, crumbles into a pile of cloth",
+            "dead": false
         },
         {
             "id": 5,
@@ -43,7 +47,8 @@
             "description": "Loping and lolloping along toward you, jaws agape and tongue lolling out between fangs of preposterous proportion, the Bandersnatch of sagas is at all times famishing and eager for the hunt.",
             "weakness": "sword",
             "fightDamage": "The Bandersnatch lunges toward you and sinks its fangs to the bone in your leg. You lose one point of health.",
-            "fightDie": "The Bandersnatch staggers, roaring, before collapsing in an untidy heap of long limbs and grinning fangs."
+            "fightDie": "The Bandersnatch staggers, roaring, before collapsing in an untidy heap of long limbs and grinning fangs.",
+            "dead": false
         },
         {
             "id": 6,
@@ -52,7 +57,8 @@
             "description": "The bright, rippling green of a bowl of jello, but grown to shocking size, endowed with two red eyes, and squelching toward you.",
             "weakness": "wand",
             "fightDamage": "The Ooze extends a psuedopod which glops onto your leg.  Acid burns you.  You lose one point of health.",
-            "fightDie": "The Ooze explodes into a shower of jello, leaving sticky puddles all over the floor."
+            "fightDie": "The Ooze explodes into a shower of jello, leaving sticky puddles all over the floor.",
+            "dead": false
         },
         {
             "id": 7,
@@ -61,7 +67,8 @@
             "description": "An innocuous treasure chest that seems completely non-threatening",
             "weakness": "cattleProd",
             "fightDamage": "The treasure chest jumps out at you, biting into your arm.  You lose one point of health.",
-            "fightDie": "The treasure chest falls over ."
+            "fightDie": "The treasure chest falls over .",
+            "dead": false
         },
         {
             "id": 8,
@@ -70,7 +77,8 @@
             "description": "You don't see any monsters, but there is a small pile of rubble that might be hiding something.",
             "weakness": "",
             "fightDamage": "",
-            "fightDie": ""
+            "fightDie": "",
+            "dead": false
         },
         {
             "id": 9,
@@ -79,7 +87,8 @@
             "description": "You don't see any monsters, but there is a small chest, the wood so soft and rotten you can push through it easily.",
             "weakness": "",
             "fightDamage": "",
-            "fightDie": ""
+            "fightDie": "",
+            "dead": false
         },{
             "id": 10,
             "name": "treasure_find",
@@ -87,7 +96,8 @@
             "description": "You don't see any monsters, but one section of the wall looks suspiciously discolored and cracked.",
             "weakness": "",
             "fightDamage": "",
-            "fightDie": ""
+            "fightDie": "",
+            "dead": false
         },{
             "id": 11,
             "name": "treasure_find",
@@ -95,7 +105,8 @@
             "description": "You don't see any monsters, but there is an ancient wooden chest with a rust-eaten lock.",
             "weakness": "",
             "fightDamage": "",
-            "fightDie": ""
+            "fightDie": "",
+            "dead": false
         },{
             "id": 12,
             "name": "treasure_find",
@@ -103,7 +114,8 @@
             "description": "You don't see any monsters, but there is a skeleton dressed in rags, still cradling something in its bony grip.",
             "weakness": "",
             "fightDamage": "",
-            "fightDie": ""
+            "fightDie": "",
+            "dead": false
         }
     ]
 }
