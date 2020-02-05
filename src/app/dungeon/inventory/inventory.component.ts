@@ -59,7 +59,7 @@ export class InventoryComponent implements OnInit, OnChanges {
   }
 
   useInventoryItem(item){
-    if( this.getItemType(item) === 'weapon' ) {
+    if( this.getItemType(item) === 'weapon') {
       this.attackService.attackDeclared(this.getDamageType(item))
     } else if( this.getItemType(item) === 'heal' ) {
       this.playerArrayConst.gainHealth();
