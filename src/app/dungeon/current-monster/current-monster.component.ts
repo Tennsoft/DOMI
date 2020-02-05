@@ -86,7 +86,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
    
     
 
-    console.log(this.playerArrayService.countSub.getValue());
+   // console.log(this.playerArrayService.countSub.getValue());
    
     
    
@@ -100,7 +100,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       this.current_monster_name = this.boss_list[1].namePretty;
       this.current_monster_desc = this.boss_list[1].description;
     }else{
-      this.can_search_for_treasure = false;
+      //this.can_search_for_treasure = false;
       this.found_treasure = this.playerArrayService.getTreasureFound();
       this.playerArrayService.setSearchPossible(false);
     this.current_monster_base_name = this.monster_list[this.current_room_abs_id].name;
@@ -115,6 +115,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
        //console.log(this.playerArrayService.getSearchPossible());
     }
     if(this.current_monster_base_name != "treasure_find"){
+      this.can_search_for_treasure = false;
       this.found_treasure = this.playerArrayService.getTreasureFound();
       this.current_treasure_name = "";
       this.current_treasure_desc = "";
@@ -132,7 +133,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
     this.attackService.setMonster(this.current_monster_name);
     }
 
-    console.log(this.playerArrayService.getPosition());
+    //console.log(this.playerArrayService.getPosition());
 
   }
 
