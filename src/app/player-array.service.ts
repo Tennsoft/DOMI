@@ -22,12 +22,14 @@ export class PlayerArrayService {
   }
 
   //inventory
-  inventoryUpdated = new EventEmitter();
 
   inventory = [];
   addToInventory(addedItem){
     this.inventory.push(addedItem);
-    this.inventoryUpdated.emit(addedItem);
+  }
+
+  removeFromInventory(removedItem){
+    this.inventory = this.inventory.filter(items => items !== removedItem);
   }
 
   getInventory(){
