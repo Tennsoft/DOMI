@@ -10,9 +10,7 @@ export class PlayerArrayService {
 
   constructor(
     private router: Router
-  ) {
-    
-  }
+  ) {}
 
   //name
   name = <string> '';

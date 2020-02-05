@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { PlayerArrayService } from './player-array.service';
-
 import { HealthChangeService } from './health-change.service'
 
 import monsters from '../../assets/monsters.json';
@@ -14,8 +14,10 @@ export class AttackService {
 
   constructor(
     public playerArray: PlayerArrayService,
-    public healthChange: HealthChangeService
+    public healthChange: HealthChangeService,
+    private router: Router
   ) { }
+  bossFight = false;
   currentMonster = '';
   setMonster(monsterName){
     this.currentMonster = monsterName;
@@ -54,6 +56,7 @@ export class AttackService {
       if(chosen.namePretty === '') {
         return true;
       } else if(chosen.weakness === damageType) {
+        this.router.navigate(['/endScreen'])
         return true;
       } else { 
         return false; 
