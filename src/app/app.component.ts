@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PlayerArrayService } from './player-array.service';
+import { treasure } from '../../assets/treasure.json';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'domi';
+  constructor(
+    protected playerArray: PlayerArrayService
+  ){}
+
+  addAll(){
+    treasure.forEach(element => { 
+      this.playerArray.addToInventory(element.name);
+    });
+  }
 }

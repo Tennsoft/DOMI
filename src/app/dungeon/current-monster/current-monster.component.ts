@@ -99,6 +99,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       this.playerArrayService.setTreasureFound(false);
       this.current_monster_name = this.boss_list[1].namePretty;
       this.current_monster_desc = this.boss_list[1].description;
+      this.attackService.setMonster(this.boss_list[1].name);
     }else{
       //this.can_search_for_treasure = false;
       this.found_treasure = this.playerArrayService.getTreasureFound();
