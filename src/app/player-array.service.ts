@@ -1,5 +1,7 @@
 import { Injectable, EventEmitter  } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -77,7 +79,9 @@ export class PlayerArrayService {
 
   //position
   position = { x: 1, y: 0 };
-  prev_position = {x: 1, y:0};
+  count = 0;
+  countSub: BehaviorSubject<number> = new BehaviorSubject(0);
+  getCount: Observable<number> = this.countSub.asObservable();
     
   setPosition(new_position){
     return this.position = new_position;
@@ -87,13 +91,16 @@ export class PlayerArrayService {
     return this.position;
   }
 
-  setOldPosition(curr_pos){
-    return this.prev_position = curr_pos;
+  setCount() {
+    this.count = this.count+1; 
+    this.countSub.next(this.count);
   }
 
-  getOldPosition(){
-    return this.prev_position;
-  }
+  // getCount(){
+  //   return this.count;
+  // }
+
+  
 
   //resetting the game
 
@@ -101,6 +108,7 @@ export class PlayerArrayService {
     this.inventory = [];
     this.health.curHP = this.health.maxHP;
     this.setName('');
+    this.count = 0;
   }
 
   restartInventory(){

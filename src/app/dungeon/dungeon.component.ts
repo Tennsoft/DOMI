@@ -29,11 +29,10 @@ export class DungeonComponent implements OnInit, DoCheck {
 
   onMoveNorth(){
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
-   this.playerArrayService.setOldPosition(current_position);
     let new_position= this.move_room_service.moveRoom(0,1,current_position);
     this.playerArrayService.setPosition(new_position);
     this.playerArrayService.setTreasureFound(false);
-    //console.log(this.playerArrayService.getOldPosition());
+    this.playerArrayService.setCount();
     
       //this.found_treasure = false;
     
@@ -44,10 +43,10 @@ export class DungeonComponent implements OnInit, DoCheck {
 
   onMoveSouth(){
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
-    this.playerArrayService.setOldPosition(current_position);
     let new_position = this.move_room_service.moveRoom(0,-1,current_position);
     this.playerArrayService.setPosition(new_position);
     this.playerArrayService.setTreasureFound(false);
+    this.playerArrayService.setCount();
     //console.log(this.playerArrayService.getOldPosition());
     // console.log(current_position);
     // console.log(this.playerArrayService.getPosition());
@@ -55,11 +54,11 @@ export class DungeonComponent implements OnInit, DoCheck {
 
   onMoveEast(){
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
-    this.playerArrayService.setOldPosition(current_position);
     let new_position = this.move_room_service.moveRoom(1,0,current_position);
     this.playerArrayService.setPosition(new_position);
     this.playerArrayService.setTreasureFound(false);
-    //console.log(this.playerArrayService.getOldPosition());
+    this.playerArrayService.setCount();
+    //console.log(this.playerArrayService.countSub.getValue());
     // console.log(current_position);
     // console.log(this.playerArrayService.getPosition());
 
@@ -67,10 +66,10 @@ export class DungeonComponent implements OnInit, DoCheck {
 
   onMoveWest(){
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
-    this.playerArrayService.setOldPosition(current_position);
     let new_position = this.move_room_service.moveRoom(-1,0,current_position);
     this.playerArrayService.setPosition(new_position);
     this.playerArrayService.setTreasureFound(false);
+    this.playerArrayService.setCount();
     //console.log(this.playerArrayService.getOldPosition());
     // console.log(current_position);
     // console.log(this.playerArrayService.getPosition());

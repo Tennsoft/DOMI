@@ -22,6 +22,7 @@ import { MonsterLayoutService } from './monster-layout.service';
 import { RoomLayoutService } from './room-layout.service';
 import { PlayerArrayService } from './player-array.service';
 import { HealthBarComponent } from './dungeon/health-bar/health-bar.component';
+import { CurrentFightComponent } from './current-fight/current-fight.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { HealthBarComponent } from './dungeon/health-bar/health-bar.component';
     CurrentRoomComponent,
     InventoryComponent,
     CurrentMonsterComponent,
-    HealthBarComponent
+    HealthBarComponent,
+    CurrentFightComponent
   ],
   imports: [
     BrowserModule,
