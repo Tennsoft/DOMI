@@ -24,7 +24,7 @@ export class HealthBarComponent implements OnInit, DoCheck {
     if (this.healthChange.updateLife) {
       this.currentHealth = this.healthChange.updateLife();
     }
-    console.log("ngDoCheck for health ran. It is " + this.currentHealth)
+    //console.log("ngDoCheck for health ran. It is " + this.currentHealth)
   }
 
   // loseALife() {

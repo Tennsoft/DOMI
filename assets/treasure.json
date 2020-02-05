@@ -20,7 +20,7 @@
             "name": "automaticCrossbow",
             "namePretty": "Automatic Crossbow",
             "description": "A crossbow which continuously fires bolts so long as the trigger is held.",
-            "strength": "ranged",
+            "strength": "automaticCrossbow",
             "starting": false,
             "found": false,
             "taken": false,

@@ -16,7 +16,7 @@ export class HealthChangeService {
   updateLife() {
     // this.currentHealth = this.playerArray.health.curHP
     return this.playerArray.health.curHP
-    console.log('update life ran. New Health: ' + this.currentHealth)
+    //console.log('update life ran. New Health: ' + this.currentHealth)
   }
 
 }
