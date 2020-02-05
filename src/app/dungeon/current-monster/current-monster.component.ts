@@ -103,9 +103,18 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       //this.can_search_for_treasure = false;
       this.found_treasure = this.playerArrayService.getTreasureFound();
       this.playerArrayService.setSearchPossible(false);
-    this.current_monster_base_name = this.monster_list[this.current_room_abs_id].name;
-    this.current_monster_name = this.monster_list[this.current_room_abs_id].namePretty;
-    this.current_monster_desc = this.monster_list[this.current_room_abs_id].description;
+      //if monster not dead, display it
+      if(this.monster_list[this.current_room_abs_id].dead == false){
+      this.current_monster_base_name = this.monster_list[this.current_room_abs_id].name;
+      this.current_monster_name = this.monster_list[this.current_room_abs_id].namePretty;
+      this.current_monster_desc = this.monster_list[this.current_room_abs_id].description;
+      }
+      //if monster dead, don't display
+      if(this.monster_list[this.current_room_abs_id].dead == true){
+        this.current_monster_base_name = "";
+        this.current_monster_name = "";
+        this.current_monster_desc = "";
+        }
     if(this.current_monster_base_name == "treasure_find"){
       this.can_search_for_treasure = true;
       this.playerArrayService.setSearchPossible(true);

@@ -22,7 +22,8 @@ import { MonsterLayoutService } from './monster-layout.service';
 import { RoomLayoutService } from './room-layout.service';
 import { PlayerArrayService } from './player-array.service';
 import { HealthBarComponent } from './dungeon/health-bar/health-bar.component';
-import { CurrentFightComponent } from './current-fight/current-fight.component';
+import { CurrentFightComponent } from './dungeon/current-fight/current-fight.component';
+import { AttackService } from './attack.service';
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import { CurrentFightComponent } from './current-fight/current-fight.component';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [MoveRoomService, MonsterLayoutService, RoomLayoutService, PlayerArrayService],
+  providers: [MoveRoomService, MonsterLayoutService, RoomLayoutService, PlayerArrayService, AttackService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
