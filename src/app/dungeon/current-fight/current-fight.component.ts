@@ -24,11 +24,13 @@ export class CurrentFightComponent implements OnInit {
 
 
   ngOnInit() {
+    this.current_fight_damage = this.playerArrayService.getFightResult();
   }
 
   ngDoCheck(){
     //get the monster
     this.monster = this.attackService.getMonster();
+    
     //declare attack
     this.current_fight_damage = this.playerArrayService.getFightResult();
 

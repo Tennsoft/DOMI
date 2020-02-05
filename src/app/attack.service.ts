@@ -48,7 +48,6 @@ export class AttackService {
     
 
     //set dead to true
-    //let my_monster_index = 
     for(var i=0; i< this.monster_list.length; i++){
       if(this.monster_list[i].namePretty == curr_mons){
         this.monster_list[i].dead = true;
@@ -56,17 +55,23 @@ export class AttackService {
     
     }
 
-
-
+    //pos = myArray.map(function(e) { return e.hello; }).indexOf('stevie');
+    let my_index = this.monster_list.map(function(e){return e.namePretty;}).indexOf(curr_mons);
+    console.log(my_index);
     if(this.usedWeakness(damageType, this.currentMonster)){
       
-      this.playerArray.setFightResult(my_monster_entry.fightDie);
+      this.playerArray.setFightResult(my_monster_entry.fightDie + " You found treasure! Check your inventory.");
+      
+      this.playerArray.addToInventory(this.treasure_list[my_index].name);
+      
+
       console.log("you used the right weapon");
      } else {
        console.log("you used the wrong weapon");
        this.playerArray.loseHealth();
        this.healthChange.updateLife();
-       this.playerArray.setFightResult(my_monster_entry.fightDamage);
+       this.playerArray.setFightResult(my_monster_entry.fightDamage + " You found treasure! Check your inventory.");
+      this.playerArray.addToInventory(this.treasure_list[my_index].name);
      }
 
            
