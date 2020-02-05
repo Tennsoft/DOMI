@@ -3,40 +3,40 @@
         <h3 class="text-danger mr-3">Make your way through the dungeon!</h3>
     </div>
     <div class="row justify-content-center mb-3">
-        <div class="col-lg-1 monsterpic">
+        <!-- <div class="col-lg-1 monsterpic">
             <p>This is where room / monster pic goes</p>
-        </div>
-    </div>
-    <div class="row justify-content-center mb-3">
+        </div> -->
         <div id="textGoesHere" class="col-sm">
-            <div class="currentRoom pl-3 pt-3 pr-3">
+            <div class="currentRoom2 pl-3 pt-3 pr-3 pb-3 text-dark">
                 <app-current-room></app-current-room>
             </div>
         </div>
-            <div id="monsterInRoom" class="col-sm">
-                <div class="currentRoom pl-3 pt-3 pr-3">
-                <app-current-monster></app-current-monster>
-                </div>
+        <div id="btnDiv" class="col-me">
+            <button id="up" class="btn btn-color mr-3 mb-3" (click)="onMoveNorth()"><strong>Go<br>North</strong></button>
+            <br>
+            <button id="right" class="btn btn-color mr-3" (click)="onMoveWest()">
+                <strong>Go<br>West</strong>
+            </button> 
+            <button id="left" class="btn btn-color" (click)="onMoveEast()">
+                <strong>Go<br>East</strong>
+            </button>
+            <br>
+            <button id="down" class="btn btn-color mr-3 mt-3" (click)="onMoveSouth()"><strong>Go<br>South</strong></button>
+        </div>
+    </div>
+    <div class="row justify-content-center mb-3">
+        <div id="monsterInRoom" class="col-sm">
+            <div class="currentRoom pl-3 pt-3 pr-3 pb-3">
+            <app-current-monster></app-current-monster>
             </div>
+        </div>
         
         <div id="moreTextGoesHere" class="col-sm">
-            <div class="fightTextHere pl-3 pt-3 pr-3">
+            <div class="fightTextHere pl-3 pt-3 pr-3 pb-3">
                 <app-current-fight></app-current-fight>    
             </div>
         </div>
    
-        <div id="btnDiv" class="col-me">
-            <button id="up" class="btn btn-primary mr-3 mb-3" (click)="onMoveNorth()"><strong>Go<br>North</strong></button>
-            <br>
-            <button id="right" class="btn btn-primary mr-3" (click)="onMoveWest()">
-                <strong>Go<br>West</strong>
-            </button> 
-            <button id="left" class="btn btn-primary" (click)="onMoveEast()">
-                <strong>Go<br>East</strong>
-            </button>
-            <br>
-            <button id="down" class="btn btn-primary mr-3 mt-3" (click)="onMoveSouth()"><strong>Go<br>South</strong></button>
-        </div>
     </div>
     <div class="heathBar">
         <app-health-bar></app-health-bar>

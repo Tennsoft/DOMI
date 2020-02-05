@@ -1,17 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-    <nav>
-      <a routerLink="/">
-        <button class="btn btn-primary mr-3">Home</button>
-      </a>
-      <a routerLink="/dungeon">
-        <button class="btn btn-primary mr-3">Dungeon</button>
-      </a>
-      <a routerLink="/endScreen">
-        <button class="btn btn-primary mr-3">End Screen</button>
-      </a>
-      <button class="btn btn-primary mr3" (click)="addAll()">Add All Items</button>
-    </nav>
+    <app-dev-box></app-dev-box>
   </div>
   <div class="row justify-content-center">
     <router-outlet></router-outlet>

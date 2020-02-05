@@ -24,6 +24,7 @@ import { PlayerArrayService } from './player-array.service';
 import { HealthBarComponent } from './dungeon/health-bar/health-bar.component';
 import { CurrentFightComponent } from './dungeon/current-fight/current-fight.component';
 import { AttackService } from './attack.service';
+import { DevBoxComponent } from './dev-box/dev-box.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { AttackService } from './attack.service';
     InventoryComponent,
     CurrentMonsterComponent,
     HealthBarComponent,
-    CurrentFightComponent
+    CurrentFightComponent,
+    DevBoxComponent
   ],
   imports: [
     BrowserModule,
