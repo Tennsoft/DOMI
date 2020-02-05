@@ -12,7 +12,8 @@ export class AppComponent {
   constructor(
     protected playerArray: PlayerArrayService
   ){}
-
+  
+  //dev method for adding all items to inventory 
   addAll(){
     treasure.forEach(element => { 
       this.playerArray.addToInventory(element.name);

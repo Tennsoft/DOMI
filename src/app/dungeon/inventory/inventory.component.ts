@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges, SimpleChanges, EventEmitter } from '@angu
 import { PlayerArrayService } from '../../player-array.service';
 import treasure from '../../../../assets/treasure.json';
 import { AttackService } from 'src/app/attack.service';
+import { HealthChangeService } from '../../health-change.service';
 
 @Component({
   selector: 'app-inventory',
@@ -12,7 +13,10 @@ export class InventoryComponent implements OnInit, OnChanges {
   itemDesc = [];
   inventory;
 
-  constructor( private playerArrayConst : PlayerArrayService, private attackService : AttackService ) { }
+  constructor( 
+    private playerArrayConst : PlayerArrayService, 
+    public healthChange: HealthChangeService,
+    private attackService : AttackService ) { }
 
   ngOnInit(){
     this.inventory = this.playerArrayConst.getInventory();
@@ -22,7 +26,9 @@ export class InventoryComponent implements OnInit, OnChanges {
     //   }
     // );
   }
-  ngOnChanges( changes: SimpleChanges ) {}
+  ngOnChanges( changes: SimpleChanges ) {
+    this.inventory = this.playerArrayConst.getInventory();
+  }
 
   getDesc(item) {
       let chosen = treasure.treasure.filter(function(items) {
@@ -30,6 +36,7 @@ export class InventoryComponent implements OnInit, OnChanges {
     })[0];
     return chosen.description;
   }
+
   getName(item){
     let chosen = treasure.treasure.filter(function(items) {
     return(items.name === item);
@@ -43,15 +50,23 @@ export class InventoryComponent implements OnInit, OnChanges {
   })[0];
   return chosen.effect;
   }
+
   getDamageType(item){
     let chosen = treasure.treasure.filter(function(items) {
     return(items.name === item);
   })[0];
   return chosen.strength;
   }
+
   useInventoryItem(item){
     if( this.getItemType(item) === 'weapon' ) {
       this.attackService.attackDeclared(this.getDamageType(item))
+    } else if( this.getItemType(item) === 'heal' ) {
+      this.playerArrayConst.gainHealth();
+      this.playerArrayConst.gainHealth();
+      this.healthChange.updateLife();
+      this.playerArrayConst.removeFromInventory(item);
+      this.inventory = this.playerArrayConst.getInventory();
     }
   }
 }

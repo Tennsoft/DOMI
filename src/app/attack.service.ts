@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { PlayerArrayService } from './player-array.service';
-import { HealthChangeService } from './health-change.service'
+import { HealthChangeService } from './health-change.service';
 
 import monsters from '../../assets/monsters.json';
 import bosses from '../../assets/bosses.json';
