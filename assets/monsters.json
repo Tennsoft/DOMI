@@ -23,7 +23,7 @@
             "name": "pheonixBear",
             "namePretty": "Phoenix Bear",
             "description": "It appears to be part bear, part phoenix with a large blue mane and azure fur.",
-            "weakness": "Phoenix Bear Mace",
+            "weakness": "toxic" ,
             "fightDamage": "The Pheonix Bear RAGES, dropping its head and charging at you with its fearsome claws. You lose one point of health.",
             "fightDie": "The Phoenix Bear gives a whimpering cry, self-engulfing into a pile of ash... better get out of here fast."
         },
