@@ -40,7 +40,7 @@ export class AttackService {
 
   attackDeclared(damageType){
     try{
-console.log("you attacked the " + this.currentMonster + " with the " + damageType);
+    console.log("you attacked the " + this.currentMonster + " with the " + damageType);
     let curr_mons = this.currentMonster;
     //console.log(curr_mons);
     let my_monster_entry = monsters.monsters.filter(function(items){
@@ -82,8 +82,8 @@ console.log("you attacked the " + this.currentMonster + " with the " + damageTyp
            
   }
     
-      }
-    } catch (error) {
+
+     catch (error) {
       let curr_mons = this.currentMonster;
       let my_monster_entry = bosses.bosses.filter(function(items){
         return(items.namePretty === curr_mons)
