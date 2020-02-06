@@ -8,7 +8,7 @@ import { MonsterLayoutService } from 'src/app/monster-layout.service';
   templateUrl: './current-fight.component.html',
   styleUrls: ['./current-fight.component.css']
 })
-export class CurrentFightComponent implements OnInit {
+export class CurrentFightComponent implements OnInit, DoCheck {
 
   constructor(public playerArrayService: PlayerArrayService, 
               public attackService: AttackService,
@@ -36,6 +36,8 @@ export class CurrentFightComponent implements OnInit {
     this.current_fight_damage = this.playerArrayService.getFightResult();
 
   }
+
+  
 
   
 

@@ -38,6 +38,8 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   current_treasure_name;
   current_treasure_desc;
 
+  
+
   count_moves;
   count_temp = 0;
   sub: Subscription;
@@ -89,6 +91,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   ngDoCheck(){
     this.current_room = this.playerArrayService.getPosition();
     this.found_treasure = this.playerArrayService.getTreasureFound();
+    //this.had_a_fight = this.playerArrayService.getFightResult();
    
     
 
@@ -101,12 +104,14 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
     if(this.current_room_abs_id == 6){
       this.can_search_for_treasure = false;
       this.playerArrayService.setTreasureFound(false);
+      this.playerArrayService.setFightResult("");
       this.current_monster_name = this.boss_list[1].namePretty;
       this.current_monster_desc = this.boss_list[1].description;
     }else{
       //this.can_search_for_treasure = false;
       this.found_treasure = this.playerArrayService.getTreasureFound();
       this.playerArrayService.setSearchPossible(false);
+      
       //if monster not dead, display it
       if(this.monster_list[this.current_room_abs_id].dead == false){
       this.current_monster_base_name = this.monster_list[this.current_room_abs_id].name;
@@ -128,6 +133,8 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
         this.current_monster_base_name = "";
         this.current_monster_name = "";
         this.current_monster_desc = "";
+        this.can_search_for_treasure = false;
+        this.playerArrayService.setSearchPossible(false);
         }
    
     if(this.count_moves != this.count_temp){
