@@ -2,42 +2,42 @@
     "bosses": [
         {
             "name": "tuckersKobolds",
-            "namePretty": "Tucker's Kobolds",
+            "namePretty": "Fearsome Dungeon Boss, Tucker's Kobolds",
             "weakness": "automaticCrossbow",
             "description": "Several kobolds fighting together. Trained in guerilla warfare tactics.",
-            "fightDamage": "The kobolds skillfully use various places in the room for cover. One throws a molotov cocktail toward you, another shoots an arrow, and a third hurls a medium sized rock. You lose one point of damage.",
+            "fightDamage": "The kobolds skillfully use various places in the room for cover. One throws a molotov cocktail toward you, another shoots an arrow, and a third hurls a medium sized rock. You lose two points of health.",
             "fightDie": "The kobolds' war of attrition has failed. Their squadron is entirely dead. In the distance you hear a helicopter fleeing. The Jimi Hendrix cover of \"All Along the Watchtower\" plays in your mind."
         },
         {
             "name": "death",
-            "namePretty": "Death",
+            "namePretty": "Fearsome Dungeon Boss, Death",
             "weakness": "bananaPeel",
             "description": "Cloaked in a black robe and wielding a silver scythe, this otherwise ordinary floating skeleton chills you with an otherwordly presence.",
-            "fightDamage": "Death floats over toward you, touching down with a single skeletal foot. It reaches out to touch you with it's hand. You lose one point of damage.",
+            "fightDamage": "Death floats over toward you, touching down with a single skeletal foot. It reaches out to touch you with its hand. You lose two points of health.",
             "fightDie": "Death floats over toward you, touching down with a single skeletal foot... right onto the discarded banana peel. It slips all the way out of the room, where loud crashing and falling can be heard trailing off in the distance."
         },
         {
             "name": "Kerfluffle",
-            "namePretty": "Kerfluffle",
+            "namePretty": "Fearsome Dungeon Boss, Kerfluffle",
             "weakness": "handheldVacuumCleaner",
             "description": "What seems to be a giant agglomeration of dust bunnies, out for revenge.",
-            "fightDamage": "The Kerfluffle bounds foward and engulfs you in soft, choking dust.  You try to inhale and are overwhelmed with coughing.  You lose one point of health.",
+            "fightDamage": "The Kerfluffle bounds foward and engulfs you in soft, choking dust.  You try to inhale and are overwhelmed with coughing.  You lose two points of health.",
             "fightDie": "The Kerfluffle explodes into a corruscating cloud of dust and is no more."
         },
         {
             "name": "boxxytmorningwood",
-            "namePretty": "Boxxy T. Morningwood",
+            "namePretty": "Fearsome Dungeon Boss, Boxxy T. Morningwood",
             "weakness": "cattleProd",
             "description": "As you enter the room, you see a treasure chest walking upon 8 spider legs. It is gazing upon you with hatred in a single cat like eye ",
-            "fightDamage": "The chest points a leg at you and a ball of shadows flies to you engulfing you.  You lose one point of health.",
+            "fightDamage": "The chest points a leg at you and a ball of shadows flies to you engulfing you.  You lose two points of health.",
             "fightDie": "The chest begins convulsing from the use of the cattle prod and falls over."
         },
         {
             "name": "originMaster",
-            "namePretty": "Origin Master",
+            "namePretty": "Fearsome Dungeon Boss, Origin Master",
             "weakness": "readME",
             "description": "The Git Origin Master, inscrutable in their enlightenment. ",
-            "fightDamage": "'git rm you,' Origin Master intones.  You lose one point of health.",
+            "fightDamage": "'git rm you,' Origin Master intones.  You lose two points of health.",
             "fightDie": "You study the readME and realize that Origin Master is just an illusion.  Looking up, you realize the room was empty all along."
         }
     ]

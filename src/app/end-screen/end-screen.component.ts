@@ -13,14 +13,16 @@ export class EndScreenComponent implements OnInit {
   playerHealth = {};
 
   EndMessage = "";
+  
+  FinalFight;
 
   //playerName //= "Brave Adventurer";
   playerName = this.playerService.getName();
 
-  flawlessMessage = "<h4 class='text-primary'>Flawless Victory, "+this.playerName+". You Won without taking any damage<h4>";
-  winMessage = "<h4 class='text-primary'>You Survived The Dungeon<h4>";
-  loseMessage = "<h4 class='text-danger'>You Died<h4>";
-  tieMessage = "<h4 class='text-warning'>You defeated the Boss but at what cost?<h4>";
+  flawlessMessage = "<h4 class='text-primary'>Flawless Victory, "+this.playerName+". You Won without taking any damage</h4>";
+  winMessage = "<h4 class='text-primary'>Congratulations, "+this.playerName+".  You survived The Dungeon</h4>";
+  loseMessage = "<h4 class='text-danger'>You Died</h4>";
+  tieMessage = "<h4 class='text-warning'>You defeated the Boss but at what cost?</h4>";
 
  
 
@@ -29,6 +31,8 @@ export class EndScreenComponent implements OnInit {
   ngOnInit() {
     this.playerName = this.playerService.getName();
     this.playerHealth = this.playerService.getHealth();
+    this.FinalFight = "<h4 class='text-primary'> "+ this.playerService.getFightResult() +"</h4>"
+    //this.playerService.getFightResult();
 
 
     if(this.playerHealth["maxHP"] === this.playerHealth["curHP"]){
