@@ -27,7 +27,7 @@
         {
             "name": "boxxytmorningwood",
             "namePretty": "Boxxy T. Morningwood",
-            "weakness": "cattelProd",
+            "weakness": "cattleProd",
             "description": "As you enter the room, you see a treasure chest walking upon 8 spider legs. It is gazing upon you with hatred in a single cat like eye ",
             "fightDamage": "The chest points a leg at you and a ball of shadows flies to you engulfing you.  You lose one point of health.",
             "fightDie": "The chest begins convulsing from the use of the cattle prod and falls over."

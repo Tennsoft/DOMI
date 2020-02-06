@@ -13,7 +13,7 @@ export class PlayerArrayService {
   ) {}
 
   //name
-  name = <string> '';
+  name = <string> 'Brave Adventurer';
   setName(newName){
     this.name = newName;
   }
@@ -128,5 +128,8 @@ export class PlayerArrayService {
     this.inventory = [this.inventory[0]];
     this.health.curHP = this.health.maxHP;
   }
-  
+
+  resetPosition(){
+    this.setPosition({x:1, y:0});
+  }
 }
