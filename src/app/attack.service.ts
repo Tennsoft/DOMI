@@ -93,15 +93,15 @@ export class AttackService {
       console.log(my_index);
       if(this.usedWeakness(damageType, this.currentMonster)){
         
-        this.playerArray.setFightResult(my_monster_entry.fightDie + " You found treasure! Check your inventory.");
-        this.playerArray.addToInventory(this.treasure_list[my_index].name);
+        this.playerArray.setFightResult(my_monster_entry.fightDie);
+        //this.playerArray.addToInventory(this.treasure_list[my_index].name);
         console.log("you used the right weapon");
       } else {
         console.log("you used the wrong weapon");
           this.playerArray.loseHealth();
           this.healthChange.updateLife();
-          this.playerArray.setFightResult(my_monster_entry.fightDamage + " You found treasure! Check your inventory.");
-          this.playerArray.addToInventory(this.treasure_list[my_index].name);
+          this.playerArray.setFightResult(my_monster_entry.fightDamage);
+          //this.playerArray.addToInventory(this.treasure_list[my_index].name);
       }
     }
   }
@@ -129,6 +129,7 @@ export class AttackService {
         this.router.navigate(['/endScreen'])
         return true;
       } else { 
+        this.router.navigate(['/endScreen'])
         return false; 
       }
 

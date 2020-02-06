@@ -3,6 +3,12 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 
 import { PlayerArrayService } from '../player-array.service';
+import { RoomLayoutService } from '../room-layout.service';
+
+import { rooms } from '../../../assets/rooms.json';
+import { monsters } from '../../../assets/monsters.json';
+import { treasure } from '../../../assets/treasure.json';
+import { bosses } from '../../../assets/bosses.json';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +28,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
   constructor(
-    private playerService: PlayerArrayService, 
+    public playerService: PlayerArrayService, 
+    public roomLayoutService: RoomLayoutService,
     public builder: FormBuilder,
     private router: Router) { 
     this.playerStartStuff = this.builder.group({
@@ -51,9 +58,18 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.player = this.playerStartStuff.value;
     this.playerService.resetPosition(); 
     this.playerService.position = {x:1,y:0};
+    this.playerService.setFightResult("");
     //this.playerService.restartInventory();
     this.playerService.addToInventory(this.player["startItem"]);
     this.playerService.setName(this.player["playerName"]);
+
+    this.roomLayoutService.scrambleRooms(rooms);
+    this.roomLayoutService.scrambleRooms(monsters);
+    this.roomLayoutService.scrambleRooms(bosses);
+    
+    let found_treasures = treasure.slice(-9);
+    this.roomLayoutService.scrambleRooms(found_treasures);
+
     this.router.navigate(['/dungeon'])
     
   }

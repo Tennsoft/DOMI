@@ -17,12 +17,10 @@ import { AttackService } from '../../attack.service';
 })
 export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
 
-  //bring in monsters, random order
-  monster_list = this.monster_layout_service.random_monster_layout;
-  //bring in boss monsters, random order
-  boss_list = this.monster_layout_service.random_boss_layout;
-  //bring in treasure to find, random order
-  treasure_list = this.room_layout_service.random_treasure_layout;
+  
+  monster_list; 
+  boss_list; 
+  treasure_list;
 
   //initialize
   current_room: {x: number, y: number};
@@ -55,6 +53,15 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
 
 
   ngOnInit() {
+
+    //bring in monsters, random order
+    this.monster_list = this.monster_layout_service.random_monster_layout;
+    //bring in boss monsters, random order
+    this.boss_list = this.monster_layout_service.random_boss_layout;
+    //bring in treasure to find, random order
+    this.treasure_list = this.room_layout_service.random_treasure_layout;
+
+
      //get the (x,y) coords
      this.current_room = this.playerArrayService.getPosition();
 

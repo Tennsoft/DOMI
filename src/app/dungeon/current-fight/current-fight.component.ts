@@ -20,10 +20,11 @@ export class CurrentFightComponent implements OnInit {
     current_treasure;
     monster_dead;
 
-    monster_list = this.monster_layout_service.random_monster_layout;
+    monster_list;
 
 
   ngOnInit() {
+    this.monster_list = this.monster_layout_service.random_monster_layout;
     this.current_fight_damage = this.playerArrayService.getFightResult();
   }
 

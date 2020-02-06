@@ -50,7 +50,7 @@
             "name": "bananaPeel",
             "namePretty": "Banana Peel",
             "description": "The peel of a banana, its insides seem unusually slippery.",
-            "strength": "instantkill",
+            "strength": "bananaPeel",
             "starting": false,
             "found": false,
             "taken": false,
