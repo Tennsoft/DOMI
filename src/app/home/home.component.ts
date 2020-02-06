@@ -49,8 +49,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   onStart(){
     this.player = this.playerStartStuff.value;
+    this.playerService.resetPosition(); 
+    this.playerService.position = {x:1,y:0};
+    //this.playerService.restartInventory();
     this.playerService.addToInventory(this.player["startItem"]);
     this.playerService.setName(this.player["playerName"]);
     this.router.navigate(['/dungeon'])
+    
   }
 }

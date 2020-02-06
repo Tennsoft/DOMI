@@ -88,8 +88,6 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
    // console.log(this.playerArrayService.countSub.getValue());
    
     
-   
-    
     this.current_room_abs_id = this.move_room_service.current_room_reduce();
     //console.log(this.current_room_abs_id)
 
