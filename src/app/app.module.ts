@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { KeyboardShortcutsModule }     from 'ng-keyboard-shortcuts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -50,6 +51,7 @@ import { DevBoxComponent } from './dev-box/dev-box.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    KeyboardShortcutsModule.forRoot(),
     ReactiveFormsModule
   ],
   providers: [MoveRoomService, MonsterLayoutService, RoomLayoutService, PlayerArrayService, AttackService],

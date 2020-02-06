@@ -71,6 +71,5 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.roomLayoutService.scrambleRooms(found_treasures);
 
     this.router.navigate(['/dungeon'])
-    
   }
 }

@@ -54,7 +54,7 @@ export class AttackService {
 
     //console.log(my_index);
     if(this.usedWeakness(damageType, this.currentMonster)){
-      console.log(this.monster_list[my_index].dead);
+      //console.log(this.monster_list[my_index].dead);
       if(this.monster_list[my_index].dead == false && this.monster_list[my_index].name != "treasure_find"){
       this.playerArray.setFightResult(my_monster_entry.fightDie);
       
@@ -76,7 +76,7 @@ export class AttackService {
       if(this.monster_list[i].namePretty == curr_mons && this.monster_list[i].namePretty != ""){
         this.monster_list[i].dead = true;
       }
-      console.log(this.monster_list[my_index].dead);
+      //console.log(this.monster_list[my_index].dead);
     }
 
            

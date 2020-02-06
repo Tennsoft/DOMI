@@ -1,7 +1,9 @@
-import { Injectable, EventEmitter  } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
+import { treasure } from '../../assets/treasure.json';
+//import { AttackService } from './attack.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +12,20 @@ export class PlayerArrayService {
 
   constructor(
     private router: Router
+    //private attkServ: AttackService
   ) {}
 
   //name
   name = <string> 'Brave Adventurer';
+  
   setName(newName){
-    this.name = newName;
+    if(newName){
+      this.name = newName;
+    } else { 
+      this.name = 'Brave Adventurer';
+    }
   }
+
   getName(){
     return this.name;
   }
@@ -24,6 +33,7 @@ export class PlayerArrayService {
   //inventory
 
   inventory = [];
+  bossItemAdded = false;
   addToInventory(addedItem){
     this.inventory.push(addedItem);
   }
@@ -34,6 +44,18 @@ export class PlayerArrayService {
 
   getInventory(){
     return this.inventory;
+  }
+
+
+  konamiUsed = <boolean> false;
+  addBossItem(){
+    if(this.router.url === '/dungeon'){
+      if(!this.konamiUsed){
+        let item = treasure[Math.floor(Math.random() * treasure.length)].name
+        this.addToInventory(item)
+        this.konamiUsed = true;
+      }
+    }
   }
 
   //searching for treasure

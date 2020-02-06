@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, DoCheck } from '@angular/core';
 import { Subscription } from 'rxjs';
-
+import { Router } from '@angular/router';
 
 import { MoveRoomService } from '../move-room.service.js';
 import { PlayerArrayService } from '../player-array.service.js';
@@ -15,15 +15,18 @@ import { PlayerArrayService } from '../player-array.service.js';
 export class DungeonComponent implements OnInit, DoCheck {
 
   //can_search_for_treasure = this.playerArrayService.getSearchPossible();
-  constructor(public move_room_service: MoveRoomService, public playerArrayService: PlayerArrayService) { 
-
+  constructor(
+    private router: Router,
+    public move_room_service: MoveRoomService, 
+    public playerArrayService: PlayerArrayService
+    ) { }
   
-  }
-  
-
   ngOnInit() {
     this.playerArrayService.resetPosition();
     this.playerArrayService.setFightResult("");
+    if( this.playerArrayService.getName() === '' || this.playerArrayService.getInventory() === []){
+      this.router.navigate(['/'])
+    }
   }
   
   
