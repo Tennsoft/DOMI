@@ -1,0 +1,18 @@
+/* #finalWords{
+    text-align: center;
+    width: 50%;
+    color: blue;
+} */
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+    display: inline-block;
+    }
+.col-centered {
+    text-align: center;
+    display:inline-block;
+    float:none;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
