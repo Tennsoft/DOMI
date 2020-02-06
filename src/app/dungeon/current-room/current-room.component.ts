@@ -21,9 +21,10 @@ export class CurrentRoomComponent implements OnInit, DoCheck {
 
   
   //bring in the rooms, random order
-  room_list = this.room_layout_service.random_room_layout;
+  //room_list = this.room_layout_service.random_room_layout;
 
   //initialize
+  room_list;
   current_room: {x: number, y: number};
   current_room_abs_id;
   current_room_name;
@@ -37,6 +38,8 @@ export class CurrentRoomComponent implements OnInit, DoCheck {
  
 
   ngOnInit() {
+    
+    this.room_list = this.room_layout_service.random_room_layout;
     //get the (x,y) coords
     this.current_room = this.playerArrayService.getPosition();
     //turn that into a single number to get an index from the rooms array

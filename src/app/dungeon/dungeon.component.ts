@@ -23,7 +23,7 @@ export class DungeonComponent implements OnInit, DoCheck {
 
   ngOnInit() {
     this.playerArrayService.resetPosition();
-    this.playerArrayService.setFightResult('');
+    this.playerArrayService.setFightResult("");
   }
   
   
