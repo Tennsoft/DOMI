@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, DoCheck } from '@angular/core';
+import { Component, OnInit, OnDestroy, DoCheck, Injectable } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 
@@ -12,6 +12,8 @@ import { PlayerArrayService } from '../player-array.service.js';
   templateUrl: './dungeon.component.html',
   styleUrls: ['./dungeon.component.css']
 })
+
+
 export class DungeonComponent implements OnInit, DoCheck {
 
   //can_search_for_treasure = this.playerArrayService.getSearchPossible();
@@ -32,6 +34,7 @@ export class DungeonComponent implements OnInit, DoCheck {
     this.playerArrayService.setTreasureFound(false);
     this.playerArrayService.setCount();
     this.playerArrayService.setFightResult("");
+    console.log(this.playerArrayService.getFightResult());
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     let new_position= this.move_room_service.moveRoom(0,1,current_position);
     this.playerArrayService.setPosition(new_position);
@@ -50,6 +53,7 @@ export class DungeonComponent implements OnInit, DoCheck {
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     let new_position = this.move_room_service.moveRoom(0,-1,current_position);
     this.playerArrayService.setPosition(new_position);
+    
     
     //console.log(this.playerArrayService.getOldPosition());
     // console.log(current_position);
@@ -73,10 +77,11 @@ export class DungeonComponent implements OnInit, DoCheck {
   onMoveWest(){
     this.playerArrayService.setTreasureFound(false);
     this.playerArrayService.setCount();
-    this.playerArrayService.setFightResult("");
+    this.playerArrayService.setFightResult('');
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     let new_position = this.move_room_service.moveRoom(-1,0,current_position);
     this.playerArrayService.setPosition(new_position);
+    
   
     //console.log(this.playerArrayService.getOldPosition());
     // console.log(current_position);
