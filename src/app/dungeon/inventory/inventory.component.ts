@@ -58,15 +58,30 @@ export class InventoryComponent implements OnInit, OnChanges {
   return chosen.strength;
   }
 
+  getHealAmmount(item){
+    if(item === "lesserheathPotion"){
+      this.playerArrayConst.gainHealth();
+    } 
+    if(item === "heathPotion"){
+      this.playerArrayConst.gainHealth();
+      this.playerArrayConst.gainHealth();
+    } 
+    if(item === "greaterheathPotion"){
+      this.playerArrayConst.gainHealth();
+      this.playerArrayConst.gainHealth();
+      this.playerArrayConst.gainHealth();
+    } 
+  }
+
   useInventoryItem(item){
     if( this.getItemType(item) === 'weapon') {
       this.attackService.attackDeclared(this.getDamageType(item))
     } else if( this.getItemType(item) === 'heal' ) {
-      this.playerArrayConst.gainHealth();
-      this.playerArrayConst.gainHealth();
+      this.getHealAmmount(item);
       this.healthChange.updateLife();
       this.playerArrayConst.removeFromInventory(item);
       this.inventory = this.playerArrayConst.getInventory();
     }
   }
+
 }

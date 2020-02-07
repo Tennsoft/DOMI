@@ -6,6 +6,7 @@ import { HealthChangeService } from './health-change.service';
 
 import monsters from '../../assets/monsters.json';
 import bosses from '../../assets/bosses.json';
+import treasure from '../../assets/treasure.json';
 import { MonsterLayoutService } from './monster-layout.service';
 import { RoomLayoutService } from './room-layout.service';
 
@@ -30,6 +31,24 @@ export class AttackService {
 
   getMonster(){
     return this.currentMonster;
+  }
+
+  getStrength( monster){ 
+    let chosen = monsters.monsters.filter(function(items) {
+      return(items.namePretty === monster);
+    })[0];
+    let strength = treasure.treasure.filter(function(items) {
+      return(items.strength == chosen.weakness);
+    })[0];
+    return strength;
+  }
+
+  addWeakness(){
+    try{
+      this.playerArray.addToInventory(this.getStrength(this.currentMonster).name);
+    } catch{
+      this.playerArray.loseHealth();
+    }
   }
 
   monster_list = this.monster_layout_service.random_monster_layout;
