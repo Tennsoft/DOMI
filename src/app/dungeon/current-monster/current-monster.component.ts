@@ -43,6 +43,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   count_moves;
   count_temp = 0;
   sub: Subscription;
+  had_a_fight;
 
   constructor(
     public playerArrayService: PlayerArrayService, 
@@ -91,8 +92,8 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   ngDoCheck(){
     this.current_room = this.playerArrayService.getPosition();
     this.found_treasure = this.playerArrayService.getTreasureFound();
-    //this.had_a_fight = this.playerArrayService.getFightResult();
-   
+    //this.had_a_fight = this.move_room_service.moveRoom(0,0,this.playerArrayService.getPosition())[1];
+    //this.playerArrayService.setFightResult(this.had_a_fight);
     
 
    // console.log(this.playerArrayService.countSub.getValue());
@@ -114,6 +115,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       
       //if monster not dead, display it
       if(this.monster_list[this.current_room_abs_id].dead == false){
+        this.playerArrayService.setFightResult('');
       this.current_monster_base_name = this.monster_list[this.current_room_abs_id].name;
       this.current_monster_name = this.monster_list[this.current_room_abs_id].namePretty;
       this.current_monster_desc = this.monster_list[this.current_room_abs_id].description;
@@ -135,6 +137,9 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
         this.current_monster_desc = "";
         this.can_search_for_treasure = false;
         this.playerArrayService.setSearchPossible(false);
+          // setTimeout(() =>{ 
+          //   this.playerArrayService.setFightResult('');
+          // }, 1900);
         }
    
     if(this.count_moves != this.count_temp){
@@ -175,7 +180,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
      setTimeout(() =>{
       this.found_treasure = false;
       this.playerArrayService.setTreasureFound(false);
-     }, 2500);
+     }, 1900);
       
 
      
@@ -188,7 +193,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       setTimeout(() =>{
         this.found_treasure = false;
         this.playerArrayService.setTreasureFound(false);
-       }, 2500);
+       }, 1900);
     }
 
   }
