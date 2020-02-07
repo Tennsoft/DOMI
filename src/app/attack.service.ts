@@ -33,8 +33,17 @@ export class AttackService {
     return this.currentMonster;
   }
 
-  getStrength( monster){ 
+  getStrength(monster){ 
     let chosen = monsters.monsters.filter(function(items) {
+      return(items.namePretty === monster);
+    })[0];
+    let strength = treasure.treasure.filter(function(items) {
+      return(items.strength == chosen.weakness);
+    })[0];
+    return strength;
+  }
+  getBossStrength(monster){ 
+    let chosen = bosses.bosses.filter(function(items) {
       return(items.namePretty === monster);
     })[0];
     let strength = treasure.treasure.filter(function(items) {
@@ -46,6 +55,14 @@ export class AttackService {
   addWeakness(){
     try{
       this.playerArray.addToInventory(this.getStrength(this.currentMonster).name);
+    } catch{
+      this.playerArray.loseHealth();
+    }
+  }  
+  
+  addBossWeakness(){
+    try{
+      this.playerArray.addToInventory(this.getBossStrength(this.currentMonster).name);
     } catch{
       this.playerArray.loseHealth();
     }

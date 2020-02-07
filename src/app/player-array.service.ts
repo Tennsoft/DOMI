@@ -55,6 +55,11 @@ export class PlayerArrayService {
     this.inventory = this.inventory.filter(items => items !== removedItem);
   }
 
+  addHealthPotion(){
+    let healthPotionList = ['greaterheathPotion','heathPotion','lesserheathPotion'];
+    this.addToInventory(healthPotionList[Math.floor(Math.random()*3)]);
+  }
+
   getInventory(){
     return this.inventory;
   }
