@@ -2,8 +2,6 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from "@angula
 import { ShortcutInput, ShortcutEventOutput, KeyboardShortcutsComponent } from "ng-keyboard-shortcuts";  
 import { PlayerArrayService } from './player-array.service';
 import { AttackService } from './attack.service';
-import { treasure } from '../../assets/treasure.json';
-
 
 @Component({
   selector: 'app-root',

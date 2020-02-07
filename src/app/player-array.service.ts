@@ -144,6 +144,7 @@ export class PlayerArrayService {
     this.health.curHP = this.health.maxHP;
     this.setName('');
     this.count = 0;
+    this.router.navigate(['/']);
   }
 
   restartInventory(){
