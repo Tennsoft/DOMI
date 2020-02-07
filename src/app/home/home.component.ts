@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.playerService.resetPosition(); 
     this.playerService.position = {x:1,y:0};
     this.playerService.setFightResult("");
-    //this.playerService.restartInventory();
+    this.playerService.clearInventory();
     this.playerService.addToInventory(this.player["startItem"]);
     this.playerService.setName(this.player["playerName"]);
 
