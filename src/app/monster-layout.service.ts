@@ -10,6 +10,7 @@ export class MonsterLayoutService {
 
   constructor() { }
 
+
   scrambleMonsters(array): Array<any> {
     let currentIndex: number = array.length;
     let temporaryValue: number, randomIndex: number;
@@ -33,7 +34,6 @@ export class MonsterLayoutService {
   random_monster_layout = this.scrambleMonsters(monsters);
 
   random_boss_layout = this.scrambleMonsters(bosses);
- 
 
 
 
