@@ -1,8 +1,9 @@
 import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-//import { monsters } from '../../../../assets/monsters.json';
-
+import { monsters } from '../../../../assets/monsters.json';
+import { treasure } from '../../../../assets/treasure.json';
+import { bosses } from '../../../../assets/bosses.json';
 
 import { PlayerArrayService } from '../../player-array.service';
 import { MoveRoomService } from 'src/app/move-room.service';
@@ -18,9 +19,9 @@ import { AttackService } from '../../attack.service';
 export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
 
   
-  monster_list; 
-  boss_list; 
-  treasure_list;
+  // monster_list; 
+  // boss_list; 
+  // treasure_list;
 
   //initialize
   current_room: {x: number, y: number};
@@ -54,16 +55,23 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
     //console.log(this.treasure_list);
   }
 
+  //bring in monsters, random order
+  monster_list = this.monster_layout_service.random_monster_layout;
+  //bring in boss monsters, random order
+  boss_list = this.monster_layout_service.random_boss_layout;
+  //bring in treasure to find, random order
+  treasure_list = this.room_layout_service.random_treasure_layout;
+
 
   ngOnInit() {
 
     //bring in monsters, random order
-    this.monster_list = this.monster_layout_service.random_monster_layout;
+    //this.monster_list = this.monster_layout_service.random_monster_layout;
     //bring in boss monsters, random order
-    this.boss_list = this.monster_layout_service.random_boss_layout;
+    //this.boss_list = this.monster_layout_service.random_boss_layout;
     //bring in treasure to find, random order
-    this.treasure_list = this.room_layout_service.random_treasure_layout;
-
+    //this.treasure_list = this.room_layout_service.random_treasure_layout;
+    //console.log(this.monster_list);
 
      //get the (x,y) coords
      this.current_room = this.playerArrayService.getPosition();
@@ -86,10 +94,11 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
        //console.log(this.playerArrayService.getSearchPossible());
      }
      
-     //console.log(this.playerArrayService.getPosition());
+     //console.log(this.current_monster_base_name);
   }
 
   ngDoCheck(){
+    console.log(this.monster_list);
     this.current_room = this.playerArrayService.getPosition();
     this.found_treasure = this.playerArrayService.getTreasureFound();
     //this.had_a_fight = this.move_room_service.moveRoom(0,0,this.playerArrayService.getPosition())[1];
@@ -119,6 +128,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       this.current_monster_base_name = this.monster_list[this.current_room_abs_id].name;
       this.current_monster_name = this.monster_list[this.current_room_abs_id].namePretty;
       this.current_monster_desc = this.monster_list[this.current_room_abs_id].description;
+      console.log(this.current_monster_base_name);
         if(this.current_monster_base_name == "treasure_find"){
           this.can_search_for_treasure = true;
           this.playerArrayService.setSearchPossible(true);

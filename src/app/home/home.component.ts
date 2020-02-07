@@ -9,6 +9,7 @@ import { rooms } from '../../../assets/rooms.json';
 import { monsters } from '../../../assets/monsters.json';
 import { treasure } from '../../../assets/treasure.json';
 import { bosses } from '../../../assets/bosses.json';
+import { MonsterLayoutService } from '../monster-layout.service';
 
 @Component({
   selector: 'app-home',
@@ -30,6 +31,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     public playerService: PlayerArrayService, 
     public roomLayoutService: RoomLayoutService,
+    public monsterLayoutService: MonsterLayoutService,
     public builder: FormBuilder,
     private router: Router) { 
     this.playerStartStuff = this.builder.group({
@@ -69,6 +71,32 @@ export class HomeComponent implements OnInit, OnDestroy {
     
     let found_treasures = treasure.slice(-9);
     this.roomLayoutService.scrambleRooms(found_treasures);
+
+    // this.monsterLayoutService.random_monster_layout = [];
+    // this.monsterLayoutService.random_boss_layout = [];
+    // this.roomLayoutService.random_treasure_layout = [];
+
+    for(var i = 0; i<this.monsterLayoutService.random_monster_layout.length; i++){
+      this.monsterLayoutService.random_monster_layout[i].dead = false;
+    }
+
+    for(var i = 0; i<this.monsterLayoutService.random_boss_layout.length; i++){
+      this.monsterLayoutService.random_boss_layout[i].dead = false;
+    }
+
+    for(var i = 0; i<found_treasures.length; i++){
+      found_treasures[i].found = false;
+      found_treasures[i].taken = false;
+    }
+
+    
+    this.monsterLayoutService.random_monster_layout = this.monsterLayoutService.scrambleMonsters(monsters);
+    this.monsterLayoutService.random_boss_layout = this.monsterLayoutService.scrambleMonsters(bosses);
+
+    this.roomLayoutService.random_treasure_layout = this.roomLayoutService.scrambleRooms(found_treasures);
+
+    console.log(this.monsterLayoutService.random_monster_layout);
+    console.log(this.roomLayoutService.random_treasure_layout);
 
     this.router.navigate(['/dungeon'])
   }
