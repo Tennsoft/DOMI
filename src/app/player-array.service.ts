@@ -31,11 +31,24 @@ export class PlayerArrayService {
   }
 
   //inventory
+  objectUnique( value ){
+    var unique = true;
+    this.inventory.forEach(function ( entry )
+    {
+        if ( entry == value )
+        {
+            unique = false;
+        }
+    });
+
+    return unique;
+}
 
   inventory = [];
-  bossItemAdded = false;
   addToInventory(addedItem){
-    this.inventory.push(addedItem);
+    if(this.objectUnique(addedItem)){
+      this.inventory.push(addedItem);
+    }
   }
 
   removeFromInventory(removedItem){
@@ -44,18 +57,6 @@ export class PlayerArrayService {
 
   getInventory(){
     return this.inventory;
-  }
-
-
-  konamiUsed = <boolean> false;
-  addBossItem(){
-    if(this.router.url === '/dungeon'){
-      if(!this.konamiUsed){
-        let item = treasure[Math.floor(Math.random() * treasure.length)].name
-        this.addToInventory(item)
-        this.konamiUsed = true;
-      }
-    }
   }
 
   //searching for treasure
