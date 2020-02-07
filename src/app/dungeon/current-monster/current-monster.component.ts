@@ -39,8 +39,10 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   current_treasure_name;
   current_treasure_desc;
 
-  
 
+  curRoom;
+  newRoom;
+  
   count_moves;
   count_temp = 0;
   sub: Subscription;
@@ -64,7 +66,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
 
 
   ngOnInit() {
-
+    this.curRoom= this.move_room_service.current_room_reduce();
     //bring in monsters, random order
     //this.monster_list = this.monster_layout_service.random_monster_layout;
     //bring in boss monsters, random order
@@ -98,6 +100,13 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   }
 
   ngDoCheck(){
+
+    this.newRoom = this.move_room_service.current_room_reduce();
+    // console.log("this is the new room" + this.newRoom)
+    if (this.newRoom != this.curRoom) {
+      this.clearTreasureBox();
+      this.curRoom = this.newRoom;
+    }
     //console.log(this.monster_list);
     this.current_room = this.playerArrayService.getPosition();
     this.found_treasure = this.playerArrayService.getTreasureFound();
@@ -170,6 +179,12 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
 
   }
 
+
+  clearTreasureBox() {
+    this.playerArrayService.setTreasureFound(false);
+    this.playerArrayService.getTreasureFound();
+    // console.log("clearFightBox() called, attempted to clear fight box " + this.current_fight_damage)
+  }
 
   searchForTreasure(){
    
