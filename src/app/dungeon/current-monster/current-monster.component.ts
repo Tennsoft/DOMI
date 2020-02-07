@@ -98,7 +98,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   }
 
   ngDoCheck(){
-    console.log(this.monster_list);
+    //console.log(this.monster_list);
     this.current_room = this.playerArrayService.getPosition();
     this.found_treasure = this.playerArrayService.getTreasureFound();
     //this.had_a_fight = this.move_room_service.moveRoom(0,0,this.playerArrayService.getPosition())[1];
@@ -128,7 +128,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       this.current_monster_base_name = this.monster_list[this.current_room_abs_id].name;
       this.current_monster_name = this.monster_list[this.current_room_abs_id].namePretty;
       this.current_monster_desc = this.monster_list[this.current_room_abs_id].description;
-      console.log(this.current_monster_base_name);
+     // console.log(this.current_monster_base_name);
         if(this.current_monster_base_name == "treasure_find"){
           this.can_search_for_treasure = true;
           this.playerArrayService.setSearchPossible(true);
@@ -153,7 +153,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
         }
    
     if(this.count_moves != this.count_temp){
-      console.log(this.count_moves + " "+ this.count_temp);
+     // console.log(this.count_moves + " "+ this.count_temp);
       this.found_treasure = false;
       this.count_temp = this.count_moves;
       
@@ -183,7 +183,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       
       this.playerArrayService.setTreasureFound(true);
       this.found_treasure =true;
-      console.log(this.count_moves);
+      //console.log(this.count_moves);
       this.playerArrayService.addToInventory(this.treasure_list[this.current_room_abs_id].name);
       this.treasure_list[this.current_room_abs_id].taken = true;
 
