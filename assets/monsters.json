@@ -100,7 +100,7 @@
             "corpse": "You see a pile of dust while inactive it still radiates malevolence."
         },
         {
-            "id": 8,
+            "id": 10,
             "name": "treasure_find",
             "namePretty": "",
             "description": "You don't see any monsters, but there is a small pile of rubble that might be hiding something.",
@@ -111,7 +111,7 @@
             "corpse": ""
         },
         {
-            "id": 9,
+            "id": 11,
             "name": "treasure_find",
             "namePretty": "",
             "description": "You don't see any monsters, but there is a small chest, the wood so soft and rotten you can push through it easily.",
@@ -121,7 +121,7 @@
             "dead": false,
             "corpse": ""
         },{
-            "id": 10,
+            "id": 12,
             "name": "treasure_find",
             "namePretty": "",
             "description": "You don't see any monsters, but one section of the wall looks suspiciously discolored and cracked.",
@@ -131,7 +131,7 @@
             "dead": false,
             "corpse": ""
         },{
-            "id": 11,
+            "id": 13,
             "name": "treasure_find",
             "namePretty": "",
             "description": "You don't see any monsters, but there is an ancient wooden chest with a rust-eaten lock.",
@@ -141,7 +141,7 @@
             "dead": false,
             "corpse": ""
         },{
-            "id": 12,
+            "id": 14,
             "name": "treasure_find",
             "namePretty": "",
             "description": "You don't see any monsters, but there is a skeleton dressed in rags, still cradling something in its bony grip.",
