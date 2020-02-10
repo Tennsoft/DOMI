@@ -24,7 +24,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   playerStartStuff = new FormGroup({
     playerName: new FormControl(''),
-    startItem: new FormControl('')
+    startItem: new FormControl(''),
+    difficulty: new FormControl('')
   });
 
 
@@ -36,12 +37,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     private router: Router) { 
     this.playerStartStuff = this.builder.group({
       playerName: [null, Validators.required],
-      startItem: [null, Validators.required]
+      startItem: [null, Validators.required],
+      difficulty: [null, Validators.required]
     });
   }
 
   ngOnInit() {
     this.audioPlayer.src = "../../assets/audio/MortalKombatTheme.mp3";
+    
   }
 
   onTestMettle(){
@@ -57,7 +60,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   onStart(){
+    
     this.player = this.playerStartStuff.value;
+    if (this.player["difficulty"] === "easy") {
     this.playerService.resetPosition(); 
     this.playerService.position = {x:1,y:0};
     this.playerService.setFightResult("");
@@ -95,5 +100,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     //console.log(this.roomLayoutService.random_treasure_layout);
 
     this.router.navigate(['/dungeon'])
+  }
   }
 }
