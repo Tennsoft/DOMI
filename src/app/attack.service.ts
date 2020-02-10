@@ -68,13 +68,19 @@ export class AttackService {
     }
   }
 
-  monster_list = this.monster_layout_service.random_monster_layout;
-  //bring in boss monsters, random order
-  boss_list = this.monster_layout_service.random_boss_layout;
-  //bring in treasure to find, random order
-  treasure_list = this.room_layout_service.random_treasure_layout;
+  monster_list;
+  boss_list;
+  treasure_list;
+  
 
   attackDeclared(damageType){
+    this.monster_list = this.monster_layout_service.random_monster_layout;
+    //bring in boss monsters, random order
+    this.boss_list = this.monster_layout_service.random_boss_layout;
+    //bring in treasure to find, random order
+    this.treasure_list = this.room_layout_service.random_treasure_layout;
+
+
     try{
     console.log("you attacked the " + this.currentMonster + " with the " + damageType);
     let curr_mons = this.currentMonster;
@@ -87,6 +93,7 @@ export class AttackService {
 
     //get index of current monster
     let my_index = this.monster_list.map(function(e){return e.namePretty;}).indexOf(curr_mons);
+    //console.log(this.treasure_list);
 
     //console.log(my_index);
     if(this.usedWeakness(damageType, this.currentMonster)){

@@ -56,9 +56,10 @@ export class PlayerArrayService {
 
   inventory = [];
   addToInventory(addedItem){
-    if(this.objectUnique(addedItem)){
+    //if(this.objectUnique(addedItem)){
+      console.log("added to inventory" + addedItem);
       this.inventory.push(addedItem);
-    }
+    //}
   }
 
   removeFromInventory(removedItem){

@@ -48,6 +48,10 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   sub: Subscription;
   had_a_fight;
 
+  monster_list;
+  boss_list;
+  treasure_list;
+
   constructor(
     public playerArrayService: PlayerArrayService, 
     public move_room_service: MoveRoomService, 
@@ -58,22 +62,22 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   }
 
   //bring in monsters, random order
-  monster_list = this.monster_layout_service.random_monster_layout;
+  //monster_list = this.monster_layout_service.random_monster_layout;
   //bring in boss monsters, random order
-  boss_list = this.monster_layout_service.random_boss_layout;
+  //boss_list = this.monster_layout_service.random_boss_layout;
   //bring in treasure to find, random order
-  treasure_list = this.room_layout_service.random_treasure_layout;
+  //treasure_list = this.room_layout_service.random_treasure_layout;
 
 
   ngOnInit() {
     this.curRoom= this.move_room_service.current_room_reduce();
     //bring in monsters, random order
-    //this.monster_list = this.monster_layout_service.random_monster_layout;
+    this.monster_list = this.monster_layout_service.random_monster_layout;
     //bring in boss monsters, random order
-    //this.boss_list = this.monster_layout_service.random_boss_layout;
+    this.boss_list = this.monster_layout_service.random_boss_layout;
     //bring in treasure to find, random order
-    //this.treasure_list = this.room_layout_service.random_treasure_layout;
-    //console.log(this.monster_list);
+    this.treasure_list = this.room_layout_service.random_treasure_layout;
+    //console.log(this.treasure_list);
 
      //get the (x,y) coords
      this.current_room = this.playerArrayService.getPosition();
@@ -84,6 +88,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
 
      //turn that into a single number to get an index from the rooms array
      this.current_room_abs_id = this.move_room_service.current_room_reduce();
+     //console.log("current room abs id is "+this.current_room_abs_id);
     
      //and pull a monster for where you happen to be
      this.current_monster_base_name = this.monster_list[this.current_room_abs_id].name;
@@ -102,7 +107,8 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   ngDoCheck(){
 
     this.newRoom = this.move_room_service.current_room_reduce();
-    // console.log("this is the new room" + this.newRoom)
+    //console.log("this is the new room" + this.newRoom)
+    //console.log(this.treasure_list);
     if (this.newRoom != this.curRoom) {
       this.clearTreasureBox();
       this.curRoom = this.newRoom;
