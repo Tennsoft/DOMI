@@ -79,6 +79,28 @@
         },
         {
             "id": 8,
+            "name": "flameElemental",
+            "namePretty": "Flame Elemental",
+            "description": "You see what appears to be a sentient flame enjoying its day in this fine dungeon",
+            "weakness": "bocketOWater",
+            "fightDamage": "The flames jump at you and burn brightly scorching you. You lose one point of health.  You found treasure! Check your inventory.",
+            "fightDie": "Proper fire safety training has ut the flames out.  You found treasure! Check your inventory.",
+            "dead": false,
+            "corpse": "A scorched spot is on the ground."
+        },
+        {
+            "id": 9,
+            "name": "faerie",
+            "namePretty": "Faerie",
+            "description": "A glowing purple ball appears to be in the room, it appears slightly malevolent",
+            "weakness": "coldIron",
+            "fightDamage": "The faerie strikes back at you before crumbling into dust. You lose one point of health.  You found treasure! Check your inventory.",
+            "fightDie": "The light fades as the fae falls to the ground crumbling to dust.  You found treasure! Check your inventory.",
+            "dead": false,
+            "corpse": "You see a pile of dust while inactive it still radiates malevolence."
+        },
+        {
+            "id": 8,
             "name": "treasure_find",
             "namePretty": "",
             "description": "You don't see any monsters, but there is a small pile of rubble that might be hiding something.",

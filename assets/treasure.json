@@ -97,6 +97,26 @@
             "effect": "weapon"
         },
         {
+            "name": "bocketOWater",
+            "namePretty": "Bucket Of Water",
+            "description": "An portable source of life giving water, that bucket also seems useful",
+            "strength": "bocketOWater",
+            "starting": false,
+            "found": false,
+            "taken": false,
+            "effect": "weapon"
+        },
+        {
+            "name": "coldIron",
+            "namePretty": "A chunk of cold Iron",
+            "description": "In old times this was used to ward off the fae",
+            "strength": "coldIron",
+            "starting": false,
+            "found": false,
+            "taken": false,
+            "effect": "weapon"
+        },
+        {
             "name": "heathPotion",
             "namePretty": "Health Potion",
             "description": "A marvel of medical science, this potion will heal 2 points of your vaguely defined injuries.",
