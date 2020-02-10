@@ -159,7 +159,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       else if(this.monster_list[this.current_room_abs_id].dead == true){
         this.current_monster_base_name = "";
         this.current_monster_name = "";
-        this.current_monster_desc = "";
+        this.current_monster_desc = this.monster_list[this.current_room_abs_id].corpse;
         this.can_search_for_treasure = false;
         this.playerArrayService.setSearchPossible(false);
           // setTimeout(() =>{ 
