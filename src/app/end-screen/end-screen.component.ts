@@ -18,11 +18,14 @@ export class EndScreenComponent implements OnInit {
 
   //playerName //= "Brave Adventurer";
   playerName = this.playerService.getName();
+  audioPlayer = new Audio();
+  finalScore
 
   flawlessMessage = "<h4 class='text-primary'>Flawless Victory, "+this.playerName+". You Won without taking any damage</h4>";
   winMessage = "<h4 class='text-primary'>Congratulations, "+this.playerName+".  You survived The Dungeon</h4>";
   loseMessage = "<h4 class='text-danger'>You Died</h4>";
   tieMessage = "<h4 class='text-warning'>You defeated the Boss but at what cost?</h4>";
+  FinalScore = "<h4 class='text-success'>Your Final Score Was ";
 
  
 
@@ -35,14 +38,31 @@ export class EndScreenComponent implements OnInit {
     //this.playerService.getFightResult();
 
 
+    this.finalScore = this.playerService.getScore() + this.playerHealth["curHP"];
+
+    console.log("player health is "+ this.playerHealth["curHP"]);
+
+    console.log("player score is " + this.finalScore);
+
+    this.FinalScore = this.FinalScore + this.finalScore +'</h4>';
+    console.log(this.FinalScore)
+
+
     if(this.playerHealth["maxHP"] === this.playerHealth["curHP"]){
       this.EndMessage = this.flawlessMessage;
+      this.youWin();
     } else if (this.playerHealth["curHP"] > 0) {
       this.EndMessage = this.winMessage;
+      this.youWin();
     } else if (this.playerHealth["bossHP"] === 0) {
       this.EndMessage = this.tieMessage;
     } else {
       this.EndMessage = this.loseMessage;
     }
+  }
+
+  youWin(){
+    this.audioPlayer.src = "../../assets/audio/youWin.mp3";
+    this.audioPlayer.play();
   }
 }

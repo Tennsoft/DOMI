@@ -9,6 +9,16 @@ import { treasure } from '../../assets/treasure.json';
   providedIn: 'root'
 })
 export class PlayerArrayService {
+  //score
+  score = <number> 0;
+
+  getScore(){
+    return this.score;
+  }
+
+  addToScore(){
+    this.score++;
+  }
 
   constructor(
     private router: Router

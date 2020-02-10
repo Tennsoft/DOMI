@@ -151,6 +151,7 @@ export class AttackService {
       if(chosen.namePretty === '') {
         return true;
       } else if(chosen.weakness === damageType) {
+        this.playerArray.addToScore();
         return true;
       } else { 
         return false; 
@@ -162,6 +163,7 @@ export class AttackService {
       if(chosen.namePretty === '') {
         return true;
       } else if(chosen.weakness === damageType) {
+        this.playerArray.addToScore();
         this.router.navigate(['/endScreen'])
         return true;
       } else { 
