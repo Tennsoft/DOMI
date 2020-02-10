@@ -31,9 +31,24 @@ export class PlayerArrayService {
   setName(newName){
     if(newName){
       this.name = newName;
+      if(newName === 'SpellSword') {
+        this.spellSword();
+      } else if (newName === 'Ben') {
+        this.benName();
+      }
     } else { 
       this.name = 'Brave Adventurer';
     }
+  }
+
+  benName(){
+    this.addToInventory('readME');
+    this.addToInventory('automaticCrossbow');
+  }
+
+  spellSword(){
+    this.addToInventory('sword');
+    this.addToInventory('wand');
   }
 
   getName(){
@@ -50,16 +65,15 @@ export class PlayerArrayService {
             unique = false;
         }
     });
-
     return unique;
 }
 
   inventory = [];
   addToInventory(addedItem){
-    //if(this.objectUnique(addedItem)){
-      console.log("added to inventory" + addedItem);
+    if(this.objectUnique(addedItem)){
+      //console.log("added to inventory" + addedItem);
       this.inventory.push(addedItem);
-    //}
+    }
   }
 
   removeFromInventory(removedItem){
