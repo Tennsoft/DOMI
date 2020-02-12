@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
 import { treasure } from '../../assets/treasure.json';
-//import { AttackService } from './attack.service';
 
 @Injectable({
   providedIn: 'root'
@@ -171,7 +170,7 @@ export class PlayerArrayService {
 
   //position
   position = { x: 1, y: 0 };
- 
+    
   setPosition(new_position){
     return this.position = new_position;
   }
@@ -188,11 +187,6 @@ export class PlayerArrayService {
       return input = true;
     }
   }
-
- 
-
-  
-
   //resetting the game
 
   clearInventory(){
