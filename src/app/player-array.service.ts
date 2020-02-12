@@ -11,6 +11,7 @@ import { treasure } from '../../assets/treasure.json';
 export class PlayerArrayService {
   //score
   score = <number> 0;
+  gold = <number> 2;
 
   getScore(){
     return this.score;
@@ -35,10 +36,22 @@ export class PlayerArrayService {
         this.spellSword();
       } else if (newName === 'Ben') {
         this.benName();
+      } else if (newName === 'Money Bags') {
+        this.moneyBagsName();
       }
     } else { 
       this.name = 'Brave Adventurer';
     }
+  }
+
+  moneyBagsName(){
+    this.addToInventory('gold');
+    this.addToInventory('gold');
+    this.addToInventory('gold');
+    this.addToInventory('gold');
+    this.addToInventory('gold');
+    this.addToInventory('gold');
+    this.addToInventory('gold');
   }
 
   benName(){
@@ -70,10 +83,23 @@ export class PlayerArrayService {
 
   inventory = [];
   addToInventory(addedItem){
-    if(this.objectUnique(addedItem)){
-      //console.log("added to inventory" + addedItem);
+    if(this.objectUnique(addedItem)) {
+      //console.log("added to inventory " + addedItem);
       this.inventory.push(addedItem);
+    } else if(addedItem === 'gold') {
+      //console.log("added gold")
+      this.addGold();
     }
+  }
+
+  addGold(){
+    this.gold = this.gold + 1;
+  }
+  spendGold(){
+    this.gold = this.gold - 1;
+  }
+  getGold(){
+    return this.gold;
   }
 
   removeFromInventory(removedItem){

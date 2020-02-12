@@ -12,6 +12,7 @@ import { HealthChangeService } from '../../health-change.service';
 export class InventoryComponent implements OnInit, OnChanges {
   itemDesc = [];
   inventory;
+  gold;
 
   constructor( 
     private playerArrayConst : PlayerArrayService, 
@@ -20,12 +21,8 @@ export class InventoryComponent implements OnInit, OnChanges {
 
   ngOnInit(){
     this.inventory = this.playerArrayConst.getInventory();
-    // this.playerArrayConst.inventoryUpdated.subscribe(
-    //   () => {
-        
-    //   }
-    // );
   }
+
   ngOnChanges( changes: SimpleChanges ) {
     this.inventory = this.playerArrayConst.getInventory();
   }
@@ -80,6 +77,13 @@ export class InventoryComponent implements OnInit, OnChanges {
       this.getHealAmmount(item);
       this.healthChange.updateLife();
       this.playerArrayConst.removeFromInventory(item);
+      this.inventory = this.playerArrayConst.getInventory();
+    } else if( this.getItemType(item) === 'gold' ) {
+      this.playerArrayConst.spendGold();
+      this.gold = this.playerArrayConst.getGold();
+      if(this.gold === 0 ){
+        this.playerArrayConst.removeFromInventory(item);
+      }
       this.inventory = this.playerArrayConst.getInventory();
     }
   }

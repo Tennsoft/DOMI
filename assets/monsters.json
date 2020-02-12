@@ -93,7 +93,7 @@
             "name": "faerie",
             "namePretty": "Faerie",
             "description": "A glowing purple ball appears to be in the room, it appears slightly malevolent",
-            "weakness": "coldIron",
+            "weakness": "sword",
             "fightDamage": "The faerie strikes back at you before crumbling into dust. You lose one point of health.  You found treasure! Check your inventory.",
             "fightDie": "The light fades as the fae falls to the ground crumbling to dust.  You found treasure! Check your inventory.",
             "dead": false,
@@ -150,6 +150,17 @@
             "fightDie": "",
             "dead": false,
             "corpse": ""
+        },
+        {
+            "id": 15,
+            "name": "treant",
+            "namePretty": "Treant",
+            "description": "If trees culd walk around and look pissed that would be an acurate description of what you see",
+            "weakness": "fire",
+            "fightDamage": "The treant strickes at you before falling to pieces. You lose one point of health.  You found treasure! Check your inventory.",
+            "fightDie": "The flames burn the treant to cinders. You found treasure! Check your inventory.",
+            "dead": false,
+            "corpse": "You see the remains of a once great tree"
         }
     ]
 }

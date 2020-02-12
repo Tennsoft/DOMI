@@ -21,10 +21,17 @@
         <td><button class="btn btn-primary" type="button">Use Wand</button></td>
         <td>Your trusty magic wand that has protected you through many a journey against magical foes</td>
       </tr> -->
+      <!-- <tr>
+        <th scope="row">1</th>
+        <td> Gold </td>
+        <td> Total:{{ this.gold }}</td>
+        <td> Gold can be used as a placeholder for value in exchange for goods and services.</td>
+      </tr> -->
 
       <tr *ngFor="let field of inventory; let i = index">
         <th scope="row">{{ i+1 }}</th>
-        <td>{{ getName(field) }}</td>
+        <td *ngIf="getName(field) === 'Gold Coin'">Gold x{{ this.playerArrayConst.getGold() }}</td>
+        <td *ngIf="getName(field) !== 'Gold Coin'">{{ getName(field) }}</td>
         <td><button class="btn btn-primary" type="button" (click) = "useInventoryItem(field)">Use {{ getName(field) }}</button></td>
         <td>{{ getDesc(field) }}</td>
       </tr>

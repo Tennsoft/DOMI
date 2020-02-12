@@ -10,7 +10,7 @@
         },
         {
             "name": "sword",
-            "namePretty": "Sword",
+            "namePretty": "Iron Sword",
             "description": "Your trusty sword that has cleaved through many a beast that would have seen you as dinner.",
             "strength": "sword",
             "starting": true,
@@ -107,16 +107,6 @@
             "effect": "weapon"
         },
         {
-            "name": "coldIron",
-            "namePretty": "A chunk of cold Iron",
-            "description": "In old times this was used to ward off the fae",
-            "strength": "coldIron",
-            "starting": false,
-            "found": false,
-            "taken": false,
-            "effect": "weapon"
-        },
-        {
             "name": "heathPotion",
             "namePretty": "Health Potion",
             "description": "A marvel of medical science, this potion will heal 2 points of your vaguely defined injuries.",
@@ -148,6 +138,16 @@
             "found": false,
             "taken": false,
             "effect": "heal"
+        },
+        {
+            "name": "gold",
+            "namePretty": "Gold Coin",
+            "description": "Gold can be used as a placeholder for value in exchange for goods and services.",
+            "strength": "none",
+            "starting": false,
+            "found": false,
+            "taken": false,
+            "effect": "gold"
         }
     ]
 }

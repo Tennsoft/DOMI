@@ -55,6 +55,12 @@ export class AppComponent  implements AfterViewInit {
               label: "Sequences",
               description: "win the game ",
               command: () => this.playerArray.addToInventory('lesserheathPotion'),
+          },             
+          {
+              key: ["a d d g o l d"],
+              label: "Sequences",
+              description: "adds gold",
+              command: () => this.playerArray.addToInventory('gold')
           }
         );  
     }  

@@ -40,12 +40,7 @@ export class EndScreenComponent implements OnInit {
 
     this.finalScore = this.playerService.getScore() + this.playerHealth["curHP"];
 
-    console.log("player health is "+ this.playerHealth["curHP"]);
-
-    console.log("player score is " + this.finalScore);
-
     this.FinalScore = this.FinalScore + this.finalScore +'</h4>';
-    console.log(this.FinalScore)
 
 
     if(this.playerHealth["maxHP"] === this.playerHealth["curHP"]){
