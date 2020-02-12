@@ -196,7 +196,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   searchForTreasure(){
    
     if(this.treasure_list[this.current_room_abs_id].found == false && this.treasure_list[this.current_room_abs_id].taken == false){
-      //this.found_treasure =true;
+      //this.found_treasure = true;
       this.treasure_list[this.current_room_abs_id].found = true;
       this.current_treasure_name = this.treasure_list[this.current_room_abs_id].namePretty;
       this.current_treasure_desc = this.treasure_list[this.current_room_abs_id].description;
@@ -204,16 +204,18 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       this.playerArrayService.setSearchPossible(false);
       
       this.playerArrayService.setTreasureFound(true);
-      this.found_treasure =true;
+      this.found_treasure = true;
       //console.log(this.count_moves);
       this.playerArrayService.addToInventory(this.treasure_list[this.current_room_abs_id].name);
       this.treasure_list[this.current_room_abs_id].taken = true;
 
+
       this.treasureSummonMonster();
 
-      setTimeout(() =>{
+      setTimeout(() => {
         this.found_treasure = false;
         this.playerArrayService.setTreasureFound(false);
+        document.getElementById("search").hidden = true;
       }, 1900);
     }
     else{
@@ -238,14 +240,11 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
         //console.log(this.monster_list[i])
         i--;
       }
-      console.log(this.monster_list[i].namePretty);
-//this currently retrieves a monster that is at the end of the randomized list 
-//it needs to insert that monster into the current monster of the current room
+      //console.log(this.monster_list[i].namePretty);
       this.monster_list[this.current_room_abs_id] = this.monster_list[i];
+      let temp2 = "A " + this.monster_list[i].namePretty + " heard the noise from your search for treasure and apporoached";
 
       this.monster_list[i].name = 'treasure_find';
-      let temp2 = "a monster was summoned"
-      
 
       this.playerArrayService.setFightResult(temp2);
       setTimeout(() => {
