@@ -32,6 +32,8 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   boss_monster_name;
   boss_monster_desc;
 
+  queueRoom = <boolean> false;
+
   can_search_for_treasure = this.playerArrayService.getSearchPossible();
 
 
@@ -43,8 +45,6 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   curRoom;
   newRoom;
   
-  count_moves;
-  count_temp = 0;
   sub: Subscription;
   had_a_fight;
 
@@ -58,7 +58,6 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
     public monster_layout_service: MonsterLayoutService,
     public room_layout_service: RoomLayoutService,
     public attackService: AttackService) { 
-    //console.log(this.treasure_list);
   }
 
   //bring in monsters, random order
@@ -93,11 +92,14 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
      this.current_monster_desc = this.monster_list[this.current_room_abs_id].description;
 
      if(this.current_monster_base_name == "treasure_find"){
-       this.can_search_for_treasure = true;
-       this.playerArrayService.setSearchPossible(true);
-       //console.log()
-       //console.log(this.playerArrayService.getSearchPossible());
-     }
+      this.can_search_for_treasure = true;
+      this.playerArrayService.setSearchPossible(true);
+      //console.log()
+      //console.log(this.playerArrayService.getSearchPossible());
+    }
+    if(this.current_monster_base_name == "waitInLine"){
+      this.queueRoom = true;
+    }
      
      //console.log(this.current_monster_base_name);
   }
@@ -118,7 +120,6 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
     //this.playerArrayService.setFightResult(this.had_a_fight);
     
 
-   // console.log(this.playerArrayService.countSub.getValue());
    
     
     this.current_room_abs_id = this.move_room_service.current_room_reduce();
@@ -164,13 +165,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
           //   this.playerArrayService.setFightResult('');
           // }, 1900);
         }
-   
-    if(this.count_moves != this.count_temp){
-     // console.log(this.count_moves + " "+ this.count_temp);
-      this.found_treasure = false;
-      this.count_temp = this.count_moves;
-      
-    }
+
     
     
     //console.log("current monster is "+ this.current_monster_name);
@@ -202,7 +197,6 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       
       this.playerArrayService.setTreasureFound(true);
       this.found_treasure = true;
-      //console.log(this.count_moves);
       this.playerArrayService.addToInventory(this.treasure_list[this.current_room_abs_id].name);
       this.treasure_list[this.current_room_abs_id].taken = true;
 
@@ -228,12 +222,14 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
 
   }
 
+
+
   treasureSummonMonster(){
     let chance = Math.floor( Math.random() * 10 );
     if( chance > 1 ) {
       //console.log("monster was summoned")
       let i = this.monster_list.length - 1;
-      while( this.monster_list[i].name === 'treasure_find' ){
+      while( this.monster_list[i].monster !== true ){
         //console.log(this.monster_list[i])
         i--;
       }

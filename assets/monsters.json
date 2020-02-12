@@ -9,7 +9,8 @@
             "fightDamage": "The werebeaver skillfully dodges your attack, using its tail as a springboard to get close enough to sink its vile teeth into your leg. You lose one point of health.  You found treasure! Check your inventory.",
             "fightDie": "The werebeaver goes limp and falls to the ground.  You found treasure! Check your inventory.",
             "dead": false,
-            "corpse": "The lumpy body of the werebeaver lies huddled on the floor, powerful tail now limp and unmoving."
+            "corpse": "The lumpy body of the werebeaver lies huddled on the floor, powerful tail now limp and unmoving.",
+            "monster": true
         },
         {
             "id": 2,
@@ -20,7 +21,8 @@
             "fightDamage": "The monstrous koi fish wobbles around your attack. It then slides toward you, sinking its fang into you. You lose one point of health.  You found treasure! Check your inventory.",
             "fightDie": "The koi fish suddenly stiffens its muscles. It begins to shrink, slowly at first, then rapidly. It is now the size of a typical koi, flopping around inside the denim jacket it once wore.  You found treasure! Check your inventory.",
             "dead": false,
-            "corpse": "The disintegrating body of a small, colorful koi fish lies in a small puddle on the ground."
+            "corpse": "The disintegrating body of a small, colorful koi fish lies in a small puddle on the ground.",
+            "monster": true
         },
         {
             "id": 3,
@@ -31,7 +33,8 @@
             "fightDamage": "The Pheonix Bear RAGES, dropping its head and charging at you with its fearsome claws. You lose one point of health.  You found treasure! Check your inventory.",
             "fightDie": "The Phoenix Bear gives a whimpering cry, self-engulfing into a pile of ash... better get out of here fast.  You found treasure! Check your inventory.",
             "dead": false,
-            "corpse": "There is a pile of ash where the Pheonix Bear used to be."
+            "corpse": "There is a pile of ash where the Pheonix Bear used to be.",
+            "monster": true
         },
         {
             "id": 4,
@@ -42,7 +45,8 @@
             "fightDamage": "The mummy is faster than it looks, and before you know it, the creature has grabbed you. You feel lifeforce drain out of your body. You lose one point of health.  You found treasure! Check your inventory.",
             "fightDie": "The mummy, in one final gasp, crumbles into a pile of cloth.  You found treasure! Check your inventory.",
             "dead": false,
-            "corpse": "There is a pile of crumbling cloth bandages where the mummy used to be."
+            "corpse": "There is a pile of crumbling cloth bandages where the mummy used to be.",
+            "monster": true
         },
         {
             "id": 5,
@@ -53,7 +57,8 @@
             "fightDamage": "The Bandersnatch lunges toward you and sinks its fangs to the bone in your leg. You lose one point of health.  You found treasure! Check your inventory.",
             "fightDie": "The Bandersnatch staggers, roaring, before collapsing in an untidy heap of long limbs and grinning fangs.  You found treasure! Check your inventory.",
             "dead": false,
-            "corpse": "The Bandersnatch sprawls on the ground, thoroughly dead."
+            "corpse": "The Bandersnatch sprawls on the ground, thoroughly dead.",
+            "monster": true
         },
         {
             "id": 6,
@@ -64,7 +69,8 @@
             "fightDamage": "The Ooze extends a psuedopod which glops onto your leg.  Acid burns you.  You lose one point of health.  You found treasure! Check your inventory.",
             "fightDie": "The Ooze explodes into a shower of jello, leaving sticky puddles all over the floor.  You found treasure! Check your inventory.",
             "dead": false,
-            "corpse": "The walls are splotched with smears of sticky green.  A good mopping would definitely help."
+            "corpse": "The walls are splotched with smears of sticky green.  A good mopping would definitely help.",
+            "monster": true
         },
         {
             "id": 7,
@@ -75,7 +81,8 @@
             "fightDamage": "The treasure chest jumps out at you, biting into your arm.  You lose one point of health.  You found treasure! Check your inventory.",
             "fightDie": "The treasure chest falls over with a pathetic gurgle.  You found treasure! Check your inventory.",
             "dead": false,
-            "corpse": "The empty mimic is spread-eagled on the ground, quite dead."
+            "corpse": "The empty mimic is spread-eagled on the ground, quite dead.",
+            "monster": true
         },
         {
             "id": 8,
@@ -86,7 +93,8 @@
             "fightDamage": "The flames jump at you and burn brightly scorching you. You lose one point of health.  You found treasure! Check your inventory.",
             "fightDie": "Proper fire safety training has ut the flames out.  You found treasure! Check your inventory.",
             "dead": false,
-            "corpse": "A scorched spot is on the ground."
+            "corpse": "A scorched spot is on the ground.",
+            "monster": true
         },
         {
             "id": 9,
@@ -97,7 +105,8 @@
             "fightDamage": "The faerie strikes back at you before crumbling into dust. You lose one point of health.  You found treasure! Check your inventory.",
             "fightDie": "The light fades as the fae falls to the ground crumbling to dust.  You found treasure! Check your inventory.",
             "dead": false,
-            "corpse": "You see a pile of dust while inactive it still radiates malevolence."
+            "corpse": "You see a pile of dust while inactive it still radiates malevolence.",
+            "monster": true
         },
         {
             "id": 10,
@@ -160,7 +169,8 @@
             "fightDamage": "The treant strickes at you before falling to pieces. You lose one point of health.  You found treasure! Check your inventory.",
             "fightDie": "The flames burn the treant to cinders. You found treasure! Check your inventory.",
             "dead": false,
-            "corpse": "You see the remains of a once great tree"
+            "corpse": "You see the remains of a once great tree",
+            "monster": true
         },
         {
             "id": 16,
@@ -171,7 +181,17 @@
             "fightDamage": "You were bitten by the Honey Badger, you might want to check for rabies when you get out. You lose one point of health.",
             "fightDie": "",
             "dead": false,
-            "corpse": "Honey Badger is just sitting there."
-        }
+            "corpse": "Honey Badger is just sitting there.",
+            "monster": true
+        }  ,
+        {
+            "id": 17,
+            "name": "waitInLine",
+            "namePretty": "Queue",
+            "trap": true,
+            "description": "You find yourself in at the back of queue with four people in line ahead of you. ",
+            "completed": false
+
+        }        
     ]
 }
