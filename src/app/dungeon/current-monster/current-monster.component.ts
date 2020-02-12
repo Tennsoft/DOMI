@@ -82,9 +82,6 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
      //get the (x,y) coords
      this.current_room = this.playerArrayService.getPosition();
 
-     this.sub = this.playerArrayService.getCount.subscribe(num => {
-      this.count_moves = num;
-    })
 
      //turn that into a single number to get an index from the rooms array
      this.current_room_abs_id = this.move_room_service.current_room_reduce();

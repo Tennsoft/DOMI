@@ -171,10 +171,7 @@ export class PlayerArrayService {
 
   //position
   position = { x: 1, y: 0 };
-  count = 0;
-  countSub: BehaviorSubject<number> = new BehaviorSubject(0);
-  getCount: Observable<number> = this.countSub.asObservable();
-    
+ 
   setPosition(new_position){
     return this.position = new_position;
   }
@@ -183,14 +180,16 @@ export class PlayerArrayService {
     return this.position;
   }
 
-  setCount() {
-    this.count = this.count+1; 
-    this.countSub.next(this.count);
+  toggle(input){
+    if(input == true){
+      return input = false;
+    }
+    else{
+      return input = true;
+    }
   }
 
-  // getCount(){
-  //   return this.count;
-  // }
+ 
 
   
 
@@ -200,7 +199,6 @@ export class PlayerArrayService {
     this.inventory = [];
     this.health.curHP = this.health.maxHP;
     this.setName('');
-    this.count = 0;
     this.router.navigate(['/']);
   }
 
