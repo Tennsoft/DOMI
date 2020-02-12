@@ -82,7 +82,7 @@ export class AttackService {
 
 
     try{
-    console.log("you attacked the " + this.currentMonster + " with the " + damageType);
+    //console.log("you attacked the " + this.currentMonster + " with the " + damageType);
     let curr_mons = this.currentMonster;
     //console.log(curr_mons);
     let my_monster_entry = monsters.monsters.filter(function(items){
@@ -95,8 +95,11 @@ export class AttackService {
     let my_index = this.monster_list.map(function(e){return e.namePretty;}).indexOf(curr_mons);
     //console.log(this.treasure_list);
 
-    //console.log(my_index);
-    if(this.usedWeakness(damageType, this.currentMonster)){
+    if(curr_mons === "Honey Badger"){
+      this.playerArray.loseHealth();
+      this.healthChange.updateLife();
+      this.playerArray.setFightResult(my_monster_entry.fightDamage);
+    } else if(this.usedWeakness(damageType, this.currentMonster)) {
       //console.log(this.monster_list[my_index].dead);
       if(this.monster_list[my_index].dead == false && this.monster_list[my_index].name != "treasure_find"){
       this.playerArray.setFightResult(my_monster_entry.fightDie);
@@ -105,7 +108,7 @@ export class AttackService {
       }
 
       //console.log("you used the right weapon");
-     } else{
+     } else {
        //console.log("you used the wrong weapon");
        this.playerArray.loseHealth();
        this.healthChange.updateLife();
@@ -138,9 +141,9 @@ export class AttackService {
         
         this.playerArray.setFightResult(my_monster_entry.fightDie);
         //this.playerArray.addToInventory(this.treasure_list[my_index].name);
-        console.log("you used the right weapon");
+        //console.log("you used the right weapon");
       } else {
-        console.log("you used the wrong weapon");
+        //console.log("you used the wrong weapon");
           this.playerArray.loseHealth();
           this.healthChange.updateLife();
           this.playerArray.setFightResult(my_monster_entry.fightDamage);

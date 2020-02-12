@@ -11,18 +11,19 @@ import { MoveRoomService } from 'src/app/move-room.service'
 })
 export class CurrentFightComponent implements OnInit, DoCheck {
 
-  constructor(public playerArrayService: PlayerArrayService, 
-              public attackService: AttackService,
-              public monster_layout_service: MonsterLayoutService,
-              public moveRoom: MoveRoomService ) { }
+  constructor(
+    public playerArrayService: PlayerArrayService, 
+    public attackService: AttackService,
+    public monster_layout_service: MonsterLayoutService,
+    public moveRoom: MoveRoomService ) { }
 
     monster;
     current_fight_damage;
-    current_fight_die;
+    //current_fight_die;
     current_treasure;
     monster_dead;
-    curRoom
-    newRoom
+    curRoom;
+    newRoom;
 
     monster_list;
 
@@ -35,10 +36,10 @@ export class CurrentFightComponent implements OnInit, DoCheck {
   ngOnInit() {
     this.monster_list = this.monster_layout_service.random_monster_layout;
     this.current_fight_damage = this.playerArrayService.getFightResult();
-    this.curRoom= this.moveRoom.current_room_reduce();
+    this.curRoom = this.moveRoom.current_room_reduce();
   }
 
-  ngDoCheck(){
+  ngDoCheck() {
     //get position
     // console.log("this is the current room " + this.curRoom)
     this.newRoom = this.moveRoom.current_room_reduce();
@@ -53,10 +54,7 @@ export class CurrentFightComponent implements OnInit, DoCheck {
     
     //declare attack
     this.current_fight_damage = this.playerArrayService.getFightResult();
+    //console.log(this.current_fight_damage);
   }
-
-  
-
-
 
 }

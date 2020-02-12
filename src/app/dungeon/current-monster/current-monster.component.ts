@@ -70,7 +70,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
 
 
   ngOnInit() {
-    this.curRoom= this.move_room_service.current_room_reduce();
+    this.curRoom = this.move_room_service.current_room_reduce();
     //bring in monsters, random order
     this.monster_list = this.monster_layout_service.random_monster_layout;
     //bring in boss monsters, random order
@@ -98,6 +98,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
      if(this.current_monster_base_name == "treasure_find"){
        this.can_search_for_treasure = true;
        this.playerArrayService.setSearchPossible(true);
+       //console.log()
        //console.log(this.playerArrayService.getSearchPossible());
      }
      
@@ -132,18 +133,18 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       this.playerArrayService.setFightResult("");
       this.current_monster_name = this.boss_list[1].namePretty;
       this.current_monster_desc = this.boss_list[1].description;
-    }else{
+    } else {
       //this.can_search_for_treasure = false;
       this.found_treasure = this.playerArrayService.getTreasureFound();
       this.playerArrayService.setSearchPossible(false);
       
       //if monster not dead, display it
       if(this.monster_list[this.current_room_abs_id].dead == false){
-        this.playerArrayService.setFightResult('');
-      this.current_monster_base_name = this.monster_list[this.current_room_abs_id].name;
-      this.current_monster_name = this.monster_list[this.current_room_abs_id].namePretty;
-      this.current_monster_desc = this.monster_list[this.current_room_abs_id].description;
-     // console.log(this.current_monster_base_name);
+        //this.playerArrayService.setFightResult('');
+        this.current_monster_base_name = this.monster_list[this.current_room_abs_id].name;
+        this.current_monster_name = this.monster_list[this.current_room_abs_id].namePretty;
+        this.current_monster_desc = this.monster_list[this.current_room_abs_id].description;
+        // console.log(this.current_monster_base_name);
         if(this.current_monster_base_name == "treasure_find"){
           this.can_search_for_treasure = true;
           this.playerArrayService.setSearchPossible(true);
@@ -208,18 +209,17 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       this.playerArrayService.addToInventory(this.treasure_list[this.current_room_abs_id].name);
       this.treasure_list[this.current_room_abs_id].taken = true;
 
-     setTimeout(() =>{
-      this.found_treasure = false;
-      this.playerArrayService.setTreasureFound(false);
-     }, 1900);
-      
+      this.treasureSummonMonster();
 
-     
+      setTimeout(() =>{
+        this.found_treasure = false;
+        this.playerArrayService.setTreasureFound(false);
+      }, 1900);
     }
     else{
       this.current_treasure_name = "";
       this.current_treasure_desc = "nothing new, even though you search carefully";
-      this.found_treasure =true;
+      this.found_treasure = true;
       this.playerArrayService.setTreasureFound(true);
       setTimeout(() =>{
         this.found_treasure = false;
@@ -229,8 +229,35 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
 
   }
 
- ngOnDestroy(){
-  this.sub.unsubscribe();
- }
+  treasureSummonMonster(){
+    let chance = Math.floor( Math.random() * 10 );
+    if( chance > 1 ) {
+      //console.log("monster was summoned")
+      let i = this.monster_list.length - 1;
+      while( this.monster_list[i].name === 'treasure_find' ){
+        //console.log(this.monster_list[i])
+        i--;
+      }
+      console.log(this.monster_list[i].namePretty);
+//this currently retrieves a monster that is at the end of the randomized list 
+//it needs to insert that monster into the current monster of the current room
+      this.monster_list[this.current_room_abs_id] = this.monster_list[i];
+
+      this.monster_list[i].name = 'treasure_find';
+      let temp2 = "a monster was summoned"
+      
+
+      this.playerArrayService.setFightResult(temp2);
+      setTimeout(() => {
+        let temp = this.playerArrayService.getFightResult();
+        console.log(temp);
+      }, 1900);
+      
+    }
+  }
+
+  ngOnDestroy(){
+    this.sub.unsubscribe();
+  }
 
 }

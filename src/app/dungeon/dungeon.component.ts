@@ -37,7 +37,7 @@ export class DungeonComponent implements OnInit, DoCheck {
     this.playerArrayService.setTreasureFound(false);
     this.playerArrayService.setCount();
     this.playerArrayService.setFightResult("");
-    console.log(this.playerArrayService.getFightResult());
+    //console.log(this.playerArrayService.getFightResult());
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     let new_position= this.move_room_service.moveRoom(0,1,current_position);
     this.playerArrayService.setPosition(new_position);
@@ -91,10 +91,9 @@ export class DungeonComponent implements OnInit, DoCheck {
     // console.log(this.playerArrayService.getPosition());
   }
 
-ngDoCheck(){
-  // this.can_search_for_treasure = this.playerArrayService.getSearchPossible();
-  // console.log(this.can_search_for_treasure);
-}
+  ngDoCheck(){
+    // this.can_search_for_treasure = this.playerArrayService.getSearchPossible();
+    // console.log(this.can_search_for_treasure);
+  }
   
-
 }

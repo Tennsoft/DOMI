@@ -165,7 +165,7 @@ export class PlayerArrayService {
 
   setFightResult(result){
     this.fight_result = result;
-    return this.fight_result;
+    console.log(this.fight_result);
   }
 
 

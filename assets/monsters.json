@@ -155,12 +155,23 @@
             "id": 15,
             "name": "treant",
             "namePretty": "Treant",
-            "description": "If trees culd walk around and look pissed that would be an acurate description of what you see",
+            "description": "If trees could walk around and look pissed that would be an acurate description of what you see",
             "weakness": "fire",
             "fightDamage": "The treant strickes at you before falling to pieces. You lose one point of health.  You found treasure! Check your inventory.",
             "fightDie": "The flames burn the treant to cinders. You found treasure! Check your inventory.",
             "dead": false,
             "corpse": "You see the remains of a once great tree"
+        },
+        {
+            "id": 16,
+            "name": "honeyBadger",
+            "namePretty": "Honey Badger",
+            "description": "Honey Badger DGAF",
+            "weakness": "none",
+            "fightDamage": "You were bitten by the Honey Badger, you might want to check for rabies when you get out. You lose one point of health.",
+            "fightDie": "",
+            "dead": false,
+            "corpse": "Honey Badger is just sitting there."
         }
     ]
 }
