@@ -25,6 +25,13 @@ export class PlayerArrayService {
     //private attkServ: AttackService
   ) {}
 
+  //queue initial length
+  queuelength = 5;
+
+  getQueueLength(){
+    return this.queuelength;
+  }
+
   //name
   name = <string> 'Brave Adventurer';
   
@@ -164,7 +171,7 @@ export class PlayerArrayService {
 
   setFightResult(result){
     this.fight_result = result;
-    console.log(this.fight_result);
+    //console.log(this.fight_result);
   }
 
 

@@ -32,7 +32,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   boss_monster_name;
   boss_monster_desc;
 
-  queueRoom = <boolean> false;
+  queueRoom = <boolean> true;
 
   can_search_for_treasure = this.playerArrayService.getSearchPossible();
 
@@ -51,6 +51,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   monster_list;
   boss_list;
   treasure_list;
+  currentWait;
 
   constructor(
     public playerArrayService: PlayerArrayService, 
@@ -91,6 +92,8 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
      this.current_monster_name = this.monster_list[this.current_room_abs_id].namePretty;
      this.current_monster_desc = this.monster_list[this.current_room_abs_id].description;
 
+     this.currentWait = this.playerArrayService.getQueueLength();
+
      if(this.current_monster_base_name == "treasure_find"){
       this.can_search_for_treasure = true;
       this.playerArrayService.setSearchPossible(true);
@@ -98,6 +101,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       //console.log(this.playerArrayService.getSearchPossible());
     }
     if(this.current_monster_base_name == "waitInLine"){
+      this.playerArrayService.setFightResult("You find yourself at the back of a queue with 5 people in front of you.");
       this.queueRoom = true;
     }
      
@@ -112,6 +116,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
     if (this.newRoom != this.curRoom) {
       this.clearTreasureBox();
       this.curRoom = this.newRoom;
+      this.currentWait = this.playerArrayService.getQueueLength();
     }
     //console.log(this.monster_list);
     this.current_room = this.playerArrayService.getPosition();
@@ -119,14 +124,15 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
     //this.had_a_fight = this.move_room_service.moveRoom(0,0,this.playerArrayService.getPosition())[1];
     //this.playerArrayService.setFightResult(this.had_a_fight);
     
+    
 
    
-    
     this.current_room_abs_id = this.move_room_service.current_room_reduce();
     //console.log(this.current_room_abs_id)
 
     if(this.current_room_abs_id == 6){
       this.can_search_for_treasure = false;
+      this.queueRoom = false;
       this.playerArrayService.setTreasureFound(false);
       this.playerArrayService.setFightResult("");
       this.current_monster_name = this.boss_list[1].namePretty;
@@ -152,6 +158,12 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
           this.found_treasure = this.playerArrayService.getTreasureFound();
           this.current_treasure_name = "";
           this.current_treasure_desc = "";
+        }
+        if(this.current_monster_base_name == "waitInLine"){
+          this.queueRoom = true;
+        }
+        else{
+          this.queueRoom = false;
         }
       }
       //if monster dead, don't display
@@ -206,7 +218,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
       setTimeout(() => {
         this.found_treasure = false;
         this.playerArrayService.setTreasureFound(false);
-        document.getElementById("search").hidden = true;
+        this.can_search_for_treasure = false;
       }, 1900);
     }
     else{
@@ -222,11 +234,31 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
 
   }
 
+  waitInLine(){
+    //console.log(this.currentWait)
+    this.currentWait--;
+    let temp2 = "Thankyou for waiting patiently, there are currently "+ this.currentWait+ " people in front of you";
+    //console.log(this.currentWait)
+
+    if(this.currentWait === 0){
+      this.searchForTreasure();
+      temp2 = "Thankyou for your patience. You recieved Treasure, Check your inventory";
+      this.monster_list[this.current_room_abs_id].dead = true;
+      this.playerArrayService.addToScore();
+    }
+    //console.log(this.monster_list[this.current_room_abs_id]);
+    //console.log(this.monster_list[this.current_room_abs_id].dead);
+    this.playerArrayService.setFightResult(temp2);
+  }
+
 
 
   treasureSummonMonster(){
     let chance = Math.floor( Math.random() * 10 );
-    if( chance > 1 ) {
+
+//this line ensures that no monster is summoned to the queue room 
+    if( this.queueRoom === true) { chance = 0; }
+    if( chance > 2 ) {
       //console.log("monster was summoned")
       let i = this.monster_list.length - 1;
       while( this.monster_list[i].monster !== true ){
@@ -244,6 +276,11 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
         let temp = this.playerArrayService.getFightResult();
         console.log(temp);
       }, 1900);
+      
+    } else {
+        setTimeout(() =>{
+          this.monster_list[this.current_room_abs_id].dead = true;
+        }, 1900);
       
     }
   }

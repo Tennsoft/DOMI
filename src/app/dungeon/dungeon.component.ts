@@ -65,10 +65,10 @@ export class DungeonComponent implements OnInit, DoCheck {
   
   ngDoCheck(){
     let now_where = this.playerArrayService.getPosition();
-    console.log(now_where.y);
+    //console.log(now_where.y);
      switch(now_where.y){
      case 2:
-       console.log("boss room");
+       //console.log("boss room");
        this.cantGoNorth = true;
        this.cantGoSouth = false;
        this.cantGoEast = true;
@@ -76,7 +76,7 @@ export class DungeonComponent implements OnInit, DoCheck {
        break;
 
      case 1:
-       console.log("moved north");
+       //console.log("moved north");
        this.cantGoNorth = false;
        this.cantGoSouth = false;
        this.cantGoEast = false;
