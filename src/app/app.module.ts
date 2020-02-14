@@ -19,6 +19,7 @@ import { HealthBarComponent } from './dungeon/health-bar/health-bar.component';
 import { CurrentFightComponent } from './dungeon/current-fight/current-fight.component';
 import { AttackService } from './attack.service';
 import { DevBoxComponent } from './dev-box/dev-box.component';
+import { FourByFourMoveRoomService } from './four-by-four-move-room.service';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { DevBoxComponent } from './dev-box/dev-box.component';
     KeyboardShortcutsModule.forRoot(),
     ReactiveFormsModule
   ],
-  providers: [MoveRoomService, MonsterLayoutService, RoomLayoutService, PlayerArrayService, AttackService],
+  providers: [MoveRoomService, MonsterLayoutService, RoomLayoutService, PlayerArrayService, AttackService, FourByFourMoveRoomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
