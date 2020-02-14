@@ -18,6 +18,8 @@ export class MoveRoomService {
   //west button needs to pass in -1,0,, and current room coord object 
   public moveRoom(first_coord: number, second_coord: number, current_pos: {x: number, y:number}){
     
+    //small dungeon with room-wrapping
+
     // let new_pos = {};
     // console.log(this.new_pos.x +" " + this.new_pos.y + 'move-room')
     let new_x = current_pos.x;
@@ -84,6 +86,8 @@ export class MoveRoomService {
       return this.new_pos;
      
     }
+
+
     
  
   }

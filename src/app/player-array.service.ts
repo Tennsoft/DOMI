@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { Observable } from 'rxjs';
 import { treasure } from '../../assets/treasure.json';
 
@@ -23,7 +23,16 @@ export class PlayerArrayService {
   constructor(
     private router: Router
     //private attkServ: AttackService
-  ) {}
+  ) {
+    this.difficultyChange.subscribe((value) => {
+      this.difficulty = value
+  });
+
+  }
+
+  seeDifficultyChange() {
+    this.difficultyChange.next(this.difficulty);
+}
 
   //queue initial length
   queuelength = 5;
@@ -186,14 +195,19 @@ export class PlayerArrayService {
     return this.position;
   }
 
-  toggle(input){
-    if(input == true){
-      return input = false;
-    }
-    else{
-      return input = true;
-    }
-  }
+  // toggle(input){
+  //   if(input == true){
+  //     return input = false;
+  //   }
+  //   else{
+  //     return input = true;
+  //   }
+  // }
+
+ 
+
+  
+
   //resetting the game
 
   clearInventory(){
@@ -211,4 +225,18 @@ export class PlayerArrayService {
   resetPosition(){
     this.setPosition({x:1, y:0});
   }
+
+  //difficulty
+  difficulty: string = "easy";
+
+  setDifficulty(diff){
+    return this.difficulty = diff; 
+  }
+
+  getDifficulty(){
+    return this.difficulty;
+  }
+
+  difficultyChange: Subject<string> = new Subject<string>();
+
 }
