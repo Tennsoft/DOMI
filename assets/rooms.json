@@ -41,6 +41,37 @@
             "name": "dragonCave",
             "namePretty": "Dragon's Home",
             "description": "As you enter the room, you see a two dragons lying around a raised stone platform. The edges of the room are darkened and they do not appear to be paying attention to you."
+        },
+        {
+            "id": 8,
+            "name": "labrynth",
+            "namePretty": "Labrynth",
+            "description": "A massive, ornate twisting maze sprawls before you. It's really easy."
+        },
+        {
+            "id": 9,
+            "name": "elevador",
+            "namePretty": "Ascending Room",
+            "description": "A tight-fitting room with buttons for NORTH, EAST, SOUTH, WEST on a square, brass panel."
+        },
+        {
+            "id": 10,
+            "name": "throneRoom",
+            "namePretty": "Throne Room",
+            "description": "A lavish vaulted hall leads up a set of stone stairs to a large throne. Torches light the walls and tapastry that hang from the ceiling."
+        },
+        {
+            "id": 11,
+            "name": "deskRoom",
+            "namePretty": "Classroom",
+            "description": "Ancient wood hewn desks litter an open room. Countless faded equations besmear a framed chalkboard on the far wall."
+        }
+        ,
+        {
+            "id": 12,
+            "name": "stable",
+            "namePretty": "Stable",
+            "description": "A wooden stable with some hay and horses. If you ask to ride one they say neigh"
         }
     ]
 }
