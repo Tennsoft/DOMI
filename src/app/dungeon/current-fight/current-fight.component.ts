@@ -59,7 +59,8 @@ export class CurrentFightComponent implements OnInit, DoCheck {
       if(this.playerArrayService.queueRoom === true){
 
       } else {
-        this.current_fight_damage = this.playerArrayService.getFightResult()+" You found treasure! Check your inventory.";
+        this.current_fight_damage = this.current_fight_damage + " You found treasure! Check your inventory.";
+        //console.log(this.playerArrayService.getTreasureFound())
       }
     }
     //console.log(this.current_fight_damage);

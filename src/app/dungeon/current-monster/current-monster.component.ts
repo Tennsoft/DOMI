@@ -53,6 +53,8 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
   treasure_list;
   currentWait;
 
+  monsterIndex;
+
   constructor(
     public playerArrayService: PlayerArrayService, 
     public move_room_service: MoveRoomService, 
@@ -117,6 +119,9 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       this.playerArrayService.setFightResult("You find yourself at the back of a queue with 5 people in front of you.");
       this.playerArrayService.queueRoom = true;
     }
+
+    
+  this.monsterIndex = <number> this.monster_list.length - 1;
      
      //console.log(this.current_monster_base_name);
   }
@@ -277,7 +282,6 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
   }
 
 
-
   treasureSummonMonster(){
     let chance = Math.floor( Math.random() * 10 );
 
@@ -285,22 +289,22 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
     if( this.playerArrayService.queueRoom === true) { chance = 0; }
     if( chance > 2 ) {
       //console.log("monster was summoned")
-      let i = this.monster_list.length - 1;
-      while( this.monster_list[i].monster !== true ){
+      while( this.monster_list[this.monsterIndex].monster !== true ){
         //console.log(this.monster_list[i])
-        i--;
+        this.monsterIndex--;
       }
       //console.log(this.monster_list[i].namePretty);
-      this.monster_list[this.current_room_abs_id] = this.monster_list[i];
-      let temp2 = "A " + this.monster_list[i].namePretty + " heard the noise from your search for treasure and apporoached.";
+      this.monster_list[this.current_room_abs_id] = this.monster_list[this.monsterIndex];
+      let temp2 = "A " + this.monster_list[this.monsterIndex].namePretty + " heard the noise from your search for treasure and apporoached.";
 
-      this.monster_list[i].name = 'treasure_find';
+      //this.monster_list[this.monsterIndex].name = 'treasure_find';
 
       this.playerArrayService.setFightResult(temp2);
       setTimeout(() => {
         let temp = this.playerArrayService.getFightResult();
-        console.log(temp);
+        //console.log(temp);
       }, 1900);
+      this.monsterIndex--;
       
     } else {
         setTimeout(() =>{
