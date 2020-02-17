@@ -65,13 +65,30 @@
             "name": "deskRoom",
             "namePretty": "Classroom",
             "description": "Ancient wood hewn desks litter an open room. Countless faded equations besmear a framed chalkboard on the far wall."
-        }
-        ,
+        },
         {
             "id": 12,
             "name": "stable",
             "namePretty": "Stable",
             "description": "A wooden stable with some hay and horses. If you ask to ride one they say neigh"
+        },
+        {
+            "id": 13,
+            "name": "royalBathHouse",
+            "namePretty": "Royal Bath House",
+            "description": "Is that a waterfall over there? Sometimes it's good to be the king"
+        },
+        {
+            "id": 14,
+            "name": "aquarium",
+            "namePretty": "Aquarium",
+            "description": "The walls of this room are lined with glass behind which you see large aquatic creatures just sort of hanging out."
+        },
+        {
+            "id": 15,
+            "name": "forestRoom",
+            "namePretty": "Forest ",
+            "description": "The room opens up to show a thick forest brush intermixed with trees. It is quiet, too quiet."
         }
     ]
 }

@@ -21,9 +21,9 @@ export class EndScreenComponent implements OnInit {
   audioPlayer = new Audio();
   finalScore
 
-  flawlessMessage = "<h4 class='text-primary'>Flawless Victory, "+this.playerName+". You Won without taking any damage</h4>";
-  winMessage = "<h4 class='text-primary'>Congratulations, "+this.playerName+".  You survived The Dungeon</h4>";
-  loseMessage = "<h4 class='text-danger'>You Died</h4>";
+  flawlessMessage = "<h4 class='text-primary'>Flawless Victory, "+this.playerName+". You Won without taking any damage.</h4>";
+  winMessage = "<h4 class='text-primary'>Congratulations, "+this.playerName+".  You survived The Dungeon of Moderate Inconvienece</h4>";
+  loseMessage = "<h4 class='text-danger'>You Died.</h4>";
   tieMessage = "<h4 class='text-warning'>You defeated the Boss but at what cost?</h4>";
   FinalScore = "<h4 class='text-success'>Your Final Score Was ";
 
@@ -36,11 +36,12 @@ export class EndScreenComponent implements OnInit {
     this.playerHealth = this.playerService.getHealth();
     this.FinalFight = "<h4 class='text-primary'> "+ this.playerService.getFightResult() +"</h4>"
     //this.playerService.getFightResult();
+    this.loseRespawn();
 
 
     this.finalScore = this.playerService.getScore() + this.playerHealth["curHP"];
 
-    this.FinalScore = this.FinalScore + this.finalScore +'</h4>';
+    this.FinalScore = this.FinalScore + this.finalScore +'.</h4>';
 
 
     if(this.playerHealth["maxHP"] === this.playerHealth["curHP"]){
@@ -53,6 +54,13 @@ export class EndScreenComponent implements OnInit {
       this.EndMessage = this.tieMessage;
     } else {
       this.EndMessage = this.loseMessage;
+    }
+  }
+
+  loseRespawn(){
+    let chance = Math.floor(Math.random()*10);
+    if (chance > 5){
+      this.loseMessage="<h4 class='text-danger'>You Died. You find yourself regaining conciousness within a horse drawn carriage. Your hands are tied and you are being taken down the road. Accross from you you see a man in rags gazing down upon youhe says, 'Hey, you'e finally awake.' </h4>";
     }
   }
 
