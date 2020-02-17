@@ -2,7 +2,8 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 import { PlayerArrayService } from 'src/app/player-array.service';
 import { AttackService } from 'src/app/attack.service';
 import { MonsterLayoutService } from 'src/app/monster-layout.service';
-import { MoveRoomService } from 'src/app/move-room.service'
+import { MoveRoomService } from 'src/app/move-room.service';
+
 
 @Component({
   selector: 'app-current-fight',
@@ -15,7 +16,7 @@ export class CurrentFightComponent implements OnInit, DoCheck {
     public playerArrayService: PlayerArrayService, 
     public attackService: AttackService,
     public monster_layout_service: MonsterLayoutService,
-    public moveRoom: MoveRoomService ) { }
+    public moveRoom: MoveRoomService) { }
 
     monster;
     current_fight_damage;
@@ -53,8 +54,16 @@ export class CurrentFightComponent implements OnInit, DoCheck {
     this.monster = this.attackService.getMonster();
     
     //declare attack
-    this.current_fight_damage = this.playerArrayService.getFightResult();
+    this.current_fight_damage = this.playerArrayService.getFightResult()
+    if(this.current_fight_damage.length !== 0 ){
+      if(this.playerArrayService.queueRoom === true){
+
+      } else {
+        this.current_fight_damage = this.playerArrayService.getFightResult()+" You found treasure! Check your inventory.";
+      }
+    }
     //console.log(this.current_fight_damage);
+    //console.log( this.current_fight_damage+"You found treasure! Check your inventory.");
   }
 
 }

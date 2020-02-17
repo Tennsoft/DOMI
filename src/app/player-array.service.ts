@@ -36,6 +36,7 @@ export class PlayerArrayService {
 
   //queue initial length
   queuelength = 5;
+  queueRoom = false;
 
   getQueueLength(){
     return this.queuelength;

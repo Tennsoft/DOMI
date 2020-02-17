@@ -87,8 +87,26 @@
         {
             "id": 15,
             "name": "forestRoom",
-            "namePretty": "Forest ",
+            "namePretty": "Forest",
             "description": "The room opens up to show a thick forest brush intermixed with trees. It is quiet, too quiet."
+        },
+        {
+            "id": 16,
+            "name": "temple",
+            "namePretty": "Temple",
+            "description": "You find yourself in what appears to be a long abandoned room of worship, the altar at the center appears to bear the insignia of a long forgotton deity."
+        },
+        {
+            "id": 17,
+            "name": "werewolfCircle",
+            "namePretty": "Game Room",
+            "description": "You find what appears to be a hotel conference room. Within it are peopel rythmically tapping on there legs with one person standing around the directing them. There are mutterings about a werewolf."
+        },
+        {
+            "id": 18,
+            "name": "dnD",
+            "namePretty": "Basement",
+            "description": "You see five people sitting around a table, wearing robes, starting at paper, and screaming at plastic polyhedrons."
         }
     ]
 }

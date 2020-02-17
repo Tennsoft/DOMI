@@ -33,7 +33,6 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
   boss_monster_name;
   boss_monster_desc;
 
-  queueRoom = <boolean> true;
 
   can_search_for_treasure = this.playerArrayService.getSearchPossible();
 
@@ -116,7 +115,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
     }
     if(this.current_monster_base_name == "waitInLine"){
       this.playerArrayService.setFightResult("You find yourself at the back of a queue with 5 people in front of you.");
-      this.queueRoom = true;
+      this.playerArrayService.queueRoom = true;
     }
      
      //console.log(this.current_monster_base_name);
@@ -157,7 +156,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
     //boss room
     if((window.history.state.difficulty == "easy" && this.current_room_abs_id == 6)  || this.current_room_abs_id == 15){
       this.can_search_for_treasure = false;
-      this.queueRoom = false;
+      this.playerArrayService.queueRoom = false;
       this.playerArrayService.setTreasureFound(false);
       this.playerArrayService.setFightResult("");
       this.current_monster_name = this.boss_list[1].namePretty;
@@ -186,10 +185,10 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
           this.current_treasure_desc = "";
         }
         if(this.current_monster_base_name == "waitInLine"){
-          this.queueRoom = true;
+          this.playerArrayService.queueRoom = true;
         }
         else{
-          this.queueRoom = false;
+          this.playerArrayService.queueRoom = false;
         }
       }
       //if monster dead, don't display
@@ -263,12 +262,12 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
   waitInLine(){
     //console.log(this.currentWait)
     this.currentWait--;
-    let temp2 = "Thankyou for waiting patiently, there are currently "+ this.currentWait+ " people in front of you";
+    let temp2 = "Thankyou for waiting patiently, there are currently "+ this.currentWait+ " people in front of you.";
     //console.log(this.currentWait)
 
     if(this.currentWait === 0){
       this.searchForTreasure();
-      temp2 = "Thankyou for your patience. You recieved Treasure, Check your inventory";
+      temp2 = "Thankyou for your patience. You recieved Treasure, Check your inventory.";
       this.monster_list[this.current_room_abs_id].dead = true;
       this.playerArrayService.addToScore();
     }
@@ -283,7 +282,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
     let chance = Math.floor( Math.random() * 10 );
 
 //this line ensures that no monster is summoned to the queue room 
-    if( this.queueRoom === true) { chance = 0; }
+    if( this.playerArrayService.queueRoom === true) { chance = 0; }
     if( chance > 2 ) {
       //console.log("monster was summoned")
       let i = this.monster_list.length - 1;
@@ -293,7 +292,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       }
       //console.log(this.monster_list[i].namePretty);
       this.monster_list[this.current_room_abs_id] = this.monster_list[i];
-      let temp2 = "A " + this.monster_list[i].namePretty + " heard the noise from your search for treasure and apporoached";
+      let temp2 = "A " + this.monster_list[i].namePretty + " heard the noise from your search for treasure and apporoached.";
 
       this.monster_list[i].name = 'treasure_find';
 
