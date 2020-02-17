@@ -67,18 +67,18 @@ export class DungeonComponent implements OnInit, DoCheck {
         this.cantGoSouth = true;
         this.cantGoEast = false;
         this.cantGoWest = false;
-        console.log("easy case")
+        //console.log("easy case")
         break;
       default:
       this.cantGoNorth = false;
       this.cantGoSouth = true;
       this.cantGoEast = false;
       this.cantGoWest = true;
-      console.log("med or hard case")
-      console.log("go north "+ this.cantGoNorth);
-      console.log("go south "+ this.cantGoSouth);
-      console.log("go east "+ this.cantGoEast);
-      console.log("go west "+ this.cantGoWest);
+      //console.log("med or hard case")
+      //console.log("go north "+ this.cantGoNorth);
+      //console.log("go south "+ this.cantGoSouth);
+      //console.log("go east "+ this.cantGoEast);
+      //console.log("go west "+ this.cantGoWest);
       break;
     }
 
@@ -103,10 +103,10 @@ export class DungeonComponent implements OnInit, DoCheck {
   
   ngDoCheck(){
     let now_where = this.playerArrayService.getPosition();
-    console.log(now_where.x + " " + now_where.y);
+    //console.log(now_where.x + " " + now_where.y);
     //this.curr_difficulty = this.playerArrayService.getDifficulty();
     this.curr_difficulty = window.history.state.difficulty;
-    console.log("difficulty is "+this.curr_difficulty);
+    //console.log("difficulty is "+this.curr_difficulty);
     //console.log("type of current difficulty is "+typeof this.curr_difficulty);
     //movement buttons enable/disable for small dungeon
     if(this.curr_difficulty == "easy"){
