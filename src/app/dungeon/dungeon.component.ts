@@ -16,7 +16,7 @@ import { PlayerArrayService } from '../player-array.service.js';
 })
 
 
-export class DungeonComponent implements OnInit, DoCheck, OnDestroy {
+export class DungeonComponent implements OnInit, DoCheck {
 
   //can_search_for_treasure = this.playerArrayService.getSearchPossible();
   constructor(
@@ -250,8 +250,5 @@ export class DungeonComponent implements OnInit, DoCheck, OnDestroy {
   }
 
   
-  ngOnDestroy(){
-    this.subscription.unsubscribe();
-  }
 
 }
