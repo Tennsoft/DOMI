@@ -1,5 +1,5 @@
-import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit, DoCheck } from '@angular/core';
+//import { Subscription } from 'rxjs';
 
 import { monsters } from '../../../../assets/monsters.json';
 import { treasure } from '../../../../assets/treasure.json';
@@ -17,7 +17,7 @@ import { FourByFourMoveRoomService } from 'src/app/four-by-four-move-room.servic
   templateUrl: './current-monster.component.html',
   styleUrls: ['./current-monster.component.css']
 })
-export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
+export class CurrentMonsterComponent implements OnInit, DoCheck {
 
   
   // monster_list; 
@@ -46,7 +46,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   curRoom;
   newRoom;
   
-  sub: Subscription;
+  
   had_a_fight;
 
   monster_list;
@@ -311,8 +311,5 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
     }
   }
 
-  ngOnDestroy(){
-    this.sub.unsubscribe();
-  }
-
+ 
 }
