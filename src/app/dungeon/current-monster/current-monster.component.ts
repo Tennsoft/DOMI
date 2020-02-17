@@ -1,5 +1,5 @@
-import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit, DoCheck } from '@angular/core';
+//import { Subscription } from 'rxjs';
 
 import { monsters } from '../../../../assets/monsters.json';
 import { treasure } from '../../../../assets/treasure.json';
@@ -10,13 +10,14 @@ import { MoveRoomService } from 'src/app/move-room.service';
 import { MonsterLayoutService } from 'src/app/monster-layout.service';
 import { RoomLayoutService } from 'src/app/room-layout.service';
 import { AttackService } from '../../attack.service';
+import { FourByFourMoveRoomService } from 'src/app/four-by-four-move-room.service.js';
 
 @Component({
   selector: 'app-current-monster',
   templateUrl: './current-monster.component.html',
   styleUrls: ['./current-monster.component.css']
 })
-export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
+export class CurrentMonsterComponent implements OnInit, DoCheck {
 
   
   // monster_list; 
@@ -45,7 +46,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   curRoom;
   newRoom;
   
-  sub: Subscription;
+  
   had_a_fight;
 
   monster_list;
@@ -58,7 +59,8 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
     public move_room_service: MoveRoomService, 
     public monster_layout_service: MonsterLayoutService,
     public room_layout_service: RoomLayoutService,
-    public attackService: AttackService) { 
+    public attackService: AttackService,
+    public four_by_four_move_room_service: FourByFourMoveRoomService) { 
   }
 
   //bring in monsters, random order
@@ -70,7 +72,12 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
 
 
   ngOnInit() {
-    this.curRoom = this.move_room_service.current_room_reduce();
+    if(window.history.state.difficulty == "easy"){
+      this.curRoom = this.move_room_service.current_room_reduce();
+    }else{
+      this.curRoom = this.four_by_four_move_room_service.current_room_reduce();
+    }
+    
     //bring in monsters, random order
     this.monster_list = this.monster_layout_service.random_monster_layout;
     //bring in boss monsters, random order
@@ -83,8 +90,15 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
      this.current_room = this.playerArrayService.getPosition();
 
 
+
      //turn that into a single number to get an index from the rooms array
-     this.current_room_abs_id = this.move_room_service.current_room_reduce();
+     if(window.history.state.difficulty == "easy"){
+      this.current_room_abs_id = this.move_room_service.current_room_reduce();
+    }else{
+      this.current_room_abs_id = this.four_by_four_move_room_service.current_room_reduce();
+    }
+
+     //this.current_room_abs_id = this.move_room_service.current_room_reduce();
      //console.log("current room abs id is "+this.current_room_abs_id);
     
      //and pull a monster for where you happen to be
@@ -109,8 +123,13 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
   }
 
   ngDoCheck(){
+    if(window.history.state.difficulty == "easy"){
+      this.newRoom = this.move_room_service.current_room_reduce();
+    }else{
+      this.newRoom = this.four_by_four_move_room_service.current_room_reduce();
+    }
 
-    this.newRoom = this.move_room_service.current_room_reduce();
+    //this.newRoom = this.move_room_service.current_room_reduce();
     //console.log("this is the new room" + this.newRoom)
     //console.log(this.treasure_list);
     if (this.newRoom != this.curRoom) {
@@ -125,19 +144,26 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
     //this.playerArrayService.setFightResult(this.had_a_fight);
     
     
-
+    if(window.history.state.difficulty == "easy"){
+      this.current_room_abs_id = this.move_room_service.current_room_reduce();
+    }else{
+      this.current_room_abs_id = this.four_by_four_move_room_service.current_room_reduce();
+    }
    
-    this.current_room_abs_id = this.move_room_service.current_room_reduce();
+    //this.current_room_abs_id = this.move_room_service.current_room_reduce();
     //console.log(this.current_room_abs_id)
 
-    if(this.current_room_abs_id == 6){
+
+    //boss room
+    if((window.history.state.difficulty == "easy" && this.current_room_abs_id == 6)  || this.current_room_abs_id == 15){
       this.can_search_for_treasure = false;
       this.queueRoom = false;
       this.playerArrayService.setTreasureFound(false);
       this.playerArrayService.setFightResult("");
       this.current_monster_name = this.boss_list[1].namePretty;
       this.current_monster_desc = this.boss_list[1].description;
-    } else {
+    } 
+    else {
       //this.can_search_for_treasure = false;
       this.found_treasure = this.playerArrayService.getTreasureFound();
       this.playerArrayService.setSearchPossible(false);
@@ -285,8 +311,5 @@ export class CurrentMonsterComponent implements OnInit, DoCheck, OnDestroy {
     }
   }
 
-  ngOnDestroy(){
-    this.sub.unsubscribe();
-  }
-
+ 
 }

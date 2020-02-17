@@ -44,13 +44,13 @@
         },
         {
             "id": 8,
-            "name": "labrynth",
-            "namePretty": "Labrynth",
+            "name": "labyrinth",
+            "namePretty": "Labyrinth",
             "description": "A massive, ornate twisting maze sprawls before you. It's really easy."
         },
         {
             "id": 9,
-            "name": "elevador",
+            "name": "elevator",
             "namePretty": "Ascending Room",
             "description": "A tight-fitting room with buttons for NORTH, EAST, SOUTH, WEST on a square, brass panel."
         },
