@@ -241,10 +241,10 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       this.current_treasure_desc = "nothing new, even though you search carefully";
       this.found_treasure = true;
       this.uniqueEncounters.setTreasureFound(true);
-      setTimeout(() =>{
-        this.found_treasure = false;
-        this.uniqueEncounters.setTreasureFound(false);
-       }, 1900);
+      //setTimeout(() =>{
+      //  this.found_treasure = false;
+      //  this.uniqueEncounters.setTreasureFound(false);
+      // }, 1900);
     }
 
   }
