@@ -264,8 +264,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
     }
     this.playerArrayService.setFightResult(temp2);
   }
-
-
+  
   treasureSummonMonster(){
     let chance = Math.floor( Math.random() * 10 );
 

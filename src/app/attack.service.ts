@@ -94,8 +94,7 @@ export class AttackService {
       //console.log(this.treasure_list);
 
       if(curr_mons === "Honey Badger"){
-        this.playerArray.loseHealth();
-        this.healthChange.updateLife();
+        this.playerArray.instantDeath();
         this.playerArray.setFightResult(my_monster_entry.fightDamage);
       } else if(this.usedWeakness(damageType, this.currentMonster)) {
         //console.log(this.monster_list[my_index].dead);

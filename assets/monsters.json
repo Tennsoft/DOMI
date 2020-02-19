@@ -167,7 +167,7 @@
             "namePretty": "Honey Badger",
             "description": "Honey Badger DGAF",
             "weakness": "none",
-            "fightDamage": "You were bitten by the Honey Badger, you might want to check for rabies when you get out. You lose one point of health.",
+            "fightDamage": "Honey badger grew tired of your games and has ended you. ",
             "fightDie": "",
             "dead": false,
             "corpse": "Honey Badger is just sitting there.",

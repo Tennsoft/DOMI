@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Subject } from 'rxjs';
-import { Observable } from 'rxjs';
-import { treasure } from '../../assets/treasure.json';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +15,6 @@ export class PlayerArrayService {
       });
     }
 
-  
   //score
   gamescore = <number> 0;
   gold = <number> 2;
