@@ -108,7 +108,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.playerService.setDifficulty("medium");
       
       //this.playerService.resetPosition(); 
-      this.playerService.position = {x:0,y:0};
+      this.playerService.position ={x:1,y:0};
       this.playerService.setFightResult("");
       this.playerService.clearInventory();
       
@@ -153,7 +153,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.playerService.setDifficulty("hard");
       console.log(this.playerService.getDifficulty());
       //this.playerService.resetPosition(); 
-      this.playerService.position = {x:0,y:0};
+      this.playerService.position = {x:1,y:0};
       console.log(this.playerService.getPosition());
       this.playerService.setFightResult("");
       this.playerService.clearInventory();
