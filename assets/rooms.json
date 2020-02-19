@@ -58,25 +58,25 @@
             "id": 10,
             "name": "throneRoom",
             "namePretty": "Throne Room",
-            "description": "A lavish vaulted hall leads up a set of stone stairs to a large throne. Torches light the walls and tapastry that hang from the ceiling."
+            "description": "A lavish vaulted hall leads up a set of stone stairs to a large throne. Torches light the walls and the tapestry that hangs from the ceiling."
         },
         {
             "id": 11,
             "name": "deskRoom",
             "namePretty": "Classroom",
-            "description": "Ancient wood hewn desks litter an open room. Countless faded equations besmear a framed chalkboard on the far wall."
+            "description": "Ancient wood hewn desks litter an open room. Countless faded equations criss-cross a framed chalkboard on the far wall."
         },
         {
             "id": 12,
             "name": "stable",
             "namePretty": "Stable",
-            "description": "A wooden stable with some hay and horses. If you ask to ride one they say neigh"
+            "description": "A wooden stable with some hay and horses. If you ask for a ride they say, 'Neigh'."
         },
         {
             "id": 13,
             "name": "royalBathHouse",
             "namePretty": "Royal Bath House",
-            "description": "Is that a waterfall over there? Sometimes it's good to be the king"
+            "description": "Is that a waterfall over there? Sometimes it's good to be the king."
         },
         {
             "id": 14,
@@ -88,25 +88,25 @@
             "id": 15,
             "name": "forestRoom",
             "namePretty": "Forest",
-            "description": "The room opens up to show a thick forest brush intermixed with trees. It is quiet, too quiet."
+            "description": "The room opens up to show a thick forest undergrowth amidst massive trees. It is quiet, too quiet."
         },
         {
             "id": 16,
             "name": "temple",
             "namePretty": "Temple",
-            "description": "You find yourself in what appears to be a long abandoned room of worship, the altar at the center appears to bear the insignia of a long forgotton deity."
+            "description": "You find yourself in what appears to be a long abandoned room of worship, the altar at the center bears the insignia of some long forgotton deity."
         },
         {
             "id": 17,
             "name": "werewolfCircle",
             "namePretty": "Game Room",
-            "description": "You find what appears to be a hotel conference room. Within it are people rhythmically tapping on there legs with one person standing around the directing them. There are mutterings about a werewolf."
+            "description": "You find what appears to be a hotel conference room. Within it are people rhythmically tapping on their legs with one person standing around the directing them. There are mutterings about a werewolf."
         },
         {
             "id": 18,
             "name": "dnD",
             "namePretty": "Basement",
-            "description": "You see five people sitting around a table, wearing robes, starting at paper, and screaming at plastic polyhedrons."
+            "description": "You see five people sitting around a table, wearing robes, staring at paper, and screaming at plastic polyhedrons."
         }
     ]
 }
