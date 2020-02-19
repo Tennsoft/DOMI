@@ -124,6 +124,8 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       this.newRoom = this.move_room_service.current_room_reduce();
     }else{
       this.newRoom = this.four_by_four_move_room_service.current_room_reduce();
+      console.log("current room "+ this.curRoom);
+      console.log("new room " + this.newRoom);
     }
 
     //this.newRoom = this.move_room_service.current_room_reduce();
@@ -131,6 +133,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
     //console.log(this.treasure_list);
     if (this.newRoom != this.curRoom) {
       this.clearTreasureBox();
+      this.playerArrayService.setFightResult("");
       this.curRoom = this.newRoom;
       this.currentWait = this.playerArrayService.getQueueLength();
     }
