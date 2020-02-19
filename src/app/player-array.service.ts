@@ -16,6 +16,8 @@ export class PlayerArrayService {
         this.difficulty = value
       });
     }
+
+  
   //score
   gamescore = <number> 0;
   gold = <number> 2;
@@ -129,28 +131,12 @@ export class PlayerArrayService {
     return this.inventory;
   }
 
-  //searching for treasure
-  // can_search = false;
-  // getSearchPossible(){
-  //   return this.can_search;
-  // }
-
-  // setSearchPossible(arg){
-  //   return this.can_search = arg;
-  // }
-
-  // treasure_found = false;
-  // getTreasureFound(){
-  //   return this.treasure_found;
-  // }
-
-  // setTreasureFound(arg){
-  //   return this.treasure_found = arg;
-  // }
-
-
   //health
-  health = {maxHP: <number> 4, curHP: <number> 4, bossHP: <number> 8};
+  health = { 
+    maxHP: <number> 4, 
+    curHP: <number> 4, 
+    bossHP: <number> 8
+  };
 
   getHealth(){
     return this.health;
@@ -167,6 +153,12 @@ export class PlayerArrayService {
     this.health.curHP++;
     if(this.health.curHP > this.health.maxHP){
       this.health.curHP = this.health.maxHP;
+    }
+  }
+
+  instantDeath(){
+    while(this.health.curHP > 0){
+      this.loseHealth();
     }
   }
 

@@ -174,7 +174,6 @@ export class AttackService {
         this.router.navigate(['/endScreen'])
         return false; 
       }
-
     }  
   }
 

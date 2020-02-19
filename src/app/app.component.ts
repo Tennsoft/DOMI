@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from "@angular/core";  
-import { ShortcutInput, ShortcutEventOutput, KeyboardShortcutsComponent } from "ng-keyboard-shortcuts";  
+import { ShortcutInput, KeyboardShortcutsComponent } from "ng-keyboard-shortcuts";  
 import { PlayerArrayService } from './player-array.service';
 import { AttackService } from './attack.service';
 
@@ -61,6 +61,12 @@ export class AppComponent  implements AfterViewInit {
               label: "Sequences",
               description: "adds gold",
               command: () => this.playerArray.addToInventory('gold')
+          },             
+          {
+              key: ["d i e"],
+              label: "Sequences",
+              description: "adds gold",
+              command: () => this.playerArray.instantDeath()
           }
         );  
     }  
