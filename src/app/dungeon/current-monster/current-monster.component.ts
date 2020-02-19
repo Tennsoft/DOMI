@@ -1,9 +1,4 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
-//import { Subscription } from 'rxjs';
-
-import { monsters } from '../../../../assets/monsters.json';
-import { treasure } from '../../../../assets/treasure.json';
-import { bosses } from '../../../../assets/bosses.json';
 
 import { PlayerArrayService } from '../../player-array.service';
 import { MoveRoomService } from 'src/app/move-room.service';
@@ -20,12 +15,7 @@ import { FourByFourMoveRoomService } from 'src/app/four-by-four-move-room.servic
   styleUrls: ['./current-monster.component.css']
 })
 export class CurrentMonsterComponent implements OnInit, DoCheck {
-
   
-  // monster_list; 
-  // boss_list; 
-  // treasure_list;
-
   //initialize
   current_room: {x: number, y: number};
   current_room_abs_id;

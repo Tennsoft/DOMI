@@ -11,8 +11,7 @@
             "dead": false,
             "corpse": "The lumpy body of the werebeaver lies huddled on the floor, powerful tail now limp and unmoving.",
             "monster": true
-        },
-        {
+        },{
             "id": 2,
             "name": "monstrousKoiFish",
             "namePretty": "Monstrous Koi Fish",
@@ -23,8 +22,7 @@
             "dead": false,
             "corpse": "The disintegrating body of a small, colorful koi fish lies in a small puddle on the ground.",
             "monster": true
-        },
-        {
+        },{
             "id": 3,
             "name": "pheonixBear",
             "namePretty": "Phoenix Bear",
@@ -35,8 +33,7 @@
             "dead": false,
             "corpse": "There is a pile of ash where the Pheonix Bear used to be.",
             "monster": true
-        },
-        {
+        },{
             "id": 4,
             "name": "mummy",
             "namePretty": "Mummy",
@@ -47,8 +44,7 @@
             "dead": false,
             "corpse": "There is a pile of crumbling cloth bandages where the mummy used to be.",
             "monster": true
-        },
-        {
+        },{
             "id": 5,
             "name": "frumiousBandersnatch",
             "namePretty": "Frumious Bandersnatch",
@@ -59,8 +55,7 @@
             "dead": false,
             "corpse": "The Bandersnatch sprawls on the ground, thoroughly dead.",
             "monster": true
-        },
-        {
+        },{
             "id": 6,
             "name": "greenOoze",
             "namePretty": "Green Ooze",
@@ -71,8 +66,7 @@
             "dead": false,
             "corpse": "The walls are splotched with smears of sticky green.  A good mopping would definitely help.",
             "monster": true
-        },
-        {
+        },{
             "id": 7,
             "name": "mimic",
             "namePretty": "Mimic",
@@ -83,8 +77,7 @@
             "dead": false,
             "corpse": "The empty mimic is spread-eagled on the ground, quite dead.",
             "monster": true
-        },
-        {
+        },{
             "id": 8,
             "name": "flameElemental",
             "namePretty": "Flame Elemental",
@@ -95,8 +88,7 @@
             "dead": false,
             "corpse": "A scorched spot is on the ground.",
             "monster": true
-        },
-        {
+        },{
             "id": 9,
             "name": "faerie",
             "namePretty": "Faerie",
@@ -107,8 +99,7 @@
             "dead": false,
             "corpse": "You see a pile of dust while inactive it still radiates malevolence.",
             "monster": true
-        },
-        {
+        },{
             "id": 10,
             "name": "treasure_find",
             "namePretty": "",
@@ -159,8 +150,7 @@
             "fightDie": "",
             "dead": false,
             "corpse": "You don't see any monsters, but there is a skeleton dressed in rags."
-        },
-        {
+        },{
             "id": 15,
             "name": "treant",
             "namePretty": "Treant",
@@ -171,8 +161,7 @@
             "dead": false,
             "corpse": "You see the remains of a once great tree",
             "monster": true
-        },
-        {
+        },{
             "id": 16,
             "name": "honeyBadger",
             "namePretty": "Honey Badger",
@@ -183,8 +172,7 @@
             "dead": false,
             "corpse": "Honey Badger is just sitting there.",
             "monster": true
-        },
-        {
+        },{
             "id": 17,
             "name": "waitInLine",
             "namePretty": "Queue",
@@ -196,8 +184,7 @@
             "dead": false,
             "corpse": "You see the queue you fondly remember waiting in",
             "monster": false
-        },
-        {
+        },{
             "id": 18,
             "name": "zombie",
             "namePretty": "Zombie",
@@ -208,8 +195,7 @@
             "dead": false,
             "corpse": "The remains of what was once a person, reanimated and defiled, now lie still.",
             "monster": true
-        },
-        {
+        },{
             "id": 19,
             "name": "bear",
             "namePretty": "Sir Bearington",
@@ -220,18 +206,28 @@
             "dead": false,
             "corpse": "The remains of a once mighty bear lie still upon the dungeon floor.",
             "monster": true
-        },
-        {
+        },{
             "id": 20,
             "name": "banshee",
             "namePretty": "Banshee",
-            "description": "A hooded figure hovers within the room. They appear to be making no moves but an ominous mist emanates from them",
+            "description": "A hooded figure hovers within the room. They appear to be making no moves but an ominous mist emanates from them.",
             "weakness": "sword",
             "fightDamage": "The figure lets out a blood curdling scream as they fall to the ground. It is so powerful it damages even your mighty figure. You lose one point of health.",
             "fightDie": "The figure fades as your weapon moves through their form, leaving a grey puddle of shadows.",
             "dead": false,
             "corpse": "What appears to be a puddle of shadows lies where the spirit fell.",
             "monster": true
-        }       
+        },{
+            "id": 21,
+            "name": "stoneGolem",
+            "namePretty": "Stone Golem",
+            "description": "A small, gnome shaped, stone stands in disinterested in the room ocasionally moving through the room.",
+            "weakness": "bananaPeel",
+            "fightDamage": "The golem strikes out towards you before falling to the ground crumbling. You lose one point of health.",
+            "fightDie": "The golem slips on the banana peal falling and shattering.",
+            "dead": false,
+            "corpse": "A pile of stone body parts lies with an almost annoyed look about it.",
+            "monster": true
+        }
     ]
 }

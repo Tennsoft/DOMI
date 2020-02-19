@@ -7,16 +7,14 @@
             "strength": "wand",
             "starting": true,
             "effect": "weapon"
-        },
-        {
+        },{
             "name": "sword",
             "namePretty": "Iron Sword",
             "description": "Your trusty sword that has cleaved through many a beast that would have seen you as dinner.",
             "strength": "sword",
             "starting": true,
             "effect": "weapon"
-        },
-        {
+        },{
             "name": "magicStaff",
             "namePretty": "Wizard's Staff",
             "description": "A stick that a great wizard once took from a forest, enhanced by their power, it is now a formidable weapon.",
@@ -25,8 +23,7 @@
             "found": false,
             "taken": false,
             "effect": "weapon"
-        },
-        {
+        },{
             "name": "dungeonsword",
             "namePretty": "Rusty Iron Sword",
             "description": "An iron sword that has been within the depths of this dungeon for a substantial period of time.",
@@ -35,8 +32,7 @@
             "found": false,
             "taken": false,
             "effect": "weapon"
-        },
-        {
+        },{
             "name": "automaticCrossbow",
             "namePretty": "Automatic Crossbow",
             "description": "A crossbow which continuously fires bolts so long as the trigger is held.",
@@ -45,8 +41,7 @@
             "found": false,
             "taken": false,
             "effect": "weapon"
-        },
-        {
+        },{
             "name": "romanCandle",
             "namePretty": "Roman Candle",
             "description": "A wand-like object that emits a ball of greek fire when evoked.",
@@ -55,8 +50,7 @@
             "found": false,
             "taken": false,
             "effect": "weapon"
-        },
-        {
+        },{
             "name": "phoenixBearMace",
             "namePretty": "Phoenix Bear Mace",
             "description": "An aluminum cylinder covered in warning labels. A firey blue growling bear face is plastard on the front. 'Keep Away from Eyes'",
@@ -65,8 +59,7 @@
             "found": false,
             "taken": false,
             "effect": "weapon"
-        },
-        {
+        },{
             "name": "bananaPeel",
             "namePretty": "Banana Peel",
             "description": "The peel of a banana, its insides seem unusually slippery.",
@@ -75,8 +68,7 @@
             "found": false,
             "taken": false,
             "effect": "weapon"
-        },
-        {
+        },{
             "name": "handheldVacuumCleaner",
             "namePretty": "Handheld Vacuum Cleaner",
             "description": "Small but powerful little vacuum that runs on batteries.",
@@ -85,8 +77,7 @@
             "found": false,
             "taken": false,
             "effect": "weapon"
-        },
-        {
+        },{
             "name": "banefulButterknife",
             "namePretty": "Baneful Butterknife",
             "description": "A tiny blade that glints wickedly in the light.  Sharp enough to cut through anything like butter. Glimers with a silvery light.  Watch your fingers!",
@@ -95,8 +86,7 @@
             "found": false,
             "taken": false,
             "effect": "weapon"
-        },
-        {
+        },{
             "name": "cattleProd",
             "namePretty": "Cattle Prod",
             "description": "A thin black cylinder with two metal prongs sticking out of one end. Perfect for dealing with shapeshifters and mimics.",
@@ -105,8 +95,7 @@
             "found": false,
             "taken": false,
             "effect": "weapon"
-        },
-        {
+        },{
             "name": "readME",
             "namePretty": "readME",
             "description": "A document containing the wisdom of the ages as they pertain to version control with git.",
@@ -115,8 +104,7 @@
             "found": false,
             "taken": false,
             "effect": "weapon"
-        },
-        {
+        },{
             "name": "bocketOWater",
             "namePretty": "Bucket Of Water",
             "description": "An portable source of life giving water, that bucket also seems useful",
@@ -125,8 +113,7 @@
             "found": false,
             "taken": false,
             "effect": "weapon"
-        },
-        {
+        },{
             "name": "heathPotion",
             "namePretty": "Health Potion",
             "description": "A marvel of medical science, this potion will heal 2 points of your vaguely defined injuries.",
@@ -136,8 +123,7 @@
             "found": false,
             "taken": false,
             "effect": "heal"
-        },
-        {
+        },{
             "name": "lesserheathPotion",
             "namePretty": "Lesser Health Potion",
             "description": "A marvel of medical science, this potion will heal 1 point of your vaguely defined injuries.",
@@ -147,8 +133,7 @@
             "found": false,
             "taken": false,
             "effect": "heal"
-        },
-        {
+        },{
             "name": "greaterheathPotion",
             "namePretty": "Greater Health Potion",
             "description": "A marvel of medical science, this potion will heal 3 points of your vaguely defined injuries.",
@@ -158,8 +143,7 @@
             "found": false,
             "taken": false,
             "effect": "heal"
-        },
-        {
+        },{
             "name": "gold",
             "namePretty": "Gold Coin",
             "description": "Gold can be used as a placeholder for value in exchange for goods and services.",
@@ -168,8 +152,7 @@
             "found": false,
             "taken": false,
             "effect": "gold"
-        },
-        {
+        },{
             "name": "gold",
             "namePretty": "Gold Coin",
             "description": "Gold can be used as a placeholder for value in exchange for goods and services.",

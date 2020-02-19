@@ -108,7 +108,7 @@ export class DungeonComponent implements OnInit, DoCheck {
     //console.log(now_where.x + " " + now_where.y);
     //this.curr_difficulty = this.playerArrayService.getDifficulty();
     this.curr_difficulty = window.history.state.difficulty;
-    console.log(window.history.state.difficulty)
+    //console.log(window.history.state.difficulty)
     //console.log("difficulty is "+this.curr_difficulty);
     //console.log("type of current difficulty is "+typeof this.curr_difficulty);
     //movement buttons enable/disable for small dungeon
