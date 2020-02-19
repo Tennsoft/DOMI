@@ -139,6 +139,7 @@ export class AttackService {
         //console.log("you used the wrong weapon");
           this.playerArray.loseHealth();
           this.healthChange.updateLife();
+          //error line 142?
           this.playerArray.setFightResult(my_monster_entry.fightDamage);
           //this.playerArray.addToInventory(this.treasure_list[my_index].name);
       }

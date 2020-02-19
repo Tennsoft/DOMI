@@ -120,7 +120,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.roomLayoutService.scrambleRooms(monsters);
       this.roomLayoutService.scrambleRooms(bosses);
       
-      let found_treasures = treasure.slice(-9);
+      let found_treasures = treasure.filter(items => items.name !== 'sword' && items.name !== 'wand');
       this.roomLayoutService.scrambleRooms(found_treasures);
 
       for(var i = 0; i<this.monsterLayoutService.random_monster_layout.length; i++){
@@ -166,7 +166,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.roomLayoutService.scrambleRooms(monsters);
       this.roomLayoutService.scrambleRooms(bosses);
       
-      let found_treasures = treasure.slice(-9);
+      let found_treasures = treasure.filter(items => items.name !== 'sword' && items.name !== 'wand');
       this.roomLayoutService.scrambleRooms(found_treasures);
 
       for(var i = 0; i<this.monsterLayoutService.random_monster_layout.length; i++){
