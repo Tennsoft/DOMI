@@ -114,9 +114,9 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
     }
 
     
-  this.monsterIndex = <number> this.monster_list.length - 1;
+    this.monsterIndex = <number> this.monster_list.length - 1;
      
-     //console.log(this.current_monster_base_name);
+    //console.log(this.current_monster_base_name);
   }
 
   ngDoCheck(){
@@ -124,8 +124,8 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       this.newRoom = this.move_room_service.current_room_reduce();
     }else{
       this.newRoom = this.four_by_four_move_room_service.current_room_reduce();
-      console.log("current room "+ this.curRoom);
-      console.log("new room " + this.newRoom);
+      //console.log("current room "+ this.curRoom);
+      //console.log("new room " + this.newRoom);
     }
 
     //this.newRoom = this.move_room_service.current_room_reduce();
@@ -230,14 +230,13 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       this.playerArrayService.addToInventory(this.treasure_list[this.current_room_abs_id].name);
       this.treasure_list[this.current_room_abs_id].taken = true;
 
-
       this.treasureSummonMonster();
 
-      setTimeout(() => {
-        this.found_treasure = false;
-        this.uniqueEncounters.setTreasureFound(false);
-        this.can_search_for_treasure = false;
-      }, 1900);
+      // setTimeout(() => {
+      //   this.found_treasure = false;
+      //   this.uniqueEncounters.setTreasureFound(false);
+      //   this.can_search_for_treasure = false;
+      // }, 1900);
     }
     else{
       this.current_treasure_name = "";
@@ -270,31 +269,24 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
   treasureSummonMonster(){
     let chance = Math.floor( Math.random() * 10 );
 
-//this line ensures that no monster is summoned to the queue room 
+    //this line ensures that no monster is summoned to the queue room 
     if( this.uniqueEncounters.queueRoom === true) { chance = 0; }
     if( chance > 2 ) {
-      //console.log("monster was summoned")
       while( this.monster_list[this.monsterIndex].monster !== true ){
-        //console.log(this.monster_list[i])
         this.monsterIndex--;
       }
-      //console.log(this.monster_list[i].namePretty);
       this.monster_list[this.current_room_abs_id] = this.monster_list[this.monsterIndex];
+      this.uniqueEncounters.newSummonedMonster(this.current_room_abs_id);
       let temp2 = "A " + this.monster_list[this.monsterIndex].namePretty + " heard the noise from your search for treasure and apporoached.";
 
-      //this.monster_list[this.monsterIndex].name = 'treasure_find';
-
       this.playerArrayService.setFightResult(temp2);
-      setTimeout(() => {
-        let temp = this.playerArrayService.getFightResult();
-        //console.log(temp);
-      }, 1900);
+      // setTimeout(() => {
+      //   let temp = this.playerArrayService.getFightResult();
+      // }, 1900);
       this.monsterIndex--;
       
     } else {
-        setTimeout(() =>{
-          this.monster_list[this.current_room_abs_id].dead = true;
-        }, 1900);
+      this.monster_list[this.current_room_abs_id].dead = true;
     }
   }
 }

@@ -33,5 +33,19 @@ export class UniqueEncountersService {
   setTreasureFound(arg) {
     return this.treasure_found = arg;
   }
+
+  summonedMonstersLocations = [];
+
+  newSummonedMonster(currentLocation){
+    this.summonedMonstersLocations.push(currentLocation);
+  }
+
+  monsterSummoned(currentLocation){
+    if( this.summonedMonstersLocations.indexOf(currentLocation) === -1 ){
+      return false;
+    } else {
+      return true;
+    }
+  }
 }
 

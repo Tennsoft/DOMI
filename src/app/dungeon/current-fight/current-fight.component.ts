@@ -3,6 +3,9 @@ import { PlayerArrayService } from 'src/app/player-array.service';
 import { AttackService } from 'src/app/attack.service';
 import { MonsterLayoutService } from 'src/app/monster-layout.service';
 import { MoveRoomService } from 'src/app/move-room.service';
+import { UniqueEncountersService } from '../../uniqueencounters.service';
+import { from } from 'rxjs';
+
 
 
 @Component({
@@ -16,7 +19,8 @@ export class CurrentFightComponent implements OnInit, DoCheck {
     public playerArrayService: PlayerArrayService, 
     public attackService: AttackService,
     public monster_layout_service: MonsterLayoutService,
-    public moveRoom: MoveRoomService) { }
+    public moveRoom: MoveRoomService,
+    public uniqueEncounters: UniqueEncountersService) { }
 
     monster;
     current_fight_damage;
@@ -48,6 +52,7 @@ export class CurrentFightComponent implements OnInit, DoCheck {
     if (this.newRoom != this.curRoom) {
       this.clearFightBox()
       this.curRoom = this.newRoom
+      //console.log(this.curRoom)
     }
 
     //get the monster
@@ -58,7 +63,7 @@ export class CurrentFightComponent implements OnInit, DoCheck {
     if(this.current_fight_damage.length !== 0 ){
       if(this.playerArrayService.queueRoom === true){
 
-      } else {
+      } else if (this.uniqueEncounters.monsterSummoned(this.curRoom)){} else{
         this.current_fight_damage = this.current_fight_damage + " You found treasure! Check your inventory.";
         //console.log(this.playerArrayService.getTreasureFound())
       }
