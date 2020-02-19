@@ -1,6 +1,7 @@
 {
     "treasure": [
         {
+            "id": 1,
             "name": "wand",
             "namePretty": "Wand",
             "description": "Your trusty magic wand that has protected you through many a journey against magical foes.",
@@ -8,6 +9,7 @@
             "starting": true,
             "effect": "weapon"
         },{
+            "id": 2,
             "name": "sword",
             "namePretty": "Iron Sword",
             "description": "Your trusty sword that has cleaved through many a beast that would have seen you as dinner.",
@@ -15,6 +17,7 @@
             "starting": true,
             "effect": "weapon"
         },{
+            "id": 3,
             "name": "magicStaff",
             "namePretty": "Wizard's Staff",
             "description": "A stick that a great wizard once took from a forest, enhanced by their power, it is now a formidable weapon.",
@@ -24,6 +27,7 @@
             "taken": false,
             "effect": "weapon"
         },{
+            "id": 4,
             "name": "dungeonsword",
             "namePretty": "Rusty Iron Sword",
             "description": "An iron sword that has been within the depths of this dungeon for a substantial period of time.",
@@ -33,6 +37,7 @@
             "taken": false,
             "effect": "weapon"
         },{
+            "id": 5,
             "name": "automaticCrossbow",
             "namePretty": "Automatic Crossbow",
             "description": "A crossbow which continuously fires bolts so long as the trigger is held.",
@@ -42,6 +47,7 @@
             "taken": false,
             "effect": "weapon"
         },{
+            "id": 6,
             "name": "romanCandle",
             "namePretty": "Roman Candle",
             "description": "A wand-like object that emits a ball of greek fire when evoked.",
@@ -51,6 +57,7 @@
             "taken": false,
             "effect": "weapon"
         },{
+            "id": 7,
             "name": "phoenixBearMace",
             "namePretty": "Phoenix Bear Mace",
             "description": "An aluminum cylinder covered in warning labels. A firey blue growling bear face is plastard on the front. 'Keep Away from Eyes'",
@@ -60,6 +67,7 @@
             "taken": false,
             "effect": "weapon"
         },{
+            "id": 8,
             "name": "bananaPeel",
             "namePretty": "Banana Peel",
             "description": "The peel of a banana, its insides seem unusually slippery.",
@@ -69,6 +77,7 @@
             "taken": false,
             "effect": "weapon"
         },{
+            "id": 9,
             "name": "handheldVacuumCleaner",
             "namePretty": "Handheld Vacuum Cleaner",
             "description": "Small but powerful little vacuum that runs on batteries.",
@@ -78,6 +87,7 @@
             "taken": false,
             "effect": "weapon"
         },{
+            "id": 10,
             "name": "banefulButterknife",
             "namePretty": "Baneful Butterknife",
             "description": "A tiny blade that glints wickedly in the light.  Sharp enough to cut through anything like butter. Glimers with a silvery light.  Watch your fingers!",
@@ -87,6 +97,7 @@
             "taken": false,
             "effect": "weapon"
         },{
+            "id": 11,
             "name": "cattleProd",
             "namePretty": "Cattle Prod",
             "description": "A thin black cylinder with two metal prongs sticking out of one end. Perfect for dealing with shapeshifters and mimics.",
@@ -96,6 +107,7 @@
             "taken": false,
             "effect": "weapon"
         },{
+            "id": 12,
             "name": "readME",
             "namePretty": "readME",
             "description": "A document containing the wisdom of the ages as they pertain to version control with git.",
@@ -105,6 +117,7 @@
             "taken": false,
             "effect": "weapon"
         },{
+            "id": 13,
             "name": "bocketOWater",
             "namePretty": "Bucket Of Water",
             "description": "An portable source of life giving water, that bucket also seems useful",
@@ -114,6 +127,7 @@
             "taken": false,
             "effect": "weapon"
         },{
+            "id": 14,
             "name": "heathPotion",
             "namePretty": "Health Potion",
             "description": "A marvel of medical science, this potion will heal 2 points of your vaguely defined injuries.",
@@ -124,6 +138,7 @@
             "taken": false,
             "effect": "heal"
         },{
+            "id": 15,
             "name": "lesserheathPotion",
             "namePretty": "Lesser Health Potion",
             "description": "A marvel of medical science, this potion will heal 1 point of your vaguely defined injuries.",
@@ -134,6 +149,7 @@
             "taken": false,
             "effect": "heal"
         },{
+            "id": 16,
             "name": "greaterheathPotion",
             "namePretty": "Greater Health Potion",
             "description": "A marvel of medical science, this potion will heal 3 points of your vaguely defined injuries.",
@@ -144,6 +160,7 @@
             "taken": false,
             "effect": "heal"
         },{
+            "id": 17,
             "name": "gold",
             "namePretty": "Gold Coin",
             "description": "Gold can be used as a placeholder for value in exchange for goods and services.",
@@ -153,6 +170,7 @@
             "taken": false,
             "effect": "gold"
         },{
+            "id": 18,
             "name": "gold",
             "namePretty": "Gold Coin",
             "description": "Gold can be used as a placeholder for value in exchange for goods and services.",
@@ -162,6 +180,7 @@
             "taken": false,
             "effect": "gold"
         },{
+            "id": 19,
             "name": "fireballguantlet",
             "namePretty": "Guanlet of Fireball",
             "description": "A wizard enchanted a gaunlet to throw fireballs, enjoy.",
