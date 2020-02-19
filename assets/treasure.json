@@ -17,6 +17,26 @@
             "effect": "weapon"
         },
         {
+            "name": "magicStaff",
+            "namePretty": "Wizard's Staff",
+            "description": "A stick that a great wizard once took from a forest, enhanced by their power, it is now a formidable weapon.",
+            "strength": "wand",
+            "starting": false,
+            "found": false,
+            "taken": false,
+            "effect": "weapon"
+        },
+        {
+            "name": "dungeonsword",
+            "namePretty": "Rusty Iron Sword",
+            "description": "An iron sword that has been within the depths of this dungeon for a substantial period of time.",
+            "strength": "sword",
+            "starting": false,
+            "found": false,
+            "taken": false,
+            "effect": "weapon"
+        },
+        {
             "name": "automaticCrossbow",
             "namePretty": "Automatic Crossbow",
             "description": "A crossbow which continuously fires bolts so long as the trigger is held.",
@@ -138,6 +158,16 @@
             "found": false,
             "taken": false,
             "effect": "heal"
+        },
+        {
+            "name": "gold",
+            "namePretty": "Gold Coin",
+            "description": "Gold can be used as a placeholder for value in exchange for goods and services.",
+            "strength": "none",
+            "starting": false,
+            "found": false,
+            "taken": false,
+            "effect": "gold"
         },
         {
             "name": "gold",

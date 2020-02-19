@@ -34,13 +34,12 @@ export class RoomLayoutService {
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
     }
-  
     return array;
   }
   
   random_room_layout = this.scrambleRooms(rooms);
 
-  found_treasures = treasure.slice(-9);
+  found_treasures = treasure.filter(items => items.name !== 'sword' && items.name !== 'wand');
 
   random_treasure_layout = this.scrambleRooms(this.found_treasures);
   
