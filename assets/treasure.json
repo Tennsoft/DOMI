@@ -161,6 +161,15 @@
             "found": false,
             "taken": false,
             "effect": "gold"
+        },{
+            "name": "fireballguantlet",
+            "namePretty": "Guanlet of Fireball",
+            "description": "A wizard enchanted a gaunlet to throw fireballs, enjoy.",
+            "strength": "fire",
+            "starting": false,
+            "found": false,
+            "taken": false,
+            "effect": "weapon"
         }
     ]
 }

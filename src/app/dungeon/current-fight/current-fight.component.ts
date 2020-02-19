@@ -4,9 +4,6 @@ import { AttackService } from 'src/app/attack.service';
 import { MonsterLayoutService } from 'src/app/monster-layout.service';
 import { MoveRoomService } from 'src/app/move-room.service';
 import { UniqueEncountersService } from '../../uniqueencounters.service';
-import { from } from 'rxjs';
-
-
 
 @Component({
   selector: 'app-current-fight',
@@ -61,7 +58,7 @@ export class CurrentFightComponent implements OnInit, DoCheck {
     //declare attack
     this.current_fight_damage = this.playerArrayService.getFightResult()
     if(this.current_fight_damage.length !== 0 ){
-      if(this.playerArrayService.queueRoom === true){
+      if(this.uniqueEncounters.queueRoom === true){
 
       } else if (this.uniqueEncounters.monsterSummoned(this.curRoom)){} else{
         this.current_fight_damage = this.current_fight_damage + " You found treasure! Check your inventory.";
