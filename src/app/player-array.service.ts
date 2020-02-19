@@ -8,31 +8,29 @@ import { treasure } from '../../assets/treasure.json';
   providedIn: 'root'
 })
 export class PlayerArrayService {
-  //score
-  score = <number> 0;
-  gold = <number> 2;
-
-  getScore(){
-    return this.score;
-  }
-
-  addToScore(){
-    this.score++;
-  }
 
   constructor(
     private router: Router
-    //private attkServ: AttackService
   ) {
-    this.difficultyChange.subscribe((value) => {
-      this.difficulty = value
-  });
+      this.difficultyChange.subscribe((value) => {
+        this.difficulty = value
+      });
+    }
+  //score
+  gamescore = <number> 0;
+  gold = <number> 2;
 
+  getScore(){
+    return this.gamescore;
+  }
+
+  addToScore(){
+    this.gamescore = this.gamescore + 1;
   }
 
   seeDifficultyChange() {
-    this.difficultyChange.next(this.difficulty);
-}
+   this.difficultyChange.next(this.difficulty);
+  }
 
   //queue initial length
   queuelength = 5;
@@ -205,10 +203,6 @@ export class PlayerArrayService {
   //   }
   // }
 
- 
-
-  
-
   //resetting the game
 
   clearInventory(){
@@ -239,5 +233,4 @@ export class PlayerArrayService {
   }
 
   difficultyChange: Subject<string> = new Subject<string>();
-
 }

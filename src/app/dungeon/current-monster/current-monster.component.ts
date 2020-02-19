@@ -206,20 +206,12 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
           // setTimeout(() =>{ 
           //   this.playerArrayService.setFightResult('');
           // }, 1900);
-        }
-
-    
-    
-    //console.log("current monster is "+ this.current_monster_name);
-    
-    
+      }
+      //console.log("current monster is "+ this.current_monster_name);
     }
     this.attackService.setMonster(this.current_monster_name);
-
     //console.log(this.playerArrayService.getPosition());
-
   }
-
 
   clearTreasureBox() {
     this.playerArrayService.setTreasureFound(false);
@@ -310,9 +302,6 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
         setTimeout(() =>{
           this.monster_list[this.current_room_abs_id].dead = true;
         }, 1900);
-      
     }
   }
-
- 
 }

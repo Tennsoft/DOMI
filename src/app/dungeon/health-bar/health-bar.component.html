@@ -1,5 +1,8 @@
 <div>
     <div class="row" id="healthBar">
+        <p id="scoreLabel" class="col-xs-1"><strong>Score: {{ this.playerScore }}</strong></p>
+    </div>
+    <div class="row" id="healthBar">
         <p id="hpLabel" class="col-xs-1"><strong>HP: </strong></p>
         <div id="health" *ngFor="let i of [].constructor(currentHealth)"></div>
     </div>

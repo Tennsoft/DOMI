@@ -69,8 +69,8 @@
         {
             "name": "banefulButterknife",
             "namePretty": "Baneful Butterknife",
-            "description": "A tiny blade that glints wickedly in the light.  Sharp enough to cut through anything like butter.  Watch your fingers!",
-            "strength": "sword",
+            "description": "A tiny blade that glints wickedly in the light.  Sharp enough to cut through anything like butter. Glimers with a silvery light.  Watch your fingers!",
+            "strength": "silver",
             "starting": false,
             "found": false,
             "taken": false,

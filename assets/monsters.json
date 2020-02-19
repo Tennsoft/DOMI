@@ -5,7 +5,7 @@
             "name": "werebeaver",
             "namePretty": "Werebeaver",
             "description": "Some poor humanoid has become infected with werebeaveritis. They have turned into a rabid beaver. It thinks you kicked its dam and it's not happy about it.",
-            "weakness": "fire",
+            "weakness": "silver",
             "fightDamage": "The werebeaver skillfully dodges your attack, using its tail as a springboard to get close enough to sink its vile teeth into your leg. You lose one point of health.",
             "fightDie": "The werebeaver goes limp and falls to the ground.",
             "dead": false,
@@ -196,7 +196,42 @@
             "dead": false,
             "corpse": "You see the queue you rememeber fondly waiting in",
             "monster": false
-
-        }        
+        },
+        {
+            "id": 18,
+            "name": "zombie",
+            "namePretty": "Zombie",
+            "description": "That corpse appears to be moving maybe you should do something about that.",
+            "weakness": "fire",
+            "fightDamage": "You attack the zombie with all your might and managed to take it down, but at what cost? You lose one point of health.",
+            "fightDie": "The zombie burns to to cinders. The apocolypse is staved off once again.",
+            "dead": false,
+            "corpse": "The remains of what was once a person, reanimated and defiled now lie still.",
+            "monster": true
+        },
+        {
+            "id": 19,
+            "name": "bear",
+            "namePretty": "Sir Bearington",
+            "description": "A rather large, hairy man wearing a fine tailored suit and a monicle stands in the room, his accent appears rather thick and you cannot easily discern what what he is saying.",
+            "weakness": "wand",
+            "fightDamage": "You attack the man strikes back at you with his large ... PAWS?  You lose one point of health.",
+            "fightDie": "Your magical blast blows away the suit and reveals Sir Bearington for what he actually is, a bear. He falls over upon his defeat.",
+            "dead": false,
+            "corpse": "The remains of a once mighty bear lay still upon the dungeon floor.",
+            "monster": true
+        },
+        {
+            "id": 20,
+            "name": "banshee",
+            "namePretty": "Banshee",
+            "description": "A hooded figure hovers within the room. They appear to be making no moves but an ominous mist waves off of them",
+            "weakness": "sword",
+            "fightDamage": "The figure lets out a blood curdling scream as they fall to the ground. It is so powerful it damages even your might figure. You lose one point of health.",
+            "fightDie": "The figure fades as your weapon moves through their form leaving a grey puddle of shadows.",
+            "dead": false,
+            "corpse": "What appears to be a puddle of shadows lies where the spirit fell.",
+            "monster": true
+        }       
     ]
 }

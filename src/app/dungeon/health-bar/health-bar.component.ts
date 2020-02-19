@@ -1,7 +1,6 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 
-import { PlayerArrayService } from '../../player-array.service.js';
-import { AttackService } from '../../attack.service';
+import { PlayerArrayService } from '../../player-array.service';
 import { HealthChangeService } from '../../health-change.service'
 
 @Component({
@@ -13,13 +12,19 @@ import { HealthChangeService } from '../../health-change.service'
 
 export class HealthBarComponent implements OnInit, DoCheck {
 
-  // playerStartHealth: number
-  // currentHealth: number
-  playerStartHealth: number = this.playerArrayService.getHealth().maxHP;
+  constructor(
+    public playerArray: PlayerArrayService, 
+    public healthChange: HealthChangeService) {}
+
+  playerStartHealth: number = this.playerArray.getHealth().maxHP;
   currentHealth: number = this.healthChange.currentHealth;
-  
-  constructor(public playerArrayService: PlayerArrayService, public healthChange: HealthChangeService) {}
+  playerScore;
+
   ngDoCheck() {
+    this.playerScore = this.playerArray.getScore();
+    //console.log(this.playerArray.score);
+    //console.log(this.playerArray.getScore());
+    //console.log(this.playerScore);
     
     if (this.healthChange.updateLife) {
       this.currentHealth = this.healthChange.updateLife();
