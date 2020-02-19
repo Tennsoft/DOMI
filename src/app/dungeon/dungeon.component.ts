@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { MoveRoomService } from '../move-room.service.js';
 import { FourByFourMoveRoomService } from '../four-by-four-move-room.service';
-import { PlayerArrayService } from '../player-array.service.js';
+import { PlayerArrayService } from '../player-array.service';
 
 
 

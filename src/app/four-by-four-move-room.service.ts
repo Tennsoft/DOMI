@@ -6,7 +6,8 @@ import { PlayerArrayService } from './player-array.service';
 })
 export class FourByFourMoveRoomService {
 
-  constructor(public playerArrayService: PlayerArrayService) { }
+  constructor(
+    public playerArrayService: PlayerArrayService) { }
 
   new_pos = {x:0, y:0};
 

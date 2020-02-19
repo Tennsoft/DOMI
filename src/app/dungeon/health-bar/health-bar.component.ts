@@ -1,7 +1,7 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 
 import { PlayerArrayService } from '../../player-array.service';
-import { HealthChangeService } from '../../health-change.service'
+import { HealthChangeService } from '../../health-change.service';
 
 @Component({
   selector: 'app-health-bar',

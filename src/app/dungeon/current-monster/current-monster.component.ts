@@ -10,7 +10,7 @@ import { MoveRoomService } from 'src/app/move-room.service';
 import { MonsterLayoutService } from 'src/app/monster-layout.service';
 import { RoomLayoutService } from 'src/app/room-layout.service';
 import { AttackService } from '../../attack.service';
-import { FourByFourMoveRoomService } from 'src/app/four-by-four-move-room.service.js';
+import { FourByFourMoveRoomService } from 'src/app/four-by-four-move-room.service';
 
 @Component({
   selector: 'app-current-monster',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { PlayerArrayService } from './player-array.service.js';
+import { PlayerArrayService } from './player-array.service';
 
 @Injectable({
   providedIn: 'root'
