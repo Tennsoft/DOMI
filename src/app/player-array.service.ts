@@ -130,23 +130,23 @@ export class PlayerArrayService {
   }
 
   //searching for treasure
-  can_search = false;
-  getSearchPossible(){
-    return this.can_search;
-  }
+  // can_search = false;
+  // getSearchPossible(){
+  //   return this.can_search;
+  // }
 
-  setSearchPossible(arg){
-    return this.can_search = arg;
-  }
+  // setSearchPossible(arg){
+  //   return this.can_search = arg;
+  // }
 
-  treasure_found = false;
-  getTreasureFound(){
-    return this.treasure_found;
-  }
+  // treasure_found = false;
+  // getTreasureFound(){
+  //   return this.treasure_found;
+  // }
 
-  setTreasureFound(arg){
-    return this.treasure_found = arg;
-  }
+  // setTreasureFound(arg){
+  //   return this.treasure_found = arg;
+  // }
 
 
   //health

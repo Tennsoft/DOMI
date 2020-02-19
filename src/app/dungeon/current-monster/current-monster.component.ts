@@ -10,7 +10,9 @@ import { MoveRoomService } from 'src/app/move-room.service';
 import { MonsterLayoutService } from 'src/app/monster-layout.service';
 import { RoomLayoutService } from 'src/app/room-layout.service';
 import { AttackService } from '../../attack.service';
+import { UniqueEncountersService } from '../../uniqueencounters.service';
 import { FourByFourMoveRoomService } from 'src/app/four-by-four-move-room.service';
+
 
 @Component({
   selector: 'app-current-monster',
@@ -34,10 +36,10 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
   boss_monster_desc;
 
 
-  can_search_for_treasure = this.playerArrayService.getSearchPossible();
+  can_search_for_treasure = this.uniqueEncounters.getSearchPossible();
 
 
-  found_treasure = this.playerArrayService.getTreasureFound();
+  found_treasure = this.uniqueEncounters.getTreasureFound();
   current_treasure_name;
   current_treasure_desc;
 
@@ -61,6 +63,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
     public monster_layout_service: MonsterLayoutService,
     public room_layout_service: RoomLayoutService,
     public attackService: AttackService,
+    public uniqueEncounters: UniqueEncountersService,
     public four_by_four_move_room_service: FourByFourMoveRoomService) { 
   }
 
@@ -111,7 +114,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
 
      if(this.current_monster_base_name == "treasure_find"){
       this.can_search_for_treasure = true;
-      this.playerArrayService.setSearchPossible(true);
+      this.uniqueEncounters.setSearchPossible(true);
       //console.log()
       //console.log(this.playerArrayService.getSearchPossible());
     }
@@ -143,7 +146,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
     }
     //console.log(this.monster_list);
     this.current_room = this.playerArrayService.getPosition();
-    this.found_treasure = this.playerArrayService.getTreasureFound();
+    this.found_treasure = this.uniqueEncounters.getTreasureFound();
     //this.had_a_fight = this.move_room_service.moveRoom(0,0,this.playerArrayService.getPosition())[1];
     //this.playerArrayService.setFightResult(this.had_a_fight);
     
@@ -162,15 +165,15 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
     if((window.history.state.difficulty == "easy" && this.current_room_abs_id == 6)  || this.current_room_abs_id == 15){
       this.can_search_for_treasure = false;
       this.playerArrayService.queueRoom = false;
-      this.playerArrayService.setTreasureFound(false);
+      this.uniqueEncounters.setTreasureFound(false);
       this.playerArrayService.setFightResult("");
       this.current_monster_name = this.boss_list[1].namePretty;
       this.current_monster_desc = this.boss_list[1].description;
     } 
     else {
       //this.can_search_for_treasure = false;
-      this.found_treasure = this.playerArrayService.getTreasureFound();
-      this.playerArrayService.setSearchPossible(false);
+      this.found_treasure = this.uniqueEncounters.getTreasureFound();
+      this.uniqueEncounters.setSearchPossible(false);
       
       //if monster not dead, display it
       if(this.monster_list[this.current_room_abs_id].dead == false){
@@ -181,11 +184,11 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
         // console.log(this.current_monster_base_name);
         if(this.current_monster_base_name == "treasure_find"){
           this.can_search_for_treasure = true;
-          this.playerArrayService.setSearchPossible(true);
+          this.uniqueEncounters.setSearchPossible(true);
         }
         else{
           this.can_search_for_treasure = false;
-          this.found_treasure = this.playerArrayService.getTreasureFound();
+          this.found_treasure = this.uniqueEncounters.getTreasureFound();
           this.current_treasure_name = "";
           this.current_treasure_desc = "";
         }
@@ -202,7 +205,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
         this.current_monster_name = "";
         this.current_monster_desc = this.monster_list[this.current_room_abs_id].corpse;
         this.can_search_for_treasure = false;
-        this.playerArrayService.setSearchPossible(false);
+        this.uniqueEncounters.setSearchPossible(false);
           // setTimeout(() =>{ 
           //   this.playerArrayService.setFightResult('');
           // }, 1900);
@@ -214,8 +217,8 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
   }
 
   clearTreasureBox() {
-    this.playerArrayService.setTreasureFound(false);
-    this.playerArrayService.getTreasureFound();
+    this.uniqueEncounters.setTreasureFound(false);
+    this.uniqueEncounters.getTreasureFound();
     // console.log("clearFightBox() called, attempted to clear fight box " + this.current_fight_damage)
   }
 
@@ -227,9 +230,9 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       this.current_treasure_name = this.treasure_list[this.current_room_abs_id].namePretty;
       this.current_treasure_desc = this.treasure_list[this.current_room_abs_id].description;
       this.can_search_for_treasure = false;
-      this.playerArrayService.setSearchPossible(false);
+      this.uniqueEncounters.setSearchPossible(false);
       
-      this.playerArrayService.setTreasureFound(true);
+      this.uniqueEncounters.setTreasureFound(true);
       this.found_treasure = true;
       this.playerArrayService.addToInventory(this.treasure_list[this.current_room_abs_id].name);
       this.treasure_list[this.current_room_abs_id].taken = true;
@@ -239,7 +242,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
 
       setTimeout(() => {
         this.found_treasure = false;
-        this.playerArrayService.setTreasureFound(false);
+        this.uniqueEncounters.setTreasureFound(false);
         this.can_search_for_treasure = false;
       }, 1900);
     }
@@ -247,10 +250,10 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       this.current_treasure_name = "";
       this.current_treasure_desc = "nothing new, even though you search carefully";
       this.found_treasure = true;
-      this.playerArrayService.setTreasureFound(true);
+      this.uniqueEncounters.setTreasureFound(true);
       setTimeout(() =>{
         this.found_treasure = false;
-        this.playerArrayService.setTreasureFound(false);
+        this.uniqueEncounters.setTreasureFound(false);
        }, 1900);
     }
 

@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
 import { MoveRoomService } from '../move-room.service.js';
+import { UniqueEncountersService } from '../uniqueencounters.service'
 import { FourByFourMoveRoomService } from '../four-by-four-move-room.service';
 import { PlayerArrayService } from '../player-array.service';
 
@@ -23,6 +24,7 @@ export class DungeonComponent implements OnInit, DoCheck {
     private router: Router,
     public move_room_service: MoveRoomService, 
     public playerArrayService: PlayerArrayService,
+    public uniqueEncounters: UniqueEncountersService,
     public four_by_four_move_room_service: FourByFourMoveRoomService
     ) {
       //this.curr_difficulty = this.playerArrayService.difficulty;
@@ -106,6 +108,7 @@ export class DungeonComponent implements OnInit, DoCheck {
     //console.log(now_where.x + " " + now_where.y);
     //this.curr_difficulty = this.playerArrayService.getDifficulty();
     this.curr_difficulty = window.history.state.difficulty;
+    console.log(window.history.state.difficulty)
     //console.log("difficulty is "+this.curr_difficulty);
     //console.log("type of current difficulty is "+typeof this.curr_difficulty);
     //movement buttons enable/disable for small dungeon
@@ -182,7 +185,7 @@ export class DungeonComponent implements OnInit, DoCheck {
   
 
   onMoveNorth(){
-    this.playerArrayService.setTreasureFound(false);
+    this.uniqueEncounters.setTreasureFound(false);
     let new_position = {};
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     if(window.history.state.difficulty == "easy"){
@@ -197,7 +200,7 @@ export class DungeonComponent implements OnInit, DoCheck {
   }
 
   onMoveSouth(){
-    this.playerArrayService.setTreasureFound(false);
+    this.uniqueEncounters.setTreasureFound(false);
     let new_position = {};
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     if(window.history.state.difficulty == "easy"){
@@ -214,7 +217,7 @@ export class DungeonComponent implements OnInit, DoCheck {
   }
 
   onMoveEast(){
-    this.playerArrayService.setTreasureFound(false);
+    this.uniqueEncounters.setTreasureFound(false);
     let new_position = {};
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     if(window.history.state.difficulty == "easy"){
@@ -232,7 +235,7 @@ export class DungeonComponent implements OnInit, DoCheck {
   }
 
   onMoveWest(){
-    this.playerArrayService.setTreasureFound(false);
+    this.uniqueEncounters.setTreasureFound(false);
     let new_position = {};
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     if(window.history.state.difficulty == "easy"){

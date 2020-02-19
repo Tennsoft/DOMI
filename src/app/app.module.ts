@@ -20,6 +20,7 @@ import { CurrentFightComponent } from './dungeon/current-fight/current-fight.com
 import { AttackService } from './attack.service';
 import { DevBoxComponent } from './dev-box/dev-box.component';
 import { FourByFourMoveRoomService } from './four-by-four-move-room.service';
+import { UniqueEncountersService } from './uniqueencounters.service';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import { FourByFourMoveRoomService } from './four-by-four-move-room.service';
     KeyboardShortcutsModule.forRoot(),
     ReactiveFormsModule
   ],
-  providers: [MoveRoomService, MonsterLayoutService, RoomLayoutService, PlayerArrayService, AttackService, FourByFourMoveRoomService],
+  providers: [MoveRoomService, MonsterLayoutService, RoomLayoutService, PlayerArrayService, AttackService, FourByFourMoveRoomService, UniqueEncountersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
