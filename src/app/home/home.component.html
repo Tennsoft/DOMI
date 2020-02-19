@@ -1,124 +1,116 @@
 <div class="container">
-    <div class="row text-warning justify-content-center mb-5">
-        <h1>Welcome to The Dungeon of Moderate Inconvenience!</h1>
-        <h3>May your adventure be neither too inconvenient nor make you late for dinner.</h3>
+  <div class="row text-warning justify-content-center mb-5">
+    <h1>Welcome to The Dungeon of Moderate Inconvenience!</h1>
+    <h3>May your adventure be neither too inconvenient nor make you late for dinner.</h3>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col">
+      <!-- button for playing mortal kombat theme -->
+      <button class="btn btn-danger" (click)="onTestMettle()">Test Your Mettle</button>
     </div>
-    <div class="row justify-content-center">
-        <div class="col">
-            <!-- button for playing mortal kombat theme -->
-            <button class="btn btn-danger" (click)="onTestMettle()">Test Your Mettle</button>
-      
-        </div>
-            <!-- player input -->
-        <div class="col-7">
-          <div class="row justify-content-center">
-            <h3 class="text-warning">Start Your Adventure</h3>
-
+      <!-- player input -->
+    <div class="col-7">
+      <div class="row justify-content-center">
+        <h3 class="text-warning">Start Your Adventure</h3>
+      </div>
+      <form [formGroup]="playerStartStuff">
+        <div class="row justify-content-center">
+          <div class="col-lg-4">
+            <label>
+              <p class="text-white">Enter your name:</p>
+              <input type="text" formControlName="playerName">
+            </label>
           </div>
-            <form [formGroup]="playerStartStuff">
-                
-                <div class="row justify-content-center">
-                  <div class="col-lg-4">
-                    <label>
-                      <p class="text-white">Enter your name:</p>
-                      <input type="text" formControlName="playerName" required>
-                    </label>
-                  </div>
-                    
-                  <div class="radio col-lg-4">
-                    <p class="text-white">Choose your starting item:</p>
-                    <label class="text-danger mr-3">
-                    <input formControlName="startItem" name="startItem" type="radio" value="sword" required/> Sword
-                    </label>    
-                    <label class="text-danger">
-                      <input formControlName="startItem" name="startItem" type="radio" value="wand" required/> Wand
-                    </label>
-                  </div>
-                  <div class="col-lg-4">
-                    <p class="text-white">Difficulty:</p>
-                    <select formControlName="difficulty" class="custom-select">
-                      <option name="difficulty" value="easy" required>Easy</option>
-                      <option name="difficulty" value="medium" required>Medium</option>
-                      <option name="difficulty" value="hard" required>Hard</option>
-                    </select>
-                    
-                  </div>
-                </div>  
-                <div class="row justify-content-center">
-                  <label>
-                    <button 
-                      class="btn btn-danger" type="button" (click)="onStart()"
-                      [disabled]="playerStartStuff.controls['playerName' && 'startItem'].invalid"
-                      >Start!</button>
-                  </label>
-                </div>
-                
-            </form>
             
-            <!-- fake high scores -->
-            <h3 class="text-warning">Totally Real High Scores</h3>
-            <table class="table table-dark table-sm">
-                <thead>
-                  <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Words of Wisdom</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>The Doctor</td>
-                    <td>51</td>
-                    <td>The secret is Time Machine</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Alucard</td>
-                    <td>50</td>
-                    <td>I went for a walk.</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Old Man Henderson</td>
-                    <td>20</td>
-                    <td>Ain't my fault I'm crazy!</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Maria Morevna</td>
-                    <td>18</td>
-                    <td>Even Kashchei the Deathless can be locked in a box.</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>Tucker's Kobolds</td>
-                    <td>16</td>
-                    <td>Teamwork! Yip yip!</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">6</th>
-                    <td>Queen of Hearts</td>
-                    <td>15</td>
-                    <td>Off with their head!</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">7</th>
-                    <td>Conan the Barbarian</td>
-                    <td>13</td>
-                    <td>Crom!</td>
-                  </tr>
-                </tbody>
-              </table>
+          <div class="radio col-lg-4">
+            <p class="text-white">Choose your starting item:</p>
+            <label class="text-danger mr-3">
+            <input formControlName="startItem" name="startItem" type="radio" value="sword" required/> Sword
+            </label>    
+            <label class="text-danger">
+              <input formControlName="startItem" name="startItem" type="radio" value="wand" required/> Wand
+            </label>
+          </div>
 
+          <div class="col-lg-4">
+            <p class="text-white">Difficulty:</p>
+            <select formControlName="difficulty" class="custom-select" required>
+              <option name="difficulty" value="easy" required>Easy</option>
+              <option name="difficulty" value="medium" required>Medium</option>
+              <option name="difficulty" value="hard" required>Hard</option>
+            </select>
+          </div>
+        </div>  
+        <div class="row justify-content-center">
+          <label>
+            <button 
+              class="btn btn-danger" type="button" (click)="onStart()"
+              [disabled]="playerStartStuff.controls['startItem' && 'difficulty'].invalid"
+              >Start!</button>
+          </label>
+        </div>
+      </form>
         
-
-        </div>
-        <div class="col">
-            <!-- empty for now, but create 3 columns so music button on right doesn't look off balance -->
-
-        </div>
+      <!-- fake high scores -->
+      <h3 class="text-warning">Totally Real High Scores</h3>
+      <table class="table table-dark table-sm">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Name</th>
+            <th scope="col">Score</th>
+            <th scope="col">Words of Wisdom</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Alucard</td>
+            <td>50</td>
+            <td>I went for a walk.</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>The Doctor</td>
+            <td>45</td>
+            <td>The secret is Time Machine</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Old Man Henderson</td>
+            <td>35</td>
+            <td>Ain't my fault I'm crazy!</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Maria Morevna</td>
+            <td>27</td>
+            <td>Even Kashchei the Deathless can be locked in a box.</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Tucker's Kobolds</td>
+            <td>25</td>
+            <td>Teamwork! Yip yip!</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>Queen of Hearts</td>
+            <td>23</td>
+            <td>Off with their head!</td>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td>Conan the Barbarian</td>
+            <td>22</td>
+            <td>Crom!</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <div class="col">
+      <!-- empty for now, but create 3 columns so music button on right doesn't look off balance -->
+    </div>
+  </div>
 </div>
 
