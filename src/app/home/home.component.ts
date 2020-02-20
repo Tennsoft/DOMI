@@ -62,6 +62,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   onStart(){
 
     this.playerService.gamescore = 0;
+    this.playerService.gold = 2;
     if(!this.audioPlayer.paused){
       this.playerService.addToScore();
       this.playerService.addToScore();

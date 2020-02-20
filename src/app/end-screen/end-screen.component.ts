@@ -60,7 +60,7 @@ export class EndScreenComponent implements OnInit {
   loseRespawn(){
     let chance = Math.floor(Math.random()*10);
     if (chance > 5){
-      this.loseMessage="<h4 class='text-danger'>You Died. You find yourself regaining conciousness within a horse drawn carriage. Your hands are tied and you are being taken down the road. Across from you you see a man in rags gazing down upon you he says, 'Hey, you'e finally awake.' </h4>";
+      this.loseMessage="<h4 class='text-danger'>You Died. You find yourself regaining conciousness within a horse drawn carriage. Your hands are tied and you are being taken down the road. Across from you you see a man in rags gazing down upon you he says, 'Hey, you're finally awake.' </h4>";
     }
   }
 

@@ -53,8 +53,12 @@ export class AppComponent  implements AfterViewInit {
           {
               key: ["d e a t h n o t e"],
               label: "Sequences",
-              description: "win the game ",
-              command: () => this.playerArray.addToInventory('lesserheathPotion'),
+              description: "kill your enemy",
+              command: () => {
+                this.playerArray.gainHealth();
+                this.attackService.attackDeclared('deathnote');
+                this.playerArray.reduceScore();
+              }
           },             
           {
               key: ["a d d g o l d"],

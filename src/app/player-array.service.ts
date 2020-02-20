@@ -24,7 +24,11 @@ export class PlayerArrayService {
   }
 
   addToScore(){
-    this.gamescore = this.gamescore + 1;
+    this.gamescore++;
+  }
+
+  reduceScore(){
+    this.gamescore--;
   }
 
   seeDifficultyChange() {

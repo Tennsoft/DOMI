@@ -71,7 +71,7 @@ export class InventoryComponent implements OnInit, OnChanges {
 
   useInventoryItem(item){
     if( this.getItemType(item) === 'weapon') {
-      this.attackService.attackDeclared(this.getDamageType(item))
+      this.attackService.attackDeclared(this.getDamageType(item));
     } else if( this.getItemType(item) === 'heal' ) {
       this.getHealAmmount(item);
       this.healthChange.updateLife();
@@ -79,6 +79,7 @@ export class InventoryComponent implements OnInit, OnChanges {
       this.inventory = this.playerArrayConst.getInventory();
     } else if( this.getItemType(item) === 'gold' ) {
       this.playerArrayConst.spendGold();
+      this.attackService.attackDeclared('gold');
       if(this.playerArrayConst.getGold() < 1){
         this.playerArrayConst.removeFromInventory(item);
       }

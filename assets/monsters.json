@@ -245,10 +245,21 @@
             "namePretty": "Seer",
             "description": "An older woman dressed in dark clothing robes sits in your path, her eyes focus past you drilling through. She speaks towards you, 'I am the lady of this dungeon, show me a weapon and I may tell you what it may strike down within these wall...For a price.",
             "weakness": "none",
-            "fightDamage": "",
+            "fightDamage": "There are powers of which the lady of the dungeon despises.",
             "fightDie": "",
             "dead": false,
-            "corpse": "Where the demon once stood there is now but an empty spot.",
+            "corpse": "",
+            "monster": false
+        },{
+            "id": 24,
+            "name": "troll",
+            "namePretty": "Bridge Troll",
+            "description": "A troll stands guarding a treasure box they glare down upon you stating, 'If you want the contents, the cost will be gold or blood'",
+            "weakness": "gold",
+            "fightDamage": "The troll strikes back at you, its attack cleaving into you. You lose one point of health.",
+            "fightDie": "The troll takes your coin and grants you the treasure.",
+            "dead": false,
+            "corpse": "The troll waves happily at you pointing down to the empty treasure chest at its feet.",
             "monster": false
         }
     ]

@@ -97,7 +97,10 @@ export class AttackService {
         this.playerArray.instantDeath();
         this.playerArray.setFightResult(my_monster_entry.fightDamage);
       } else if(curr_mons === "Seer"){
-        if(this.playerArray.getGold() > 0) {
+        if(damageType === 'deathnote'){
+          this.playerArray.instantDeath();
+          this.playerArray.setFightResult(my_monster_entry.fightDamage);
+        } else if(this.playerArray.getGold() > 0) {
           let weakness = monsters.monsters;
           let bossWeakness = bosses.bosses;
           let endString = '';
@@ -109,8 +112,10 @@ export class AttackService {
           bossWeakness.forEach(element => { endString = endString + "the " + element.namePretty + " and "; });
           endString = endString.slice(0, -5) + '.';
 
-          this.playerArray.setFightResult('Such an item would do well against ' +endString+ ' If you were to find them in this dungeon.');
-          this.playerArray.spendGold();
+          this.playerArray.setFightResult('Such an item would do well against ' + endString + ' If you were to find them in this dungeon.');
+          if(damageType !== 'gold'){//costs gold if not testing gold
+            this.playerArray.spendGold();
+          }
         } else {
           this.playerArray.setFightResult('She glares at you starting "My sight actually costs money..."');
         }
@@ -123,11 +128,11 @@ export class AttackService {
         //console.log("you used the right weapon");
       } else {
         //console.log("you used the wrong weapon");
-        this.playerArray.loseHealth();
-        this.healthChange.updateLife();
-        if(this.monster_list[my_index].dead == false && this.monster_list[my_index].name != "treasure_find"){
-        this.playerArray.setFightResult(my_monster_entry.fightDamage);
-        this.playerArray.addToInventory(this.treasure_list[my_index].name); }
+          this.playerArray.loseHealth();
+          this.healthChange.updateLife();
+          if(this.monster_list[my_index].dead == false && this.monster_list[my_index].name != "treasure_find"){
+            this.playerArray.setFightResult(my_monster_entry.fightDamage);
+            this.playerArray.addToInventory(this.treasure_list[my_index].name); }
       }
 
       //set dead to true
@@ -136,7 +141,6 @@ export class AttackService {
           if(this.monster_list[i].namePretty == curr_mons && this.monster_list[i].namePretty != ""){
             this.monster_list[i].dead = true;
           }
-          //console.log(this.monster_list[my_index].dead);
         }
       }
     } catch (error) {
