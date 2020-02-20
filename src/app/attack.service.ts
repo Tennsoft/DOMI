@@ -96,6 +96,24 @@ export class AttackService {
       if(curr_mons === "Honey Badger"){
         this.playerArray.instantDeath();
         this.playerArray.setFightResult(my_monster_entry.fightDamage);
+      } else if(curr_mons === "Seer"){
+        if(this.playerArray.getGold() > 0) {
+          let weakness = monsters.monsters;
+          let bossWeakness = bosses.bosses;
+          let endString = '';
+
+          weakness = weakness.filter(function(items){return(items.weakness === damageType)});
+          bossWeakness = bossWeakness.filter(function(items){return(items.weakness === damageType)});
+
+          weakness.forEach(element => { endString = endString + "the " + element.namePretty + " and "; });
+          bossWeakness.forEach(element => { endString = endString + "the " + element.namePretty + " and "; });
+          endString = endString.slice(0, -5) + '.';
+
+          this.playerArray.setFightResult('Such an item would do well against ' +endString+ ' If you were to find them in this dungeon.');
+          this.playerArray.spendGold();
+        } else {
+          this.playerArray.setFightResult('She glares at you starting "My sight actually costs money..."');
+        }
       } else if(this.usedWeakness(damageType, this.currentMonster)) {
         //console.log(this.monster_list[my_index].dead);
         if(this.monster_list[my_index].dead == false && this.monster_list[my_index].name != "treasure_find"){
@@ -113,7 +131,7 @@ export class AttackService {
       }
 
       //set dead to true
-      if(curr_mons !== "Honey Badger"){
+      if(curr_mons !== "Seer"){
         for(var i=0; i< this.monster_list.length; i++){
           if(this.monster_list[i].namePretty == curr_mons && this.monster_list[i].namePretty != ""){
             this.monster_list[i].dead = true;
@@ -127,7 +145,7 @@ export class AttackService {
         return(items.namePretty === curr_mons)
       })[0];
 
-      let my_index = this.boss_list.map(function(e){return e.namePretty;}).indexOf(curr_mons);
+      //let my_index = this.boss_list.map(function(e){return e.namePretty;}).indexOf(curr_mons);
       //console.log(my_index);
       if(this.usedWeakness(damageType, this.currentMonster)){
         
@@ -175,5 +193,4 @@ export class AttackService {
       }
     }  
   }
-
 }

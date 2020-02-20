@@ -171,16 +171,6 @@
             "effect": "gold"
         },{
             "id": 18,
-            "name": "gold",
-            "namePretty": "Gold Coin",
-            "description": "Gold can be used as a placeholder for value in exchange for goods and services.",
-            "strength": "none",
-            "starting": false,
-            "found": false,
-            "taken": false,
-            "effect": "gold"
-        },{
-            "id": 19,
             "name": "fireballguantlet",
             "namePretty": "Guanlet of Fireball",
             "description": "A wizard enchanted a gaunlet to throw fireballs, enjoy.",

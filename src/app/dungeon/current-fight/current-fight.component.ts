@@ -60,7 +60,9 @@ export class CurrentFightComponent implements OnInit, DoCheck {
     if(this.current_fight_damage.length !== 0 ){
       if(this.uniqueEncounters.queueRoom === true){
 
-      } else if (this.uniqueEncounters.monsterSummoned(this.curRoom)){} else{
+      } else if (this.uniqueEncounters.monsterSummoned(this.curRoom)){
+
+      } else if(this.monster === "Seer"){} else {
         this.current_fight_damage = this.current_fight_damage + " You found treasure! Check your inventory.";
         //console.log(this.playerArrayService.getTreasureFound())
       }

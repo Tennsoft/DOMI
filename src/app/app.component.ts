@@ -65,7 +65,7 @@ export class AppComponent  implements AfterViewInit {
           {
               key: ["d i e"],
               label: "Sequences",
-              description: "adds gold",
+              description: "kills the player",
               command: () => this.playerArray.instantDeath()
           }
         );  

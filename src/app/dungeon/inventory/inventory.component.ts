@@ -79,10 +79,10 @@ export class InventoryComponent implements OnInit, OnChanges {
       this.inventory = this.playerArrayConst.getInventory();
     } else if( this.getItemType(item) === 'gold' ) {
       this.playerArrayConst.spendGold();
-      if(this.playerArrayConst.getGold() === 0 ){
-        this.playerArrayConst.removeFromInventory(item);}
+      if(this.playerArrayConst.getGold() < 1){
+        this.playerArrayConst.removeFromInventory(item);
+      }
       this.inventory = this.playerArrayConst.getInventory();
     }
   }
-
 }

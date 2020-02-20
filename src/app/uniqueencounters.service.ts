@@ -33,7 +33,7 @@ export class UniqueEncountersService {
   setTreasureFound(arg) {
     return this.treasure_found = arg;
   }
-
+  //summoning monsters
   summonedMonstersLocations = [];
 
   newSummonedMonster(currentLocation){
@@ -47,5 +47,7 @@ export class UniqueEncountersService {
       return true;
     }
   }
+  //contract demon
+  demonRoom = false;
 }
 

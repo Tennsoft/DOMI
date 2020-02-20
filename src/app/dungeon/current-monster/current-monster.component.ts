@@ -124,24 +124,16 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       this.newRoom = this.move_room_service.current_room_reduce();
     }else{
       this.newRoom = this.four_by_four_move_room_service.current_room_reduce();
-      //console.log("current room "+ this.curRoom);
-      //console.log("new room " + this.newRoom);
     }
 
-    //this.newRoom = this.move_room_service.current_room_reduce();
-    //console.log("this is the new room" + this.newRoom)
-    //console.log(this.treasure_list);
     if (this.newRoom != this.curRoom) {
       this.clearTreasureBox();
       this.playerArrayService.setFightResult("");
       this.curRoom = this.newRoom;
       this.currentWait = this.playerArrayService.getQueueLength();
     }
-    //console.log(this.monster_list);
     this.current_room = this.playerArrayService.getPosition();
     this.found_treasure = this.uniqueEncounters.getTreasureFound();
-    //this.had_a_fight = this.move_room_service.moveRoom(0,0,this.playerArrayService.getPosition())[1];
-    //this.playerArrayService.setFightResult(this.had_a_fight);
     
     
     if(window.history.state.difficulty == "easy"){
@@ -150,10 +142,6 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       this.current_room_abs_id = this.four_by_four_move_room_service.current_room_reduce();
     }
    
-    //this.current_room_abs_id = this.move_room_service.current_room_reduce();
-    //console.log(this.current_room_abs_id)
-
-
     //boss room
     if((window.history.state.difficulty == "easy" && this.current_room_abs_id == 6)  || this.current_room_abs_id == 15){
       this.can_search_for_treasure = false;
@@ -178,8 +166,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
         if(this.current_monster_base_name == "treasure_find"){
           this.can_search_for_treasure = true;
           this.uniqueEncounters.setSearchPossible(true);
-        }
-        else{
+        } else{
           this.can_search_for_treasure = false;
           this.found_treasure = this.uniqueEncounters.getTreasureFound();
           this.current_treasure_name = "";
@@ -187,9 +174,13 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
         }
         if(this.current_monster_base_name == "waitInLine"){
           this.uniqueEncounters.queueRoom = true;
-        }
-        else{
+        } else {
           this.uniqueEncounters.queueRoom = false;
+        }
+        if(this.current_monster_base_name == "contractDemon"){
+          this.uniqueEncounters.demonRoom = true;
+        } else {
+          this.uniqueEncounters.demonRoom = false;
         }
       }
       //if monster dead, don't display
@@ -203,10 +194,8 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
           //   this.playerArrayService.setFightResult('');
           // }, 1900);
       }
-      //console.log("current monster is "+ this.current_monster_name);
     }
     this.attackService.setMonster(this.current_monster_name);
-    //console.log(this.playerArrayService.getPosition());
   }
 
   clearTreasureBox() {
@@ -243,12 +232,18 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       this.current_treasure_desc = "nothing new, even though you search carefully";
       this.found_treasure = true;
       this.uniqueEncounters.setTreasureFound(true);
+      this.playerArrayService.setFightResult('.')
       //setTimeout(() =>{
       //  this.found_treasure = false;
       //  this.uniqueEncounters.setTreasureFound(false);
       // }, 1900);
     }
 
+  }
+
+  promiseFirstBorn(){
+    this.attackService.attackDeclared('agree');
+    document.getElementById('demon').hidden = true;
   }
 
   waitInLine(){
@@ -285,6 +280,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       this.monsterIndex--;
       
     } else {
+      this.playerArrayService.setFightResult('.')
       this.monster_list[this.current_room_abs_id].dead = true;
     }
   }

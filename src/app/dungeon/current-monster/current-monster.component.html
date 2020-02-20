@@ -3,7 +3,11 @@
         <div class="col-xs">
             <h6>You Look For Monsters:</h6>
             <p> {{ current_monster_name }} </p>
-            <p> {{ current_monster_desc }} </p>    
+            <p> {{ current_monster_desc }} </p>
+            <div *ngIf = "this.uniqueEncounters.demonRoom">
+                <button id="demon" class="btn btn-primary" (click)="promiseFirstBorn()"
+                >Promise First Born</button>
+            </div>
             <div *ngIf = "this.uniqueEncounters.queueRoom">
                 <button id="wait" class="btn btn-primary" (click)="waitInLine()"
                 >Wait In Line</button>
