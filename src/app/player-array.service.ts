@@ -215,7 +215,7 @@ export class PlayerArrayService {
   }
 
   //difficulty
-  difficulty: string = "easy";
+  difficulty: string = "";
 
   setDifficulty(diff){
     return this.difficulty = diff; 

@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, DoCheck} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
-import { MoveRoomService } from '../move-room.service.js';
+import { MoveRoomService } from '../move-room.service';
 import { UniqueEncountersService } from '../uniqueencounters.service'
 import { FourByFourMoveRoomService } from '../four-by-four-move-room.service';
 import { PlayerArrayService } from '../player-array.service';
@@ -17,7 +17,7 @@ import { PlayerArrayService } from '../player-array.service';
 })
 
 
-export class DungeonComponent implements OnInit, DoCheck {
+export class DungeonComponent implements OnInit, DoCheck, OnDestroy {
 
   //can_search_for_treasure = this.playerArrayService.getSearchPossible();
   constructor(
@@ -47,6 +47,11 @@ export class DungeonComponent implements OnInit, DoCheck {
     subscription: Subscription;
   
   ngOnInit() {
+    if(this.playerArrayService.difficulty === ""){
+      this.router.navigate(['/']);
+    }
+
+
     this.playerArrayService.resetPosition();
     this.playerArrayService.setFightResult("");
     if( this.playerArrayService.getName() === '' || this.playerArrayService.getInventory() === []){
@@ -244,14 +249,12 @@ export class DungeonComponent implements OnInit, DoCheck {
       new_position = this.four_by_four_move_room_service.moveRoom(-1,0,current_position);
     }
     this.playerArrayService.setPosition(new_position);
-    
-    
-  
     //console.log(this.playerArrayService.getOldPosition());
     // console.log(current_position);
     // console.log(this.playerArrayService.getPosition());
   }
 
-  
-
+  ngOnDestroy(){
+    this.playerArrayService.setDifficulty("");
+  }
 }

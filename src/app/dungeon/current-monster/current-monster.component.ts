@@ -242,8 +242,28 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
   }
 
   promiseFirstBorn(){
-    this.attackService.attackDeclared('agree');
+    this.playerArrayService.addToScore();
     document.getElementById('demon').hidden = true;
+    this.attackService.attackDeclared('agree');
+  }
+  promiseSoul(){
+    document.getElementById('demon').hidden = true;
+    this.attackService.attackDeclared('agree');
+  }
+  promiseKingdom(){
+    this.playerArrayService.addToScore();
+    this.playerArrayService.addToScore();
+    document.getElementById('demon').hidden = true;
+    this.attackService.attackDeclared('agree');
+  }
+  promiseAll(){
+    this.playerArrayService.addToScore();
+    this.playerArrayService.addToScore();
+    this.playerArrayService.addToScore();
+    this.playerArrayService.addToScore();
+    this.playerArrayService.addToScore();
+    document.getElementById('demon').hidden = true;
+    this.attackService.attackDeclared('agree');
   }
 
   waitInLine(){

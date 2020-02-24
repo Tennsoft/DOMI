@@ -4,9 +4,15 @@
             <h6>You Look For Monsters:</h6>
             <p> {{ current_monster_name }} </p>
             <p> {{ current_monster_desc }} </p>
-            <div *ngIf = "this.uniqueEncounters.demonRoom">
-                <button id="demon" class="btn btn-primary" (click)="promiseFirstBorn()"
+            <div id="demon" *ngIf = "this.uniqueEncounters.demonRoom">
+                <button class="btn btn-primary ml-3 mt-3" (click)="promiseFirstBorn()"
                 >Promise First Born</button>
+                <button class="btn btn-primary ml-3 mt-3" (click)="promiseSoul()"
+                >Promise Soul</button>
+                <button class="btn btn-primary ml-3 mt-3" (click)="promiseKingdom()"
+                >Promise Kingdom</button>
+                <button class="btn btn-primary ml-3 mt-3" (click)="promiseAll()"
+                >Promise All Of The Above</button>
             </div>
             <div *ngIf = "this.uniqueEncounters.queueRoom">
                 <button id="wait" class="btn btn-primary" (click)="waitInLine()"
@@ -21,7 +27,6 @@
                     <p> {{ current_treasure_name }} </p>
                     <p> {{ current_treasure_desc }} </p>
                 </div>
-
             </div>
         </div>
     </div>
