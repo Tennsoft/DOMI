@@ -1,5 +1,6 @@
 <div>
-<h6>You are in the {{ current_room_name }}</h6>
-<p> {{ current_room_desc }} </p>
+    <h6>You are in the {{ current_room_name }}</h6>
+    <p> {{ current_room_desc }} </p>
+    <button class="btn btn-primary mu-3" *ngIf="this.danceparty" (click)="this.onCaramel()">Dance</button>
 </div>
 

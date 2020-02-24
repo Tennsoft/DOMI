@@ -8,7 +8,8 @@ import { PlayerArrayService } from '../player-array.service';
 })
 export class EndScreenComponent implements OnInit {
 
-  constructor(private playerService: PlayerArrayService) { }
+  constructor(
+    private playerService: PlayerArrayService) {}
 
   playerHealth = {};
 

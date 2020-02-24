@@ -19,30 +19,27 @@ import { FourByFourMoveRoomService } from 'src/app/four-by-four-move-room.servic
   styleUrls: ['./current-room.component.css']
 })
 export class CurrentRoomComponent implements OnInit, DoCheck {
-
-  
   //bring in the rooms, random order
   //room_list = this.room_layout_service.random_room_layout;
 
   //initialize
   room_list;
-  current_room: {x: number, y: number};
+  current_room: { x: number, y: number};
   current_room_abs_id;
   current_room_name;
   current_room_desc;
+  danceparty = <boolean> false;
+  audioPlayer = new Audio();
   
 
-  constructor(public move_room_service: MoveRoomService, 
-              public room_layout_service: RoomLayoutService, 
-              public playerArrayService: PlayerArrayService,
-              public four_by_four_move_room_service: FourByFourMoveRoomService) { 
-
-  }
-  
- 
+  constructor(
+    public move_room_service: MoveRoomService, 
+    public room_layout_service: RoomLayoutService, 
+    public playerArrayService: PlayerArrayService,
+    public four_by_four_move_room_service: FourByFourMoveRoomService) { }
 
   ngOnInit() {
-    
+    this.audioPlayer.src = "../../assets/audio/Caramelldansen.mp3";
     this.room_list = this.room_layout_service.random_room_layout;
     //get the (x,y) coords
     this.current_room = this.playerArrayService.getPosition();
@@ -61,18 +58,6 @@ export class CurrentRoomComponent implements OnInit, DoCheck {
     //console.log(this.playerArrayService.getPosition());
 
 }
-  
-
-    //original attempt
-    // let dungeonLayout = rooms.map(a => a.id);
-    // function newDungeon(array) {
-    //  array.sort(() => Math.random() - 0.5);
-    // }
-    // let my_new_dungeon = newDungeon(dungeonLayout);
-    // console.log(dungeonLayout);    
-    // console.log(my_new_dungeon);
-    // console.log(typeof my_new_dungeon);
-    
 
   ngDoCheck(){
     this.current_room = this.playerArrayService.getPosition();
@@ -83,15 +68,25 @@ export class CurrentRoomComponent implements OnInit, DoCheck {
     }else{
       this.current_room_abs_id = this.four_by_four_move_room_service.current_room_reduce();
     }
-    
+
     //this.current_room_abs_id = this.move_room_service.current_room_reduce();
     //console.log(this.current_room_abs_id)
     this.current_room_name = this.room_list[this.current_room_abs_id].namePretty;
     this.current_room_desc = this.room_list[this.current_room_abs_id].description;
     //console.log("current room is "+ this.current_room_name);
-
+    
+    if(this.current_room_name === "Dance Party"){
+      this.danceparty = true;
+    } else {
+      this.danceparty = false;
+    }
   }
 
-  
-
+  onCaramel(){
+    if(this.audioPlayer.paused){
+      this.audioPlayer.play();
+    } else {
+      this.audioPlayer.pause();
+    }
+  }
 }

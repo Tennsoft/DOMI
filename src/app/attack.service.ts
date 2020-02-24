@@ -3,12 +3,12 @@ import { Router } from '@angular/router';
 
 import { PlayerArrayService } from './player-array.service';
 import { HealthChangeService } from './health-change.service';
+import { MonsterLayoutService } from './monster-layout.service';
+import { RoomLayoutService } from './room-layout.service';
 
 import monsters from '../../assets/monsters.json';
 import bosses from '../../assets/bosses.json';
 import treasure from '../../assets/treasure.json';
-import { MonsterLayoutService } from './monster-layout.service';
-import { RoomLayoutService } from './room-layout.service';
 
 @Injectable({
   providedIn: 'root'

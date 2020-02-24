@@ -18,7 +18,7 @@ export class InventoryComponent implements OnInit, OnChanges {
   constructor( 
     private playerArrayConst : PlayerArrayService, 
     public healthChange: HealthChangeService,
-    private attackService : AttackService ) { }
+    private attackService : AttackService ) {}
 
   ngOnInit(){
     this.inventory = this.playerArrayConst.getInventory();

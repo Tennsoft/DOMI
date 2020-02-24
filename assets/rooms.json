@@ -107,6 +107,12 @@
             "name": "dnD",
             "namePretty": "Basement",
             "description": "You see five people sitting around a table, wearing robes, staring at paper, and screaming at plastic polyhedrons."
+        },
+        {
+            "id": 19,
+            "name": "danceParty",
+            "namePretty": "Dance Party",
+            "description": "The darkened room bears a stage and you see a crownd of people performing a strange dance."
         }
     ]
 }
