@@ -1,24 +1,17 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
-//import { Observable, Subscription } from 'rxjs';
-
-
-import { DungeonComponent } from '../dungeon.component';
-import { rooms } from '../../../../assets/rooms.json';
-
+import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 
 import { PlayerArrayService } from '../../player-array.service';
 import { MoveRoomService } from 'src/app/move-room.service';
 import { RoomLayoutService } from 'src/app/room-layout.service';
 import { FourByFourMoveRoomService } from 'src/app/four-by-four-move-room.service';
 
-
-
 @Component({
   selector: 'app-current-room',
   templateUrl: './current-room.component.html',
   styleUrls: ['./current-room.component.css']
 })
-export class CurrentRoomComponent implements OnInit, DoCheck {
+
+export class CurrentRoomComponent implements OnInit, DoCheck, OnDestroy {
   //bring in the rooms, random order
   //room_list = this.room_layout_service.random_room_layout;
 
@@ -80,6 +73,9 @@ export class CurrentRoomComponent implements OnInit, DoCheck {
     } else {
       this.danceparty = false;
     }
+  }
+  ngOnDestroy(){
+    this.audioPlayer.pause();
   }
 
   onCaramel(){
