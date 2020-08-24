@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { rooms } from '../../assets/rooms.json';
-import { treasure } from '../../assets/treasure.json';
+import { rooms } from '../assets/rooms.json';
+import { treasure } from '../assets/treasure.json';
 
 @Injectable({
   providedIn: 'root'

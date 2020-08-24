@@ -5,10 +5,10 @@ import { Router } from '@angular/router';
 import { PlayerArrayService } from '../player-array.service';
 import { RoomLayoutService } from '../room-layout.service';
 
-import { rooms } from '../../../assets/rooms.json';
-import { monsters } from '../../../assets/monsters.json';
-import { treasure } from '../../../assets/treasure.json';
-import { bosses } from '../../../assets/bosses.json';
+import { rooms } from '../../assets/rooms.json';
+import { monsters } from '../../assets/monsters.json';
+import { treasure } from '../../assets/treasure.json';
+import { bosses } from '../../assets/bosses.json';
 import { MonsterLayoutService } from '../monster-layout.service';
 
 @Component({

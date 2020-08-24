@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PlayerArrayService } from '../player-array.service';
-import { treasure } from '../../../assets/treasure.json';
+import { treasure } from '../../assets/treasure.json';
 
 @Component({
   selector: 'app-dev-box',
