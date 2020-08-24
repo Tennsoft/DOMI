@@ -86,33 +86,45 @@ export class MoveRoomEasyService {
       return this.new_pos;
      
     }
-
-
-    
- 
   }
 
 
-  public current_room_reduce = function(){  
-    //console.log(this.playerArrayService.getPosition().x + " " + this.playerArrayService.getPosition().y + "current room reduce")
+  public current_room_reduce = function(){
     let room_abs_id = 1;
-    if(this.playerArrayService.getPosition().x == 0 && this.playerArrayService.getPosition().y == 0){ 
-      room_abs_id = 0;
-    }else if(this.playerArrayService.getPosition().x == 1 && this.playerArrayService.getPosition().y == 0){ 
-      room_abs_id = 1;
-    }else if(this.playerArrayService.getPosition().x == 2 && this.playerArrayService.getPosition().y == 0){ 
-      room_abs_id = 2;
-    }else if(this.playerArrayService.getPosition().x == 2 && this.playerArrayService.getPosition().y == 1){ 
-      room_abs_id = 3;
-    }else if(this.playerArrayService.getPosition().x == 1 && this.playerArrayService.getPosition().y == 1){ 
-      room_abs_id = 4;
-    }else if(this.playerArrayService.getPosition().x == 0 && this.playerArrayService.getPosition().y == 1){ 
-      room_abs_id = 5;
-    }else if(this.playerArrayService.getPosition().x == 1 && this.playerArrayService.getPosition().y == 2){ 
-      room_abs_id = 6;
-    }
+    let pos = this.playerArrayService.getPosition();
+    switch(pos.y) { 
+      case 0: {
+        room_abs_id = pos.x;
+        break; 
+      } 
+      case 1: { 
+        switch(pos.x) { 
+          case 0: { 
+            room_abs_id = 5;
+            break; 
+          } 
+          case 1: { 
+            room_abs_id = 4;
+             break; 
+          }  
+          case 2: { 
+            room_abs_id = 3;
+            break; 
+          } 
+          default: {
+            break; 
+          }
+        } 
+        break; 
+      }  
+      case 2: { 
+        room_abs_id = 6;
+        break; 
+      } 
+      default: {
+        break; 
+      }
+    } 
     return room_abs_id;
   }
-  
-
 }

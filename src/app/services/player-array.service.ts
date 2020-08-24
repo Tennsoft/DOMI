@@ -9,43 +9,23 @@ export class PlayerArrayService {
 
   constructor(
     private router: Router
-  ) {
-      this.difficultyChange.subscribe((value) => {
-        this.difficulty = value
-      });
-    }
+  ) {}
 
   //score
   gamescore = <number> 0;
   gold = <number> 2;
-
   getScore(){
     return this.gamescore;
   }
-
   addToScore(){
     this.gamescore++;
   }
-
   reduceScore(){
     this.gamescore--;
   }
 
-  seeDifficultyChange() {
-   this.difficultyChange.next(this.difficulty);
-  }
-
-  //queue initial length
-  queuelength = 5;
-  queueRoom = false;
-
-  getQueueLength(){
-    return this.queuelength;
-  }
-
-  //name
+  //name{
   name = <string> 'Brave Adventurer';
-  
   setName(newName){
     if(newName){
       this.name = newName;
@@ -60,7 +40,6 @@ export class PlayerArrayService {
       this.name = 'Brave Adventurer';
     }
   }
-
   moneyBagsName(){
     this.addToInventory('gold');
     this.addToInventory('gold');
@@ -70,17 +49,14 @@ export class PlayerArrayService {
     this.addToInventory('gold');
     this.addToInventory('gold');
   }
-
   benName(){
     this.addToInventory('readME');
     this.addToInventory('automaticCrossbow');
   }
-
   spellSword(){
     this.addToInventory('sword');
     this.addToInventory('wand');
   }
-
   getName(){
     return this.name;
   }
@@ -97,7 +73,6 @@ export class PlayerArrayService {
     });
     return unique;
 }
-
   inventory = [];
   addToInventory(addedItem){
     if(this.objectUnique(addedItem)) {
@@ -108,7 +83,18 @@ export class PlayerArrayService {
       this.addGold();
     }
   }
+  addHealthPotion(){
+    let healthPotionList = ['greaterheathPotion','heathPotion','lesserheathPotion'];
+    this.addToInventory(healthPotionList[Math.floor(Math.random()*3)]);
+  }
+  removeFromInventory(removedItem){
+    this.inventory = this.inventory.filter(items => items !== removedItem);
+  }
+  getInventory(){
+    return this.inventory;
+  }
 
+  //gold
   addGold(){
     this.gold = this.gold + 1;
   }
@@ -119,44 +105,27 @@ export class PlayerArrayService {
     return this.gold;
   }
 
-  removeFromInventory(removedItem){
-    this.inventory = this.inventory.filter(items => items !== removedItem);
-  }
-
-  addHealthPotion(){
-    let healthPotionList = ['greaterheathPotion','heathPotion','lesserheathPotion'];
-    this.addToInventory(healthPotionList[Math.floor(Math.random()*3)]);
-  }
-
-  getInventory(){
-    return this.inventory;
-  }
-
   //health
   health = { 
     maxHP: <number> 4, 
     curHP: <number> 4, 
     bossHP: <number> 8
   };
-
   getHealth(){
     return this.health;
   }
-
   loseHealth(){
     this.health.curHP--;
     if(this.health.curHP === 0 ){
       this.router.navigate(['/endScreen'])
     }
   }
-
   gainHealth(){
     this.health.curHP++;
     if(this.health.curHP > this.health.maxHP){
       this.health.curHP = this.health.maxHP;
     }
   }
-
   instantDeath(){
     while(this.health.curHP > 0){
       this.loseHealth();
@@ -165,11 +134,9 @@ export class PlayerArrayService {
 
   //fight results
   fight_result = "";
-
   getFightResult(){
     return this.fight_result;
   }
-
   setFightResult(result){
     this.fight_result = result;
     //console.log(this.fight_result);
@@ -177,24 +144,13 @@ export class PlayerArrayService {
 
 
   //position
-  position = { x: 1, y: 0 };
-    
+  position = { x: 1, y: 0, z: 0 }; 
   setPosition(new_position){
     return this.position = new_position;
   }
-
   getPosition(){
     return this.position;
   }
-
-  // toggle(input){
-  //   if(input == true){
-  //     return input = false;
-  //   }
-  //   else{
-  //     return input = true;
-  //   }
-  // }
 
   //resetting the game
 

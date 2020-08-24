@@ -29,7 +29,8 @@ export class CurrentRoomComponent implements OnInit, DoCheck, OnDestroy {
     public move_room_service: MoveRoomEasyService, 
     public room_layout_service: RoomLayoutService, 
     public playerArrayService: PlayerArrayService,
-    public four_by_four_move_room_service: MoveRoomMediumService) { }
+    public four_by_four_move_room_service: MoveRoomMediumService,
+    ) { }
 
   ngOnInit() {
     this.audioPlayer.src = "../../assets/audio/Caramelldansen.mp3";

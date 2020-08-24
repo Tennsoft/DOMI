@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PlayerArrayService } from '../services/player-array.service';
+import { MonsterLayoutService } from '../monster-layout.service';
 
-describe('PlayerArrayService', () => {
+describe('MonsterLayoutService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: PlayerArrayService = TestBed.get(PlayerArrayService);
+    const service: MonsterLayoutService = TestBed.get(MonsterLayoutService);
     expect(service).toBeTruthy();
   });
 });

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MoveRoomMediumService } from '../services/difficulty/move-room-medium.service';
+import { MoveRoomMediumService } from '../difficulty/move-room-medium.service';
 
 describe('4x4MoveRoomService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

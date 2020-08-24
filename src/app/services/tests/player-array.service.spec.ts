@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AttackService } from '../services/attack.service';
+import { PlayerArrayService } from '../player-array.service';
 
-describe('AttackService', () => {
+describe('PlayerArrayService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AttackService = TestBed.get(AttackService);
+    const service: PlayerArrayService = TestBed.get(PlayerArrayService);
     expect(service).toBeTruthy();
   });
 });

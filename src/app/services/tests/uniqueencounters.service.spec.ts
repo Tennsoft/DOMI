@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UniqueEncountersService } from '../services/uniqueencounters.service';
+import { UniqueEncountersService } from '../uniqueencounters.service';
 
 describe('UniqueencountersService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

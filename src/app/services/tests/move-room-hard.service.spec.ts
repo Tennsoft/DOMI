@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MoveRoomHardService } from '../services/difficulty/move-room-hard.service';
+import { MoveRoomHardService } from '../difficulty/move-room-hard.service';
 
 describe('MoveRoomHardService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

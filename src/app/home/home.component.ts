@@ -71,7 +71,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     if (this.player["difficulty"] === "easy") {
       this.playerService.setDifficulty("easy");
       this.playerService.resetPosition(); 
-      this.playerService.position = {x:1,y:0};
+      this.playerService.position = { x:1, y:0, z:0};
       this.playerService.setFightResult("");
       this.playerService.clearInventory();
       
@@ -114,7 +114,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.playerService.setDifficulty("medium");
       
       //this.playerService.resetPosition(); 
-      this.playerService.position ={x:1,y:0};
+      this.playerService.position = { x:1, y:0, z:0};
       this.playerService.setFightResult("");
       this.playerService.clearInventory();
       
@@ -159,7 +159,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.playerService.setDifficulty("hard");
       console.log(this.playerService.getDifficulty());
       //this.playerService.resetPosition(); 
-      this.playerService.position = {x:1,y:0};
+      this.playerService.position = { x:1, y:0, z:0};
       console.log(this.playerService.getPosition());
       this.playerService.setFightResult("");
       this.playerService.clearInventory();
@@ -188,14 +188,10 @@ export class HomeComponent implements OnInit, OnDestroy {
         found_treasures[i].taken = false;
       }
 
-      
       this.monsterLayoutService.random_monster_layout = this.monsterLayoutService.scrambleMonsters(monsters);
       this.monsterLayoutService.random_boss_layout = this.monsterLayoutService.scrambleMonsters(bosses);
 
       this.roomLayoutService.random_treasure_layout = this.roomLayoutService.scrambleRooms(found_treasures);
-
-      //console.log(this.monsterLayoutService.random_monster_layout);
-      //console.log(this.roomLayoutService.random_treasure_layout);
       
       this.router.navigate(['/dungeon'],{ state: {difficulty : "hard"}});
       

@@ -47,11 +47,6 @@ export class DungeonComponent implements OnInit, DoCheck, OnDestroy {
     if( this.playerArrayService.getName() === '' || this.playerArrayService.getInventory() === []){
       this.router.navigate(['/'])
     }
-
-    // this.curr_difficulty = this.playerArrayService.seeDifficultyChange();
-    // this.subscription = this.playerArrayService.difficultyChange.subscribe(value => {
-    //    this.curr_difficulty = value;
-    //  });
   
     this.curr_difficulty = window.history.state.difficulty;
     //this.curr_difficulty  = this.playerArrayService.getDifficulty();

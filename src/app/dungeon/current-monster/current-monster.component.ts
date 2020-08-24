@@ -100,7 +100,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
      this.current_monster_name = this.monster_list[this.current_room_abs_id].namePretty;
      this.current_monster_desc = this.monster_list[this.current_room_abs_id].description;
 
-     this.currentWait = this.playerArrayService.getQueueLength();
+     this.currentWait = this.uniqueEncounters.getQueueLength();
 
      if(this.current_monster_base_name == "treasure_find"){
       this.can_search_for_treasure = true;
@@ -130,7 +130,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       this.clearTreasureBox();
       this.playerArrayService.setFightResult("");
       this.curRoom = this.newRoom;
-      this.currentWait = this.playerArrayService.getQueueLength();
+      this.currentWait = this.uniqueEncounters.getQueueLength();
     }
     this.current_room = this.playerArrayService.getPosition();
     this.found_treasure = this.uniqueEncounters.getTreasureFound();

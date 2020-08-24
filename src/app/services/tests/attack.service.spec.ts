@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RoomLayoutService } from '../services/room-layout.service';
+import { AttackService } from '../attack.service';
 
-describe('RoomLayoutService', () => {
+describe('AttackService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RoomLayoutService = TestBed.get(RoomLayoutService);
+    const service: AttackService = TestBed.get(AttackService);
     expect(service).toBeTruthy();
   });
 });
