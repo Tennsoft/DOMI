@@ -19,10 +19,10 @@ export class DungeonComponent implements OnInit, DoCheck, OnDestroy {
   //can_search_for_treasure = this.playerArrayService.getSearchPossible();
   constructor(
     private router: Router,
-    public move_room_service: MoveRoomEasyService, 
+    public move_room_easy_service: MoveRoomEasyService, 
     public playerArrayService: PlayerArrayService,
     public uniqueEncounters: UniqueEncountersService,
-    public four_by_four_move_room_service: MoveRoomMediumService
+    public move_room_medium_service: MoveRoomMediumService
     ) {}
 
     //initialize
@@ -48,9 +48,7 @@ export class DungeonComponent implements OnInit, DoCheck, OnDestroy {
       this.router.navigate(['/'])
     }
   
-    this.curr_difficulty = window.history.state.difficulty;
-    //this.curr_difficulty  = this.playerArrayService.getDifficulty();
-    //console.log("difficulty in dungeon component is "+this.curr_difficulty);
+    this.curr_difficulty = this.playerArrayService.getDifficulty();
 
     //if(this.curr_difficulty == "easy"){
     switch(this.curr_difficulty){
@@ -59,18 +57,12 @@ export class DungeonComponent implements OnInit, DoCheck, OnDestroy {
         this.cantGoSouth = true;
         this.cantGoEast = false;
         this.cantGoWest = false;
-        //console.log("easy case")
         break;
       default:
       this.cantGoNorth = false;
       this.cantGoSouth = true;
       this.cantGoEast = false;
       this.cantGoWest = true;
-      //console.log("med or hard case")
-      //console.log("go north "+ this.cantGoNorth);
-      //console.log("go south "+ this.cantGoSouth);
-      //console.log("go east "+ this.cantGoEast);
-      //console.log("go west "+ this.cantGoWest);
       break;
     }
 
@@ -92,15 +84,10 @@ export class DungeonComponent implements OnInit, DoCheck, OnDestroy {
   
   ngDoCheck(){
     let now_where = this.playerArrayService.getPosition();
-    //console.log(now_where.x + " " + now_where.y);
     //this.curr_difficulty = this.playerArrayService.getDifficulty();
     this.curr_difficulty = window.history.state.difficulty;
-    //console.log(window.history.state.difficulty)
-    //console.log("difficulty is "+this.curr_difficulty);
-    //console.log("type of current difficulty is "+typeof this.curr_difficulty);
     //movement buttons enable/disable for small dungeon
     if(this.curr_difficulty == "easy"){
-      //console.log("you're playing the easy dungeon");
       if(now_where.x != 1){
         this.cantGoSouth = false;
       }
@@ -135,8 +122,7 @@ export class DungeonComponent implements OnInit, DoCheck, OnDestroy {
           }
         }
       }
-  //movement buttons enable/disable for 4x4 dungeon
-  //if(curr_difficulty == "medium" || curr_difficulty == "hard"){
+    //movement buttons enable/disable for 4x4 dungeon
       else{
         if(now_where.x != 0){
             this.cantGoWest = false;
@@ -170,9 +156,9 @@ export class DungeonComponent implements OnInit, DoCheck, OnDestroy {
     let new_position = {};
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     if(window.history.state.difficulty == "easy"){
-        new_position= this.move_room_service.moveRoom(0,1,current_position);
+        new_position= this.move_room_easy_service.moveRoom(0,1,current_position);
     }else{
-        new_position = this.four_by_four_move_room_service.moveRoom(0,1,current_position);
+        new_position = this.move_room_medium_service.moveRoom(0,1,current_position);
     }
     this.playerArrayService.setPosition(new_position);
   }
@@ -182,14 +168,11 @@ export class DungeonComponent implements OnInit, DoCheck, OnDestroy {
     let new_position = {};
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     if(window.history.state.difficulty == "easy"){
-       new_position= this.move_room_service.moveRoom(0,-1,current_position);
+       new_position= this.move_room_easy_service.moveRoom(0,-1,current_position);
     }else{
-       new_position = this.four_by_four_move_room_service.moveRoom(0,-1,current_position);
+       new_position = this.move_room_medium_service.moveRoom(0,-1,current_position);
     }
     this.playerArrayService.setPosition(new_position);
-    //console.log(this.playerArrayService.getOldPosition());
-    // console.log(current_position);
-    // console.log(this.playerArrayService.getPosition());
   }
 
   onMoveEast(){
@@ -197,14 +180,11 @@ export class DungeonComponent implements OnInit, DoCheck, OnDestroy {
     let new_position = {};
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     if(window.history.state.difficulty == "easy"){
-      new_position= this.move_room_service.moveRoom(1,0,current_position);
+      new_position= this.move_room_easy_service.moveRoom(1,0,current_position);
     }else{
-      new_position = this.four_by_four_move_room_service.moveRoom(1,0,current_position);
+      new_position = this.move_room_medium_service.moveRoom(1,0,current_position);
     }
     this.playerArrayService.setPosition(new_position);
-    //console.log(this.playerArrayService.countSub.getValue());
-    // console.log(current_position);
-    // console.log(this.playerArrayService.getPosition());
   }
 
   onMoveWest(){
@@ -212,14 +192,11 @@ export class DungeonComponent implements OnInit, DoCheck, OnDestroy {
     let new_position = {};
     let current_position: {x: number, y: number} = this.playerArrayService.getPosition();
     if(window.history.state.difficulty == "easy"){
-      new_position= this.move_room_service.moveRoom(-1,0,current_position);
+      new_position= this.move_room_easy_service.moveRoom(-1,0,current_position);
     }else{
-      new_position = this.four_by_four_move_room_service.moveRoom(-1,0,current_position);
+      new_position = this.move_room_medium_service.moveRoom(-1,0,current_position);
     }
     this.playerArrayService.setPosition(new_position);
-    //console.log(this.playerArrayService.getOldPosition());
-    // console.log(current_position);
-    // console.log(this.playerArrayService.getPosition());
   }
 
   ngOnDestroy(){

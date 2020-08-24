@@ -49,12 +49,12 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
 
   constructor(
     public playerArrayService: PlayerArrayService, 
-    public move_room_service: MoveRoomEasyService, 
+    public move_room_easy_service: MoveRoomEasyService, 
+    public move_room_medium_service: MoveRoomMediumService,
     public monster_layout_service: MonsterLayoutService,
     public room_layout_service: RoomLayoutService,
     public attackService: AttackService,
-    public uniqueEncounters: UniqueEncountersService,
-    public four_by_four_move_room_service: MoveRoomMediumService) { 
+    public uniqueEncounters: UniqueEncountersService,) { 
   }
 
   //bring in monsters, random order
@@ -67,9 +67,9 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
 
   ngOnInit() {
     if(window.history.state.difficulty == "easy"){
-      this.curRoom = this.move_room_service.current_room_reduce();
+      this.curRoom = this.move_room_easy_service.current_room_reduce();
     }else{
-      this.curRoom = this.four_by_four_move_room_service.current_room_reduce();
+      this.curRoom = this.move_room_medium_service.current_room_reduce();
     }
     
     //bring in monsters, random order
@@ -87,12 +87,12 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
 
      //turn that into a single number to get an index from the rooms array
      if(window.history.state.difficulty == "easy"){
-      this.current_room_abs_id = this.move_room_service.current_room_reduce();
+      this.current_room_abs_id = this.move_room_easy_service.current_room_reduce();
     }else{
-      this.current_room_abs_id = this.four_by_four_move_room_service.current_room_reduce();
+      this.current_room_abs_id = this.move_room_medium_service.current_room_reduce();
     }
 
-     //this.current_room_abs_id = this.move_room_service.current_room_reduce();
+     //this.current_room_abs_id = this.move_room_easy_service.current_room_reduce();
      //console.log("current room abs id is "+this.current_room_abs_id);
     
      //and pull a monster for where you happen to be
@@ -121,9 +121,9 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
 
   ngDoCheck(){
     if(window.history.state.difficulty == "easy"){
-      this.newRoom = this.move_room_service.current_room_reduce();
+      this.newRoom = this.move_room_easy_service.current_room_reduce();
     }else{
-      this.newRoom = this.four_by_four_move_room_service.current_room_reduce();
+      this.newRoom = this.move_room_medium_service.current_room_reduce();
     }
 
     if (this.newRoom != this.curRoom) {
@@ -137,13 +137,17 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
     
     
     if(window.history.state.difficulty == "easy"){
-      this.current_room_abs_id = this.move_room_service.current_room_reduce();
+      this.current_room_abs_id = this.move_room_easy_service.current_room_reduce();
     }else{
-      this.current_room_abs_id = this.four_by_four_move_room_service.current_room_reduce();
+      this.current_room_abs_id = this.move_room_medium_service.current_room_reduce();
     }
    
     //boss room
-    if((window.history.state.difficulty == "easy" && this.current_room_abs_id == 6)  || this.current_room_abs_id == 15){
+    let curr_difficulty = this.playerArrayService.getDifficulty();
+    
+    if((curr_difficulty == "easy" && this.current_room_abs_id == 6) || 
+      (curr_difficulty == "medium" && this.current_room_abs_id == 15) || 
+      this.current_room_abs_id == 16 ){
       this.can_search_for_treasure = false;
       this.uniqueEncounters.queueRoom = false;
       this.uniqueEncounters.setTreasureFound(false);
@@ -232,11 +236,7 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
       this.current_treasure_desc = "nothing new, even though you search carefully";
       this.found_treasure = true;
       this.uniqueEncounters.setTreasureFound(true);
-      this.playerArrayService.setFightResult('.')
-      //setTimeout(() =>{
-      //  this.found_treasure = false;
-      //  this.uniqueEncounters.setTreasureFound(false);
-      // }, 1900);
+      this.playerArrayService.setFightResult('.');
     }
 
   }

@@ -68,133 +68,42 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.playerService.addToScore();
     }
     this.player = this.playerStartStuff.value;
-    if (this.player["difficulty"] === "easy") {
-      this.playerService.setDifficulty("easy");
-      this.playerService.resetPosition(); 
-      this.playerService.position = { x:1, y:0, z:0};
-      this.playerService.setFightResult("");
-      this.playerService.clearInventory();
-      
-      this.playerService.addToInventory('gold');
-      this.playerService.addToInventory(this.player["startItem"]);
-      this.playerService.setName(this.player["playerName"]);
+    this.playerService.setDifficulty(this.player["difficulty"] );
+    this.playerService.resetPosition(); 
+    this.playerService.position = { x:1, y:0, z:0 };
+    this.playerService.setFightResult("");
+    this.playerService.clearInventory();
+    
+    this.playerService.addToInventory('gold');
+    this.playerService.addToInventory(this.player["startItem"]);
+    this.playerService.setName(this.player["playerName"]);
 
-      this.roomLayoutService.scrambleRooms(rooms);
-      this.roomLayoutService.scrambleRooms(monsters);
-      this.roomLayoutService.scrambleRooms(bosses);
-      
-      let found_treasures = treasure.slice(-9);
-      this.roomLayoutService.scrambleRooms(found_treasures);
+    this.roomLayoutService.scrambleRooms(rooms);
+    this.roomLayoutService.scrambleRooms(monsters);
+    this.roomLayoutService.scrambleRooms(bosses);
+    
+    let found_treasures = treasure.slice(-9);
+    this.roomLayoutService.scrambleRooms(found_treasures);
 
-      for(var i = 0; i<this.monsterLayoutService.random_monster_layout.length; i++){
-        this.monsterLayoutService.random_monster_layout[i].dead = false;
-      }
-
-      for(var i = 0; i<this.monsterLayoutService.random_boss_layout.length; i++){
-        this.monsterLayoutService.random_boss_layout[i].dead = false;
-      }
-
-      for(var i = 0; i<found_treasures.length; i++){
-        found_treasures[i].found = false;
-        found_treasures[i].taken = false;
-      }
-
-      
-      this.monsterLayoutService.random_monster_layout = this.monsterLayoutService.scrambleMonsters(monsters);
-      this.monsterLayoutService.random_boss_layout = this.monsterLayoutService.scrambleMonsters(bosses);
-
-      this.roomLayoutService.random_treasure_layout = this.roomLayoutService.scrambleRooms(found_treasures);
-
-      //console.log(this.monsterLayoutService.random_monster_layout);
-      //console.log(this.roomLayoutService.random_treasure_layout);
-
-      this.router.navigate(['/dungeon'],{ state: {difficulty : "easy"}});
-    } else if (this.player["difficulty"] === "medium") {
-      this.playerService.difficulty = "medium";
-      this.playerService.setDifficulty("medium");
-      
-      //this.playerService.resetPosition(); 
-      this.playerService.position = { x:1, y:0, z:0};
-      this.playerService.setFightResult("");
-      this.playerService.clearInventory();
-      
-      this.playerService.addToInventory('gold');
-      this.playerService.addToInventory(this.player["startItem"]);
-      this.playerService.setName(this.player["playerName"]);
-
-      this.roomLayoutService.scrambleRooms(rooms);
-      this.roomLayoutService.scrambleRooms(monsters);
-      this.roomLayoutService.scrambleRooms(bosses);
-      
-      let found_treasures = treasure.filter(items => items.name !== 'sword' && items.name !== 'wand');
-      this.roomLayoutService.scrambleRooms(found_treasures);
-
-      for(var i = 0; i<this.monsterLayoutService.random_monster_layout.length; i++){
-        this.monsterLayoutService.random_monster_layout[i].dead = false;
-      }
-
-      for(var i = 0; i<this.monsterLayoutService.random_boss_layout.length; i++){
-        this.monsterLayoutService.random_boss_layout[i].dead = false;
-      }
-
-      for(var i = 0; i<found_treasures.length; i++){
-        found_treasures[i].found = false;
-        found_treasures[i].taken = false;
-      }
-
-      
-      this.monsterLayoutService.random_monster_layout = this.monsterLayoutService.scrambleMonsters(monsters);
-      this.monsterLayoutService.random_boss_layout = this.monsterLayoutService.scrambleMonsters(bosses);
-
-      this.roomLayoutService.random_treasure_layout = this.roomLayoutService.scrambleRooms(found_treasures);
-
-      //console.log(this.monsterLayoutService.random_monster_layout);
-      //console.log(this.roomLayoutService.random_treasure_layout);
-
-      this.router.navigate(['/dungeon'],{ state: {difficulty : "medium"}});
-
-    } else if (this.player["difficulty"] === "hard") {
-      
-      this.playerService.difficulty = "hard";
-      this.playerService.setDifficulty("hard");
-      console.log(this.playerService.getDifficulty());
-      //this.playerService.resetPosition(); 
-      this.playerService.position = { x:1, y:0, z:0};
-      console.log(this.playerService.getPosition());
-      this.playerService.setFightResult("");
-      this.playerService.clearInventory();
-      
-      this.playerService.addToInventory('gold');
-      this.playerService.addToInventory(this.player["startItem"]);
-      this.playerService.setName(this.player["playerName"]);
-
-      this.roomLayoutService.scrambleRooms(rooms);
-      this.roomLayoutService.scrambleRooms(monsters);
-      this.roomLayoutService.scrambleRooms(bosses);
-      
-      let found_treasures = treasure.filter(items => items.name !== 'sword' && items.name !== 'wand');
-      this.roomLayoutService.scrambleRooms(found_treasures);
-
-      for(var i = 0; i<this.monsterLayoutService.random_monster_layout.length; i++){
-        this.monsterLayoutService.random_monster_layout[i].dead = false;
-      }
-
-      for(var i = 0; i<this.monsterLayoutService.random_boss_layout.length; i++){
-        this.monsterLayoutService.random_boss_layout[i].dead = false;
-      }
-
-      for(var i = 0; i<found_treasures.length; i++){
-        found_treasures[i].found = false;
-        found_treasures[i].taken = false;
-      }
-
-      this.monsterLayoutService.random_monster_layout = this.monsterLayoutService.scrambleMonsters(monsters);
-      this.monsterLayoutService.random_boss_layout = this.monsterLayoutService.scrambleMonsters(bosses);
-
-      this.roomLayoutService.random_treasure_layout = this.roomLayoutService.scrambleRooms(found_treasures);
-      
-      this.router.navigate(['/dungeon'],{ state: {difficulty : "hard"}});
-      
+    for(var i = 0; i<this.monsterLayoutService.random_monster_layout.length; i++){
+      this.monsterLayoutService.random_monster_layout[i].dead = false;
     }
+
+    for(var i = 0; i<this.monsterLayoutService.random_boss_layout.length; i++){
+      this.monsterLayoutService.random_boss_layout[i].dead = false;
+    }
+
+    for(var i = 0; i<found_treasures.length; i++){
+      found_treasures[i].found = false;
+      found_treasures[i].taken = false;
+    }
+
+    
+    this.monsterLayoutService.random_monster_layout = this.monsterLayoutService.scrambleMonsters(monsters);
+    this.monsterLayoutService.random_boss_layout = this.monsterLayoutService.scrambleMonsters(bosses);
+
+    this.roomLayoutService.random_treasure_layout = this.roomLayoutService.scrambleRooms(found_treasures);
+
+    this.router.navigate(['/dungeon']);
   }
 }

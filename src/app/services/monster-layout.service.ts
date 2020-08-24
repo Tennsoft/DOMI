@@ -10,7 +10,6 @@ export class MonsterLayoutService {
 
   constructor() { }
 
-
   scrambleMonsters(array): Array<any> {
     let currentIndex: number = array.length;
     let temporaryValue: number, randomIndex: number;
@@ -28,13 +27,21 @@ export class MonsterLayoutService {
     array[randomIndex] = temporaryValue;
     }
   
+    console.log("new monster list is \n " + array);
+    let x = this.generateMonsterList(array);
     return array;
+
   }
-  
-  random_monster_layout = this.scrambleMonsters(monsters);
+  generateMonsterList(array): Array<any> {
+    let newMonsterList = [];
+    while(newMonsterList.length <= 40) {
+      let newID = Math.floor(Math.random() * (array.length - 1));
+      newMonsterList.push(array[newID]);
+    }
+    console.log("new monster list is \n " + newMonsterList);
+    return newMonsterList;
+  }
+  random_monster_layout = this.scrambleMonsters(monsters); 
 
   random_boss_layout = this.scrambleMonsters(bosses);
-
-
-
 }
