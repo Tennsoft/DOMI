@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { monsters } from '../../assets/monsters.json';
-import { bosses } from '../../assets/bosses.json';
+import { monsters } from '../assets/monsters.json';
+import { bosses } from '../assets/bosses.json';
 
 @Injectable({
   providedIn: 'root'

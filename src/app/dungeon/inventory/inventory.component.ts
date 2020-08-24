@@ -4,7 +4,7 @@ import { PlayerArrayService } from '../../player-array.service';
 import { AttackService } from 'src/app/attack.service';
 import { HealthChangeService } from '../../health-change.service';
 
-import treasure from '../../../../assets/treasure.json';
+import treasure from '../../../assets/treasure.json';
 
 @Component({
   selector: 'app-inventory',
