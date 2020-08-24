@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UniqueencountersService } from './uniqueencounters.service';
+import { UniqueEncountersService } from './uniqueencounters.service';
 
 describe('UniqueencountersService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: UniqueencountersService = TestBed.get(UniqueencountersService);
+    const service: UniqueEncountersService = TestBed.get(UniqueEncountersService);
     expect(service).toBeTruthy();
   });
 });
