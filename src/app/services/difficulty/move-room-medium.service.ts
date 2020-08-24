@@ -31,47 +31,66 @@ export class MoveRoomMediumService {
   }
 
   public current_room_reduce = function(){  
-    //console.log(this.playerArrayService.getPosition().x + " " + this.playerArrayService.getPosition().y + "current room reduce")
     let room_abs_id = 1;
-    //bottom row y =0
-    if(this.playerArrayService.getPosition().x == 0 && this.playerArrayService.getPosition().y == 0){ 
-      room_abs_id = 0;
-    }else if(this.playerArrayService.getPosition().x == 1 && this.playerArrayService.getPosition().y == 0){ 
-      room_abs_id = 1;
-    }else if(this.playerArrayService.getPosition().x == 2 && this.playerArrayService.getPosition().y == 0){ 
-      room_abs_id = 2;
-    }else if(this.playerArrayService.getPosition().x == 3 && this.playerArrayService.getPosition().y == 0){ 
-      room_abs_id = 3;
-      //second row y = 1
-    }else if(this.playerArrayService.getPosition().x == 0 && this.playerArrayService.getPosition().y == 1){ 
-      room_abs_id = 4;
-    }else if(this.playerArrayService.getPosition().x == 1 && this.playerArrayService.getPosition().y == 1){ 
-      room_abs_id = 5;
-    }else if(this.playerArrayService.getPosition().x == 2 && this.playerArrayService.getPosition().y == 1){ 
-      room_abs_id = 6;
-    }else if(this.playerArrayService.getPosition().x == 3 && this.playerArrayService.getPosition().y == 1){ 
-      room_abs_id = 7;
-    }
-    //third row y = 2
-    else if(this.playerArrayService.getPosition().x == 0 && this.playerArrayService.getPosition().y == 2){ 
-      room_abs_id = 8;
-    }else if(this.playerArrayService.getPosition().x == 1 && this.playerArrayService.getPosition().y == 2){ 
-      room_abs_id = 9;
-    }else if(this.playerArrayService.getPosition().x == 2 && this.playerArrayService.getPosition().y == 2){ 
-      room_abs_id = 10;
-    }else if(this.playerArrayService.getPosition().x == 3 && this.playerArrayService.getPosition().y == 2){ 
-      room_abs_id = 11;
-    }
-    //fourth row y = 3
-    else if(this.playerArrayService.getPosition().x == 0 && this.playerArrayService.getPosition().y == 3){ 
-      room_abs_id = 12;
-    }else if(this.playerArrayService.getPosition().x == 1 && this.playerArrayService.getPosition().y == 3){ 
-      room_abs_id = 13;
-    }else if(this.playerArrayService.getPosition().x == 2 && this.playerArrayService.getPosition().y == 3){ 
-      room_abs_id = 14;
-    }else if(this.playerArrayService.getPosition().x == 3 && this.playerArrayService.getPosition().y == 3){ 
-      room_abs_id = 15;
-    }
+    let pos = this.playerArrayService.getPosition();
+    room_abs_id = ((4*pos.y) + pos.x)
+    // switch(pos.y) { 
+    //   case 0: {
+    //     room_abs_id = pos.x;
+    //     break; 
+    //   } 
+    //   case 1: { 
+    //     room_abs_id = (pos.x + 4);
+    //     break; 
+    //   }  
+    //   case 2: { 
+    //     room_abs_id = 6;
+    //     break; 
+    //   } 
+    //   default: {
+    //     break; 
+    //   }
+    // } 
+    // //console.log(this.playerArrayService.getPosition().x + " " + this.playerArrayService.getPosition().y + "current room reduce")
+    // //bottom row y =0
+    // if(this.playerArrayService.getPosition().x == 0 && this.playerArrayService.getPosition().y == 0){ 
+    //   room_abs_id = 0;
+    // }else if(this.playerArrayService.getPosition().x == 1 && this.playerArrayService.getPosition().y == 0){ 
+    //   room_abs_id = 1;
+    // }else if(this.playerArrayService.getPosition().x == 2 && this.playerArrayService.getPosition().y == 0){ 
+    //   room_abs_id = 2;
+    // }else if(this.playerArrayService.getPosition().x == 3 && this.playerArrayService.getPosition().y == 0){ 
+    //   room_abs_id = 3;
+    //   //second row y = 1
+    // }else if(this.playerArrayService.getPosition().x == 0 && this.playerArrayService.getPosition().y == 1){ 
+    //   room_abs_id = 4;
+    // }else if(this.playerArrayService.getPosition().x == 1 && this.playerArrayService.getPosition().y == 1){ 
+    //   room_abs_id = 5;
+    // }else if(this.playerArrayService.getPosition().x == 2 && this.playerArrayService.getPosition().y == 1){ 
+    //   room_abs_id = 6;
+    // }else if(this.playerArrayService.getPosition().x == 3 && this.playerArrayService.getPosition().y == 1){ 
+    //   room_abs_id = 7;
+    // }
+    // //third row y = 2
+    // else if(this.playerArrayService.getPosition().x == 0 && this.playerArrayService.getPosition().y == 2){ 
+    //   room_abs_id = 8;
+    // }else if(this.playerArrayService.getPosition().x == 1 && this.playerArrayService.getPosition().y == 2){ 
+    //   room_abs_id = 9;
+    // }else if(this.playerArrayService.getPosition().x == 2 && this.playerArrayService.getPosition().y == 2){ 
+    //   room_abs_id = 10;
+    // }else if(this.playerArrayService.getPosition().x == 3 && this.playerArrayService.getPosition().y == 2){ 
+    //   room_abs_id = 11;
+    // }
+    // //fourth row y = 3
+    // else if(this.playerArrayService.getPosition().x == 0 && this.playerArrayService.getPosition().y == 3){ 
+    //   room_abs_id = 12;
+    // }else if(this.playerArrayService.getPosition().x == 1 && this.playerArrayService.getPosition().y == 3){ 
+    //   room_abs_id = 13;
+    // }else if(this.playerArrayService.getPosition().x == 2 && this.playerArrayService.getPosition().y == 3){ 
+    //   room_abs_id = 14;
+    // }else if(this.playerArrayService.getPosition().x == 3 && this.playerArrayService.getPosition().y == 3){ 
+    //   room_abs_id = 15;
+    // }
     return room_abs_id;
   }
 

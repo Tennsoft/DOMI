@@ -92,39 +92,13 @@ export class MoveRoomEasyService {
   public current_room_reduce = function(){
     let room_abs_id = 1;
     let pos = this.playerArrayService.getPosition();
-    switch(pos.y) { 
-      case 0: {
-        room_abs_id = pos.x;
-        break; 
-      } 
-      case 1: { 
-        switch(pos.x) { 
-          case 0: { 
-            room_abs_id = 5;
-            break; 
-          } 
-          case 1: { 
-            room_abs_id = 4;
-             break; 
-          }  
-          case 2: { 
-            room_abs_id = 3;
-            break; 
-          } 
-          default: {
-            break; 
-          }
-        } 
-        break; 
-      }  
-      case 2: { 
-        room_abs_id = 6;
-        break; 
-      } 
-      default: {
-        break; 
-      }
-    } 
+    
+    if( pos.y == 2 ) {
+      room_abs_id = 6;
+    } else {
+        room_abs_id = ((3 * pos.y) + pos.x);
+    }
+    
     return room_abs_id;
   }
 }
