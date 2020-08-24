@@ -1,9 +1,9 @@
 import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 
-import { PlayerArrayService } from '../../player-array.service';
-import { MoveRoomService } from 'src/app/move-room.service';
-import { RoomLayoutService } from 'src/app/room-layout.service';
-import { FourByFourMoveRoomService } from 'src/app/four-by-four-move-room.service';
+import { PlayerArrayService } from '../../services/player-array.service';
+import { MoveRoomEasyService } from '../../services/difficulty/move-room-easy.service';
+import { RoomLayoutService } from '../../services/room-layout.service';
+import { MoveRoomMediumService } from '../../services/difficulty/move-room-medium.service';
 
 @Component({
   selector: 'app-current-room',
@@ -26,10 +26,10 @@ export class CurrentRoomComponent implements OnInit, DoCheck, OnDestroy {
   
 
   constructor(
-    public move_room_service: MoveRoomService, 
+    public move_room_service: MoveRoomEasyService, 
     public room_layout_service: RoomLayoutService, 
     public playerArrayService: PlayerArrayService,
-    public four_by_four_move_room_service: FourByFourMoveRoomService) { }
+    public four_by_four_move_room_service: MoveRoomMediumService) { }
 
   ngOnInit() {
     this.audioPlayer.src = "../../assets/audio/Caramelldansen.mp3";

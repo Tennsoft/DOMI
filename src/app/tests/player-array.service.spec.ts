@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PlayerArrayService } from './player-array.service';
+import { PlayerArrayService } from '../services/player-array.service';
 
 describe('PlayerArrayService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

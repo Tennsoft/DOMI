@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PlayerArrayService } from '../player-array.service';
+import { PlayerArrayService } from '../services/player-array.service';
 import { treasure } from '../../assets/treasure.json';
 
 @Component({

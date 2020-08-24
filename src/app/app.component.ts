@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from "@angular/core";  
 import { ShortcutInput, KeyboardShortcutsComponent } from "ng-keyboard-shortcuts";  
-import { PlayerArrayService } from './player-array.service';
-import { AttackService } from './attack.service';
+import { PlayerArrayService } from './services/player-array.service';
+import { AttackService } from './services/attack.service';
 
 @Component({
   selector: 'app-root',

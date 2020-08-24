@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RoomLayoutService } from './room-layout.service';
+import { RoomLayoutService } from '../services/room-layout.service';
 
 describe('RoomLayoutService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

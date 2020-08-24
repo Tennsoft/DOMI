@@ -1,12 +1,12 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 
-import { PlayerArrayService } from '../../player-array.service';
-import { MoveRoomService } from 'src/app/move-room.service';
-import { MonsterLayoutService } from 'src/app/monster-layout.service';
-import { RoomLayoutService } from 'src/app/room-layout.service';
-import { AttackService } from '../../attack.service';
-import { UniqueEncountersService } from '../../uniqueencounters.service';
-import { FourByFourMoveRoomService } from 'src/app/four-by-four-move-room.service';
+import { PlayerArrayService } from '../../services/player-array.service';
+import { MoveRoomEasyService } from '../../services/difficulty/move-room-easy.service';
+import { MonsterLayoutService } from '../../services/monster-layout.service';
+import { RoomLayoutService } from '../../services/room-layout.service';
+import { AttackService } from '../../services/attack.service';
+import { UniqueEncountersService } from '../../services/uniqueencounters.service';
+import { MoveRoomMediumService } from '../../services/difficulty/move-room-medium.service';
 
 
 @Component({
@@ -49,12 +49,12 @@ export class CurrentMonsterComponent implements OnInit, DoCheck {
 
   constructor(
     public playerArrayService: PlayerArrayService, 
-    public move_room_service: MoveRoomService, 
+    public move_room_service: MoveRoomEasyService, 
     public monster_layout_service: MonsterLayoutService,
     public room_layout_service: RoomLayoutService,
     public attackService: AttackService,
     public uniqueEncounters: UniqueEncountersService,
-    public four_by_four_move_room_service: FourByFourMoveRoomService) { 
+    public four_by_four_move_room_service: MoveRoomMediumService) { 
   }
 
   //bring in monsters, random order

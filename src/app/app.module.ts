@@ -8,19 +8,19 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DungeonComponent } from './dungeon/dungeon.component';
 import { EndScreenComponent } from './end-screen/end-screen.component';
-import { MoveRoomService } from './move-room.service';
+import { MoveRoomEasyService } from './services/difficulty/move-room-easy.service';
 import { CurrentRoomComponent } from './dungeon/current-room/current-room.component';
 import { InventoryComponent } from './dungeon/inventory/inventory.component';
 import { CurrentMonsterComponent } from './dungeon/current-monster/current-monster.component';
-import { MonsterLayoutService } from './monster-layout.service';
-import { RoomLayoutService } from './room-layout.service';
-import { PlayerArrayService } from './player-array.service';
+import { MonsterLayoutService } from './services/monster-layout.service';
+import { RoomLayoutService } from './services/room-layout.service';
+import { PlayerArrayService } from './services/player-array.service';
 import { HealthBarComponent } from './dungeon/health-bar/health-bar.component';
 import { CurrentFightComponent } from './dungeon/current-fight/current-fight.component';
-import { AttackService } from './attack.service';
+import { AttackService } from './services/attack.service';
 import { DevBoxComponent } from './dev-box/dev-box.component';
-import { FourByFourMoveRoomService } from './four-by-four-move-room.service';
-import { UniqueEncountersService } from './uniqueencounters.service';
+import { MoveRoomMediumService } from './services/difficulty/move-room-medium.service';
+import { UniqueEncountersService } from './services/uniqueencounters.service';
 
 
 @NgModule({
@@ -42,7 +42,15 @@ import { UniqueEncountersService } from './uniqueencounters.service';
     KeyboardShortcutsModule.forRoot(),
     ReactiveFormsModule
   ],
-  providers: [MoveRoomService, MonsterLayoutService, RoomLayoutService, PlayerArrayService, AttackService, FourByFourMoveRoomService, UniqueEncountersService],
+  providers: [
+    MoveRoomEasyService, 
+    MonsterLayoutService, 
+    RoomLayoutService, 
+    PlayerArrayService, 
+    AttackService, 
+    MoveRoomMediumService, 
+    UniqueEncountersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

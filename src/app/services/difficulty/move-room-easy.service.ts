@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 
-import { PlayerArrayService } from './player-array.service';
+import { PlayerArrayService } from '../player-array.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MoveRoomService {
+export class MoveRoomEasyService {
 
   new_pos = {x: 1, y: 0};
 

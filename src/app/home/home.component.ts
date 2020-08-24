@@ -2,14 +2,14 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { PlayerArrayService } from '../player-array.service';
-import { RoomLayoutService } from '../room-layout.service';
+import { PlayerArrayService } from '../services/player-array.service';
+import { RoomLayoutService } from '../services/room-layout.service';
 
 import { rooms } from '../../assets/rooms.json';
 import { monsters } from '../../assets/monsters.json';
 import { treasure } from '../../assets/treasure.json';
 import { bosses } from '../../assets/bosses.json';
-import { MonsterLayoutService } from '../monster-layout.service';
+import { MonsterLayoutService } from '../services/monster-layout.service';
 
 @Component({
   selector: 'app-home',

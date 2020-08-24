@@ -1,10 +1,10 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 
-import { PlayerArrayService } from 'src/app/player-array.service';
-import { AttackService } from 'src/app/attack.service';
-import { MonsterLayoutService } from 'src/app/monster-layout.service';
-import { MoveRoomService } from 'src/app/move-room.service';
-import { UniqueEncountersService } from '../../uniqueencounters.service';
+import { PlayerArrayService } from 'src/app/services/player-array.service';
+import { AttackService } from 'src/app/services/attack.service';
+import { MonsterLayoutService } from 'src/app/services/monster-layout.service';
+import { MoveRoomEasyService } from 'src/app/services/difficulty/move-room-easy.service';
+import { UniqueEncountersService } from '../../services/uniqueencounters.service';
 
 @Component({
   selector: 'app-current-fight',
@@ -17,7 +17,7 @@ export class CurrentFightComponent implements OnInit, DoCheck {
     public playerArrayService: PlayerArrayService, 
     public attackService: AttackService,
     public monster_layout_service: MonsterLayoutService,
-    public moveRoom: MoveRoomService,
+    public moveRoom: MoveRoomEasyService,
     public uniqueEncounters: UniqueEncountersService) { }
 
     monster;

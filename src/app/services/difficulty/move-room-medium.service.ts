@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { PlayerArrayService } from './player-array.service';
+import { PlayerArrayService } from '../player-array.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FourByFourMoveRoomService {
+export class MoveRoomMediumService {
 
   constructor(
     public playerArrayService: PlayerArrayService) { }
@@ -72,8 +72,6 @@ export class FourByFourMoveRoomService {
     }else if(this.playerArrayService.getPosition().x == 3 && this.playerArrayService.getPosition().y == 3){ 
       room_abs_id = 15;
     }
-
-
     return room_abs_id;
   }
 

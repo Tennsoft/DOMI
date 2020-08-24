@@ -2,10 +2,10 @@ import { Component, OnInit, OnDestroy, DoCheck} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
-import { MoveRoomService } from '../move-room.service';
-import { UniqueEncountersService } from '../uniqueencounters.service'
-import { FourByFourMoveRoomService } from '../four-by-four-move-room.service';
-import { PlayerArrayService } from '../player-array.service';
+import { MoveRoomEasyService } from '../services/difficulty/move-room-easy.service';
+import { UniqueEncountersService } from '../services/uniqueencounters.service'
+import { MoveRoomMediumService } from '../services/difficulty/move-room-medium.service';
+import { PlayerArrayService } from '../services/player-array.service';
 
 @Component({
   selector: 'app-dungeon',
@@ -19,10 +19,10 @@ export class DungeonComponent implements OnInit, DoCheck, OnDestroy {
   //can_search_for_treasure = this.playerArrayService.getSearchPossible();
   constructor(
     private router: Router,
-    public move_room_service: MoveRoomService, 
+    public move_room_service: MoveRoomEasyService, 
     public playerArrayService: PlayerArrayService,
     public uniqueEncounters: UniqueEncountersService,
-    public four_by_four_move_room_service: FourByFourMoveRoomService
+    public four_by_four_move_room_service: MoveRoomMediumService
     ) {}
 
     //initialize

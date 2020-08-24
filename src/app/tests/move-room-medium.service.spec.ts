@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FourByFourMoveRoomService } from './four-by-four-move-room.service';
+import { MoveRoomMediumService } from '../services/difficulty/move-room-medium.service';
 
 describe('4x4MoveRoomService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: FourByFourMoveRoomService = TestBed.get(FourByFourMoveRoomService);
+    const service: MoveRoomMediumService = TestBed.get(MoveRoomMediumService);
     expect(service).toBeTruthy();
   });
 });

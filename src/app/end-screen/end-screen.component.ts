@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlayerArrayService } from '../player-array.service';
+import { PlayerArrayService } from '../services/player-array.service';
 
 @Component({
   selector: 'app-end-screen',

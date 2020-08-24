@@ -1,8 +1,8 @@
 import { Component, OnInit, OnChanges, SimpleChanges, EventEmitter } from '@angular/core';
 
-import { PlayerArrayService } from '../../player-array.service';
-import { AttackService } from 'src/app/attack.service';
-import { HealthChangeService } from '../../health-change.service';
+import { PlayerArrayService } from '../../services/player-array.service';
+import { AttackService } from 'src/app/services/attack.service';
+import { HealthChangeService } from '../../services/health-change.service';
 
 import treasure from '../../../assets/treasure.json';
 

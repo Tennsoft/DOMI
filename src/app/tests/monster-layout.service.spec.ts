@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MonsterLayoutService } from './monster-layout.service';
+import { MonsterLayoutService } from '../services/monster-layout.service';
 
 describe('MonsterLayoutService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
